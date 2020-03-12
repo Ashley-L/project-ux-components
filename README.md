@@ -72,27 +72,27 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 ## STYLING DRAFT
 
 ### COLOURS
-- ![#5C3232](https://placehold.it/15/333366/000000?text=+) `#5C3232`
+- ![#5C3232](https://placehold.it/15/5C3232/000000?text=+) `#5C3232`
 - 70%
 
-- ![#414141](https://placehold.it/15/333366/000000?text=+) `#414141`
+- ![#414141](https://placehold.it/15/414141/000000?text=+) `#414141`
 - body text, 75%
 
-- ![#0D096E](https://placehold.it/15/333366/000000?text=+) `#0D096E`
+- ![#0D096E](https://placehold.it/15/0D096E/000000?text=+) `#0D096E`
 - button tag purple, 64%
 
-- ![#CFDBD5](https://placehold.it/15/333366/000000?text=+) `#CFDBD5`
+- ![#CFDBD5](https://placehold.it/15/CFDBD5/000000?text=+) `#CFDBD5`
 - light green
-- ![#E8EDDF](https://placehold.it/15/333366/000000?text=+) `#E8EDDF`
+- ![#E8EDDF](https://placehold.it/15/E8EDDF/000000?text=+) `#E8EDDF`
 - light platinum
 
-- ![#F5CB5C](https://placehold.it/15/333366/000000?text=+) `#F5CB5C`
+- ![#F5CB5C](https://placehold.it/15/F5CB5C/000000?text=+) `#F5CB5C`
 - golden canary yellow
 
-- ![#4C0758](https://placehold.it/15/333366/000000?text=+) `#4C0758`
+- ![#4C0758](https://placehold.it/15/4C0758/000000?text=+) `#4C0758`
 - main purple, 75% 
 
-- ![#F11E22](https://placehold.it/15/333366/000000?text=+) `#F11E22`
+- ![#F11E22](https://placehold.it/15/F11E22/000000?text=+) `#F11E22`
 - brilliant red
 
 * 
