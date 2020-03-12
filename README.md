@@ -72,8 +72,7 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 ## STYLING DRAFT
 
 ### COLOURS
-- ![#5C3232](https://placehold.it/15/5C3232/000000?text=+) `#5C3232`
-- 70%
+- ![#5C3232](https://placehold.it/15/5C3232/000000?text=+) `#5C3232; 70%`
 
 - ![#414141](https://placehold.it/15/414141/000000?text=+) `#414141; body text, 75%`
 
@@ -89,7 +88,6 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 
 - ![#F11E22](https://placehold.it/15/F11E22/000000?text=+) `#F11E22; brilliant red`
 
-* 
 
 ### FONTS
 * H1
