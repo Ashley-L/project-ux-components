@@ -72,29 +72,30 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 ## STYLING DRAFT
 
 ### COLOURS
-- ![#5C3232](https://placehold.it/15/5C3232/000000?text=+) `#5C3232; 70%`
+- ![#5C3232](https://placehold.it/15/5C3232/000000?text=+) `#5C3232; hover-dark, 70%`
 
-- ![#414141](https://placehold.it/15/414141/000000?text=+) `#414141; body text, 75%`
+- ![#414141](https://placehold.it/15/414141/000000?text=+) `#414141; body text (primary-text`
+- ![#707070](https://placehold.it/15/707070/000000?text=+) `#707070; secondary text lighter grey`
 
-- ![#0D096E](https://placehold.it/15/0D096E/000000?text=+) `#0D096E; button tag purple, 64%`
+
+- ![#0D096E](https://placehold.it/15/0D096E/000000?text=+) `#0D096E; footer, buttons, main-dark, 64%`
 
 - ![#CFDBD5](https://placehold.it/15/CFDBD5/000000?text=+) `#CFDBD5; light green`
-
 - ![#E8EDDF](https://placehold.it/15/E8EDDF/000000?text=+) `#E8EDDF; light platinum`
 
-- ![#F5CB5C](https://placehold.it/15/F5CB5C/000000?text=+) `#F5CB5C; golden canary yellow`
-
-- ![#4C0758](https://placehold.it/15/4C0758/000000?text=+) `#4C0758; main purple, 75% `
+- ![#F5CB5C](https://placehold.it/15/F5CB5C/000000?text=+) `#F5CB5C; main-bright, golden canary yellow`
 
 - ![#F11E22](https://placehold.it/15/F11E22/000000?text=+) `#F11E22; brilliant red`
 
 
 ### FONTS
-* H1
-* H2
-* H3 
-* Sans-serif Contenders: 
-  * Lato ,Helvetica Neue,sans-serif
+- Sans-serif: futura-pt, sans-serif
+- futura-pt-bold
+- Serif: classico-urw
+- blockquote: Crimson italic (google)
+- navbar: outlined w border: Futura PT (adobe)
+* h1, h2, h3, h4: classico-urw (adobe)
+
 
 ### CHARACTER CARDS
 * Hover
