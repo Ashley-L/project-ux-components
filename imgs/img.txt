@@ -1,1 +1,24 @@
 testing skeleton branch!
+
+w10: 12 march 2020 (in-class notes)
+** NOT one branch per person **
+** REMEMBER WHICH BRANCH YOU ARE IN **
+branch makes exact copy of code. branch out from MASTER branch. each branch should focus on one feature (named after what you are trying to do.) keep them isolated so you test them before can merge them back to MASTER.
+
+search > git:merge branch; merge branches together, then merge to MASTER.
+
+commit > push > getch from all remotes; 
+
+** ANIMATION ** 
+Transform: translate, rotate;
+Transition: if a property changes, do so after a duration of time;
+Select color, all, font size,
+Define on orig obj;
+
+cf.
+Desandro; tri div; 
+
+Body:hover .square {}
+
+v js version
+.tumble {}
