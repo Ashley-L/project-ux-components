@@ -72,7 +72,28 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 ## STYLING DRAFT
 
 ### COLOURS
-- ![#333366](https://placehold.it/15/333366/000000?text=+) `#333366`
+- ![#5C3232](https://placehold.it/15/333366/000000?text=+) `#5C3232`
+- 70%
+
+- ![#414141](https://placehold.it/15/333366/000000?text=+) `#414141`
+- body text, 75%
+
+- ![#0D096E](https://placehold.it/15/333366/000000?text=+) `#0D096E`
+- button tag purple, 64%
+
+- ![#CFDBD5](https://placehold.it/15/333366/000000?text=+) `#CFDBD5`
+- light green
+- ![#E8EDDF](https://placehold.it/15/333366/000000?text=+) `#E8EDDF`
+- light platinum
+
+- ![#F5CB5C](https://placehold.it/15/333366/000000?text=+) `#F5CB5C`
+- golden canary yellow
+
+- ![#4C0758](https://placehold.it/15/333366/000000?text=+) `#4C0758`
+- main purple, 75% 
+
+- ![#F11E22](https://placehold.it/15/333366/000000?text=+) `#F11E22`
+- brilliant red
 
 * 
 
