@@ -162,17 +162,33 @@ FIXED ELEMENTS
 .side-movies {
     position: fixed;
     top: 100px; right: 40px;
+    text-align: right;
 }
+.movies-table li {
+    padding: .25em;
+}
+.movies-table a {
+    color: var(--primary-text);
+    font-family: var(--body-sans);
 
+
+}
 /* Scroll-spy */
 .scroll-spy {
     position: fixed;
-    bottom: 100px; right: 40px;
+    bottom: 150px; right: 40px;
+}
+.scroll-spy a {
+    color: var(--primary-text);
 }
 
+/*Back to top*/
 .arrow-up {
     position: fixed;
     bottom: 50px; right: 40px;
+}
+.arrow-up a {
+    color: var(--primary-text);
 }
     
 
