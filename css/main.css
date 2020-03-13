@@ -73,6 +73,10 @@ h4 {
     padding: 0.8em 0;
 }
 
+h5 {
+    color: var(--background);
+}
+
 em {
     font-weight: 700;
     font-size: 1.1em;
@@ -264,11 +268,69 @@ em {
 }
 .appear-list {
     color: var(--main-dark);
-
-
 }
 
 .bottom-footer {
-    background-color: purple;
+    background-color: var(--main-dark);
+    padding: 4em 2em 0.5em 2em;
+}
 
+.footer-title {
+    font-size: 2.5em;
+    font-weight: 800;
+    text-align: center;
+    -webkit-text-stroke: 1.7px var(--primary-text);
+}
+
+.mappy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1.3em;
+}
+
+.mappy li {
+    padding: 1.2em 1.4em;
+}
+
+.legal li a {
+    padding-left: 1.1em;
+}
+
+.mappy li a, .legal li a{
+    color: var(--background);
+    font-family: var(--heading-sans);
+    font-weight: 700;
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.connect-title, .legal, .copyright-c {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 1.3em;
+}
+
+.connect-title, .legal, .copyright-c {
+    font-size: 0.9em;
+    padding: 0.5em 0.8em;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.social-icons li{
+    padding: 0 0.8em;
+}
+
+.social-b img{
+    width: 30px;
+}
+
+.copyright-c {
+    padding-bottom: 1.3em;
 }
