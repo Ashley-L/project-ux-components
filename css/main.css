@@ -63,7 +63,7 @@ h2 {
 
 h3 {
     font-size: 2.3em;
-    padding: 0.5em 0;
+    /* padding: 0.5em 0; */
 }
 
 h4 {
@@ -161,7 +161,7 @@ FIXED ELEMENTS
 /* Filter by movie */
 .side-movies {
     position: fixed;
-    top: 40px; right: 40px;
+    top: 100px; right: 40px;
 }
 
 /* Scroll-spy */
@@ -278,6 +278,10 @@ ARTICLE CONTENT
 }
 
 
+.char-name {
+    padding-top: 1.5em;
+}
+
 /*CAROUSEL*/
 .char-slides img {
     object-fit: fill;
@@ -346,6 +350,7 @@ ARTICLE CONTENT
 .bottom-footer {
     background-color: var(--main-dark);
     padding: 4em 2em 0.5em 2em;
+    margin-top: 4em;
 }
 .footer-title {
     font-size: 2.5em;
