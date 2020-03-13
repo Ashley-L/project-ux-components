@@ -54,8 +54,6 @@ h1, h2, h3, h4 {
 
 h1 {
     color:var(--primary-text);
-    font-size: 4em;
-
 }
 
 h2 {
@@ -70,7 +68,6 @@ h3 {
 
 h4 {
     font-size: 1.75em;
-    padding: 0.8em 0;
 }
 
 h5 {
@@ -84,16 +81,26 @@ em {
 }
 
 
-/*TOP BAR + NAVIGATION*/
+/**************************************
+HEADER
+**************************************/
+/*TOP BAR*/
 .top-bar {
     background-color: var(--main-bright);
-    display: grid;
-    grid-template-columns: 4fr 30em 8em;
     position: fixed;
+    z-index: 9998;
+    width: 100%;
     top: 0;
     left: 0;
+}
+.top-bar-nav {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 4fr 30em 8em;
     width: 100%;
-    z-index: 9998;
+    max-width: 1300px;
+    /* position: fixed;
+    top: 0; */
 }
 .nav-title {
     font-size: 2.5em;
@@ -141,22 +148,23 @@ em {
     font-size: 2em;
 }
 
-
+/*Banner*/
 .top-banner img{
     width: 100%;
 }
 
-.main-container {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-}
 
+/**************************************
+FIXED ELEMENTS
+**************************************/
+
+/* Filter by movie */
 .side-movies {
     position: fixed;
     top: 40px; right: 40px;
 }
 
+/* Scroll-spy */
 .scroll-spy {
     position: fixed;
     bottom: 100px; right: 40px;
@@ -168,7 +176,57 @@ em {
 }
     
 
-/* Character cards at top */
+/**************************************
+ARTICLE CONTENT
+**************************************/
+
+/*GENERAL*/
+.main-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.article-title {
+    line-height: 1em;
+    font-size: 3em;
+    padding-top: .25em;
+}
+.article-content {
+    padding-top: 3em;
+    
+}
+.article-content p {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.intro-sec, .heroes-sec, .villain-sec {
+    padding-bottom: 3em;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+.section-heading {
+    padding-bottom: .5em;
+}
+.article-chunk {
+    padding: .8em 0;
+}
+.article-chunk h4, .article-chunk p {
+    padding-bottom: .5em;
+}
+.byline, .choose-msg {
+    font-family: var(--heading-sans);
+    color: var(--secondary-text);
+    font-style: italic;
+    padding: 0.5em 0 0.5em 0;
+}
+.fig-caption {
+    font-family: var(--heading-sans);
+    color: red;
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+/* CHARACTER GRID */
 .cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -210,9 +268,6 @@ em {
     align-items: flex-end;
     justify-content: flex-end;
 }
-
-
-
 .char-quote {
     font-family: var(--b-quote);
     font-size: 1.3em;
@@ -222,33 +277,12 @@ em {
     margin: 0 2em;
 }
 
-.byline, .choose-msg {
-    font-family: var(--heading-sans);
-    color: var(--secondary-text);
-    font-style: italic;
-    padding: 0.5em 0 0.5em 0;
-}
 
-.article-content {
-    padding-top: 3em;
+/*CAROUSEL*/
+.char-slides img {
+    object-fit: fill;
+    width: 100%;
 }
-
-.fig-caption {
-    font-family: var(--body-sans);
-    color: red;
-    font-size: 1.5em;
-    font-style: italic;
-}
-
-.intro-sec, .heroes-sec, .villain-sec {
-    padding-bottom: 3em;
-}
-
-.heroes-sec p {
-    font-size: 1.2em;
-    line-height: 1.2em;
-}
-
 .carousel-thumbs{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -256,25 +290,63 @@ em {
     max-width: 500px;
     margin: 1em auto;
 }
-
 .carousel-thumbs li img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
+
+/*VALUES*/
 .values-list {
     color: var(--main-dark);
-    font-family: var(--body-sans);
+    padding-left: 1em;
+   
 }
+.values-list li {
+    font-family: var(--body-sans);
+    display: grid;
+    grid-template-columns: 2em 5em;
+    /* list-style-image: url(star-outline-24px.svg) */
+}
+.values-list li span, .values-list li p{
+    align-self: center; 
+    padding: 0;
+}
+.material-icons.star {
+    font-size: 1.5em;
+}
+
+
+/* APPEARANCES */
 .appear-list {
     color: var(--main-dark);
 }
+.appear-list li {
+    display: inline-block;
+    margin: .25em .25em .25em 0;
+
+}
+.movie-tag {
+    font-size: 1.2em;
+    padding: .5em;
+    border:1px solid;
+    border-radius: 8px;
+}
+.movie-tag a{
+    color: var(--main-dark);
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+}
+
+
+
 
 .bottom-footer {
     background-color: var(--main-dark);
     padding: 4em 2em 0.5em 2em;
 }
-
 .footer-title {
     font-size: 2.5em;
     font-weight: 800;
