@@ -194,10 +194,46 @@ em {
 }
 .appear-list {
     color: var(--main-dark);
-
-
 }
 
 .bottom-footer {
-    background-color: purple;
+    background-color: var(--main-dark);
+    padding: 4em 2em 0.5em 2em;
+}
+
+.footer-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: var(--background);
+    text-align: center;
+    -webkit-text-stroke: 1.7px var(--primary-text);
+
+}
+
+.mappy{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 1.5em;
+}
+
+.mappy li {
+    padding: 1.2em 2em;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 1.5em;
+}
+
+
+.social-icons li{
+    padding: 0.5em 0.8em;
+
+}
+
+.social-b img{
+    width: 30px;
 }
