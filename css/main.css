@@ -39,6 +39,7 @@ body {
     background-color: var(--background);
     font-family: var(--body-sans);
     color: var(--primary-text);
+    padding-top: 60px;
 }
 p {
     /* font-family: var(--body-sans); */
@@ -78,33 +79,65 @@ em {
     font-style: italic;
 }
 
-.fig-caption {
-    font-family: var(--body-sans);
-    color: red;
-    font-size: 1.5em;
-    font-style: italic;
-}
 
+/*TOP BAR + NAVIGATION*/
 .top-bar {
     background-color: var(--main-bright);
-    /* max-width: 100%; */
-
+    display: grid;
+    grid-template-columns: 4fr 30em 8em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9998;
 }
-
-.top-menu {
-    font-family: var(--bold-sans);
-    color: var(--background);
-
-}
-
 .nav-title {
-    font-size: 2em;
+    font-size: 2.5em;
     font-weight: 800;
     color: var(--background);
     -webkit-text-stroke: 3px var(--primary-text);
-    padding: 0.5em;
-
+    padding: 0.25em;
 }
+.top-menu {
+    font-family: var(--bold-sans);
+    color: var(--background);
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.top-menu li {
+    font-size: 1.75em;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top-menu li:hover {
+    background-color: #D8A211;
+}
+.top-menu a {
+    color: var(--primary-text);
+    text-decoration: none;
+}
+.top-menu-icons {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+}
+.user-button {
+    background-color: transparent;
+    border: none;
+    /* padding: 0 1em; */
+}
+.user-button span {
+    color: var(--primary-text);
+}
+.material-icons {
+    font-size: 2em;
+}
+
+
 .top-banner img{
     width: 100%;
 }
@@ -164,6 +197,13 @@ em {
 
 .article-content {
     padding-top: 3em;
+}
+
+.fig-caption {
+    font-family: var(--body-sans);
+    color: red;
+    font-size: 1.5em;
+    font-style: italic;
 }
 
 .intro-sec, .heroes-sec, .villain-sec {
