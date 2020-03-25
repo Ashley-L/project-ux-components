@@ -96,20 +96,10 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 - navbar: outlined w border: Futura PT (adobe)
 * h1, h2, h3, h4: classico-urw (adobe)
 
-
-### CHARACTER CARDS
-* Hover
-* Overlay:
-* Font: 
-
-### BUTTONS
-* 
-
-### ACCENTS
-* Links (a):
-* Highlight text:
- * Scrollspy glow:
-
+## MOCKUP
+![image](https://user-images.githubusercontent.com/52459805/77582001-0a599380-6eb5-11ea-9601-5e3e81b18c79.png)
+![image](https://user-images.githubusercontent.com/52459805/77582595-011cf680-6eb6-11ea-8bd2-6ade375c3992.png)
+![image](https://user-images.githubusercontent.com/52459805/77582827-61ac3380-6eb6-11ea-9902-d3a2049001ae.png)
 
 ## BODY CONTENT LIST
 * Content Source: 
