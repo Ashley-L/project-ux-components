@@ -22,7 +22,7 @@
             <nav class="top-bar-nav">
                 <p class="nav-title">SUPERDAZE</p>
                 <ul class="top-menu">
-                    <li><a href="#news">news</a></li>
+                    <li><a href="#">news</a></li>
                     <li><a href="#">heroes</a></li>
                     <li><a href="#">villains</a></li>
                     <li><a href="#">blog</a></li>
@@ -58,7 +58,7 @@
         <!-- Stars are placeholders, will replace with actual character icons when we make them -->
         <div class="scroll-spy">
             <ul class="char-icons">
-                <li><a href="#"><span class="material icons"><span class="material-icons star">star_outline</span></a></li>
+                <li><a href="#"><span class="material-icons star">star_outline</span></a></li>
                 <li><a href="#"><span class="material-icons star">star_outline</span></a></li>
                 <li><a href="#"><span class="material-icons star">star_outline</span></a></li>
                 <li><a href="#"><span class="material-icons star">star_outline</span></a></li>
@@ -85,45 +85,44 @@
                     <p class="fig-caption">The Mightiest of Them All.</p>
                     <h1 class="article-title">TOP 8 MARVEL HEROES AND VILLAINS</h1>
                     <p class="byline">by various vigilantes </p>
+                    <h5 class="select-msg">Select a character below</h5>
                 </article>
 
                 <!-- CHARACTER CARD GRID -->
                 <div class="cards-container">
                     <div class="char-card">
-                        <a href="#spider-man">
-                            <h4 class="char-card-name">Spider-Man</h4>
-                        </a>
+                        <a class="char-card-name" href="#hero-spiderman">Spider-Man</a>
                         <img src="imgs/char-card-spider-man.png" alt="Spider-Man">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#iron-man">Iron Man</a>
+                        <a class="char-card-name" href="#hero-ironman">Iron Man</a>
                         <img src="imgs/char-card-iron-man.png" alt="Iron Man">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#cap-marvel">Captain Marvel</a>
+                        <a class="char-card-name" href="#hero-capmarv">Captain Marvel</a>
                         <img src="imgs/char-card-cap-marvel.png" alt="Captain Marvel">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#black-panth">Black Panther</a>
+                        <a class="char-card-name" href="#hero-bp">Black Panther</a>
                         <img src="imgs/char-card-black-panther.png" alt="">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#thanos">Thanos</a>
+                        <a class="char-card-name" href="#vlln-thanos">Thanos</a>
                         <img src="imgs/char-card-thanos.png" alt="Thanos">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#magneto"> Magneto</a>
+                        <a class="char-card-name" href="#vlln-magneto">Magneto</a>
                         <img src="imgs/char-card-magneto.png" alt="Magneto">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#killmonger"> Killmonger</a>
+                        <a class="char-card-name" href="#vlln-km">Killmonger</a>
                         <img src="imgs/char-card-killmonger.png" alt="Killmonger">
                     </div>
                     <div class="char-card">
-                        <a class="char-card-name" href="#loki">Loki</a>
+                        <a class="char-card-name" href="#vlln-loki">Loki</a>
                         <img src="imgs/char-card-loki.png" alt="Loki"></div>
                 </div>
-                <p class="choose-msg">Which side are YOU on?</p>
+                <p class="dramatic-msg">Which side are YOU on?</p>
             </section>
 
             <!-- HEROES -->
@@ -134,47 +133,34 @@
                 <!-- SPIDER-MAN -->
                 <section class="hero spider-man">
                     <!-- Hero name -->
-                    <h3 class="char-name">// SPIDERMAN</h3>
+                    <h3 class="char-name" id="hero-spiderman">// SPIDERMAN</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/spidey-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/spidey-carousel1.jpg" alt="Spider-Man">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/spidey-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/spidey-carousel2.jpeg" alt="spidey"></li>
-                            <li><img src="imgs/spidey-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/spidey-carousel4.jpeg" alt="spidey"></li>
+                            <li><img src="imgs/spidey-carousel1.jpg" alt="Spidey"></li>
+                            <li><img src="imgs/spidey-carousel2.jpeg" alt="Spidey"></li>
+                            <li><img src="imgs/spidey-carousel3.jpg" alt="Spidey"></li>
+                            <li><img src="imgs/spidey-carousel4.jpeg" alt="Spidey"></li>
                         </ul>
-                        <blockquote class="char-quote">"When you can do the things that I can, but you don't, and then the
-                            bad things happen, they happen because of you."
+                        <blockquote class="char-quote">When you can do the things that I can, but you don't, and then the bad things happen, they happen because of you."
                         </blockquote>
                     </div>
     
                     <!-- Bio -->
                     <article class="article-chunk bio">
                         <h4>Bio</h4>
-                        <p>A bite from a spider somehow granted teenager Peter Parker its arachnid abilities and instead of
-                        using them for personal gain, he decided to help others with them. An orphan living with his aunt,
-                        May Parker, the boy chose to wear a mask while fighting crime so as not to burden her with his
-                        actions.</p>
-                        <p>Calling himself Spider-Man and sporting a pair of web-shooting devices he’d constructed, Parker wound
-                        up in internet videos which attracted the attention of Tony Stark. The billionaire industrialist
-                        deduced Spider-Man’s secret identity and approached Parker at his and May’s home in Queens, New York
-                        with a request for aid from the hero in an upcoming confrontation with Captain America and a group
-                        of other rogue Avengers and associates. Parker was initially hesitant to even admit his secret
-                        career as Spider-Man, but the thrill of adventure and Stark’s talk of responsibility drew him in and
-                        he accepted the invitation, as well as a new, high-tech costume and web-shooters.</p>
+                        <p>A bite from a spider somehow granted teenager Peter Parker its arachnid abilities and instead of using them for personal gain, he decided to help others with them. An orphan living with his aunt, May Parker, the boy chose to wear a mask while fighting crime so as not to burden her with his actions.</p>
+                        <p>Calling himself Spider-Man and sporting a pair of web-shooting devices he’d constructed, Parker wound up in internet videos which attracted the attention of Tony Stark. The billionaire industrialist deduced Spider-Man’s secret identity and approached Parker at his and May’s home in Queens, New York with a request for aid from the hero in an upcoming confrontation with Captain America and a group of other rogue Avengers and associates. Parker was initially hesitant to even admit his secret career as Spider-Man, but the thrill of adventure and Stark’s talk of responsibility drew him in and he accepted the invitation, as well as a new, high-tech costume and web-shooters.</p>
                     </article>
                     
                     <!-- Ethos -->
                     <article class="article-chunk ethos">
                         <h4>Ethos</h4>
-                        <p>Spidey’s core mission statement and message countless times, but it’s important to make sure to ask
-                        what it means, and why it makes him special in a pantheon of incredible heroes. This central
-                        conceit, that our responsibility to our world and the people around us is directly proportional to
-                        our ability to impact said world, is not particularly complex or deep, but it is vital.</p>
+                        <p>Despite being a teenager, Peter is committed to doing what he can to prevent harm from coming to the people in his city.</p>
                     </article>
                     
                     <!-- Values -->
@@ -200,11 +186,11 @@
                     <article class="article-chunk appearances">
                         <h4>Appearances</h4>
                         <ul class="appear-list">
-                            <li class="movie-tag"><a href="#civil-war">Captain America: Civil War</a></li>
+                            <li class="movie-tag"><a href="#civilwar">Captain America: Civil War</a></li>
                             <li class="movie-tag"><a href="#homecoming">Spider-Man: Homecoming</a></li>
-                            <li class="movie-tag"><a href="#infinitywar">Avengers: Infinity War</a></li>
+                            <li class="movie-tag"><a href="#iw">Avengers: Infinity War</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
-                            <li class="movie-tag"><a href="farfromhome">Spider-Man: Far From Home</a></li>
+                            <li class="movie-tag"><a href="ffh">Spider-Man: Far From Home</a></li>
                         </ul>
                     </article>
                 </section>
@@ -212,18 +198,18 @@
                 <!-- IRON MAN -->
                 <section class="hero iron-man">
                     <!-- Hero name -->
-                    <h3 class="char-name">// IRON MAN</h3>
+                    <h3 class="char-name" id="hero-ironman">// IRON MAN</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/ironman-carousel1.jpeg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/ironman-carousel1.jpeg" alt="Iron Man">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/ironman-carousel1.jpeg" alt="spidey"></li>
-                            <li><img src="imgs/ironman-carousel2.jpg" alt="spidey"></li>
-                            <li><img src="imgs/ironman-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/ironman-carousel4.jpg" alt="spidey"></li>
+                            <li><img src="imgs/ironman-carousel1.jpeg" alt="Iron Man"></li>
+                            <li><img src="imgs/ironman-carousel2.jpg" alt="Iron Man"></li>
+                            <li><img src="imgs/ironman-carousel3.jpg" alt="Iron Man"></li>
+                            <li><img src="imgs/ironman-carousel4.jpg" alt="Iron Man"></li>
                         </ul>
                         <blockquote class="char-quote">“You can take away my house, all my tricks and toys. One thing you can’t take away… I am Iron Man.”</blockquote>
                     </div>
@@ -231,7 +217,7 @@
                     <!-- Bio -->
                     <article class="article-chunk bio">
                         <h4>Bio</h4>
-                        <p>Iron Man was born in a cave, with a box of scraps, after Tony Stark is injured in a terrorist attack by the Ten Rings and taken prisoner in Afghanistan. With fellow prisoner Ho Yinsen, they build an arc reactor to both keep shrapnel out of his heart and power a mechanized suit he uses to escape. Further developing the suit into a weapon, he eventually takes on the mantle 'Iron Man' and becomes a cornerstone to S.H.I.E.L.D.'s Avengers Initiative.
+                        <p>Iron Man is born in a cave, with a box of scraps, after Tony Stark is injured in a terrorist attack by the Ten Rings and taken prisoner in Afghanistan. With fellow prisoner Ho Yinsen, they build an arc reactor to both keep shrapnel out of his heart and power a mechanized suit he uses to escape. Further developing the suit into a weapon, he eventually takes on the mantle 'Iron Man' and becomes a cornerstone to S.H.I.E.L.D.'s Avengers Initiative.
                         </p>
                     </article>
                     
@@ -247,15 +233,15 @@
                         <ul class="values-list">
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Responsibility</p>
+                                <p>Intelligence</p>
                             </li>
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Integrity</p>
+                                <p>Resourcefulness</p>
                             </li>
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Loyalty</p>
+                                <p>Selflessness</p>
                             </li>
                         </ul>
                     </article>
@@ -270,7 +256,7 @@
                             <li class="movie-tag"><a href="#avengers">The Avengers</a></li>
                             <li class="movie-tag"><a href="#aou">Avengers: Age of Ultron</a></li>
                             <li class="movie-tag"><a href="#homecoming">Spider-Man: Homecoming</a></li>
-                            <li class="movie-tag"><a href="#infintywar">Avengers: Infnity War</a></li>
+                            <li class="movie-tag"><a href="#iw">Avengers: Infnity War</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
                         </ul>
                     </article>
@@ -279,18 +265,18 @@
                 <!-- CAPTAIN MARVEL -->
                 <section class="hero captain-marvel">
                     <!-- Hero name -->
-                    <h3 class="char-name">// CAPTAIN MARVEL</h3>
+                    <h3 class="char-name" id="hero-capmarv">// CAPTAIN MARVEL</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/capmarvel-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/capmarvel-carousel1.jpg" alt="Captain Marvel">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/capmarvel-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/capmarvel-carousel2.png" alt="spidey"></li>
-                            <li><img src="imgs/capmarvel-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/capmarvel-carousel4.jpg" alt="spidey"></li>
+                            <li><img src="imgs/capmarvel-carousel1.jpg" alt="Captain Marvel"></li>
+                            <li><img src="imgs/capmarvel-carousel2.png" alt="Captain Marvel"></li>
+                            <li><img src="imgs/capmarvel-carousel3.jpg" alt="Captain Marvel"></li>
+                            <li><img src="imgs/capmarvel-carousel4.jpg" alt="Captain Marvel"></li>
                         </ul>
                         <blockquote class="char-quote">“I’ve been fighting with one arm behind my back. What happens when I’m finally set free?”
                         </blockquote>
@@ -307,7 +293,7 @@
                     <!-- Ethos -->
                     <article class="article-chunk ethos">
                         <h4>Ethos</h4>
-                        <p>Whenever Carol falls down, she always gets back up again</p>
+                        <p>Whenever Carol falls down, she always gets back up again.</p>
                     </article>
                     
                     <!-- Values -->
@@ -333,7 +319,7 @@
                     <article class="article-chunk appearances">
                         <h4>Appearances</h4>
                         <ul class="appear-list">
-                            <li class="movie-tag"><a href="#capmarvel-movie">Captain Marvel</a></li>
+                            <li class="movie-tag"><a href="#cm">Captain Marvel</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
                         </ul>
                     </article>
@@ -342,18 +328,18 @@
                  <!-- BLACK PANTHER -->
                  <section class="hero black-panther">
                     <!-- Hero name -->
-                    <h3 class="char-name">// BLACK PANTHER</h3>
+                    <h3 class="char-name" id="hero-bp">// BLACK PANTHER</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/blackpanth-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/blackpanth-carousel1.jpg" alt="Black Panther">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/blackpanth-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/blackpanth-carousel2.jpg" alt="spidey"></li>
-                            <li><img src="imgs/blackpanth-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/blackpanth-carousel4.jpg" alt="spidey"></li>
+                            <li><img src="imgs/blackpanth-carousel1.jpg" alt="Black Panther"></li>
+                            <li><img src="imgs/blackpanth-carousel2.jpg" alt="Black Panther"></li>
+                            <li><img src="imgs/blackpanth-carousel3.jpg" alt="Black Panther"></li>
+                            <li><img src="imgs/blackpanth-carousel4.jpg" alt="Black Panther"></li>
                         </ul>
                         <blockquote class="char-quote">"Vengeance has consumed you... I am done letting it consume me."
                         </blockquote>
@@ -394,9 +380,9 @@
                     <article class="article-chunk appearances">
                         <h4>Appearances</h4>
                         <ul class="appear-list">
-                            <li class="movie-tag"><a href="#civil-war">Captain America: Civil War</a></li>
-                            <li class="movie-tag"><a href="#black-panth">Black Panther</a></li>
-                            <li class="movie-tag"><a href="#infinitywar">Avengers: Infinity War</a></li>
+                            <li class="movie-tag"><a href="#civilwar">Captain America: Civil War</a></li>
+                            <li class="movie-tag"><a href="#blackpanth">Black Panther</a></li>
+                            <li class="movie-tag"><a href="#iw">Avengers: Infinity War</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
                         </ul>
                     </article>
@@ -410,20 +396,20 @@
                 <p>Meet our finest Villains! They're <em>BAD</em> and they <em>KNOW</em> it.</p>
 
                 <!-- THANOS -->
-                <section class="hero thanos">
+                <section class="villain thanos">
                     <!-- Hero name -->
-                    <h3 class="char-name">// THANOS</h3>
+                    <h3 class="char-name" id="vlln-thanos">// THANOS</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/thanos-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/thanos-carousel1.jpg" alt="Thanos">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/thanos-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/thanos-carousel2.jpeg" alt="spidey"></li>
-                            <li><img src="imgs/thanos-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/thanos-carousel4.jpg" alt="spidey"></li>
+                            <li><img src="imgs/thanos-carousel1.jpg" alt="Thanos"></li>
+                            <li><img src="imgs/thanos-carousel2.jpeg" alt="Thanos"></li>
+                            <li><img src="imgs/thanos-carousel3.jpg" alt="Thanos"></li>
+                            <li><img src="imgs/thanos-carousel4.jpg" alt="Thanos"></li>
                         </ul>
                         <blockquote class="char-quote">"Fun isn’t something one considers when balancing the universe, but this does put a smile on my face.”
                         </blockquote>
@@ -466,29 +452,29 @@
                         <h4>Appearances</h4>
                         <ul class="appear-list">
                             <li class="movie-tag"><a href="#gotg">Guardians of the Galaxy</a></li>
-                            <li class="movie-tag"><a href="#infinitywar">Avengers: Infinity War</a></li>
+                            <li class="movie-tag"><a href="#iw">Avengers: Infinity War</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
                         </ul>
                     </article>
                 </section>
 
                 <!-- MAGNETO -->
-                <section class="hero magneto">
+                <section class="villain magneto">
                     <!-- Hero name -->
-                    <h3 class="char-name">// MAGNETO</h3>
+                    <h3 class="char-name" id="vlln-magneto">// MAGNETO</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/magneto-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/magneto-carousel1.jpg" alt="Magneto">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/magneto-carousel1.jpg" alt="magneto"></li>
-                            <li><img src="imgs/magneto-carousel2.jpg" alt="magneto"></li>
-                            <li><img src="imgs/magneto-carousel3.jpg" alt="magneto"></li>
-                            <li><img src="imgs/magneto-carousel4.jpg" alt="magneto"></li>
+                            <li><img src="imgs/magneto-carousel1.jpg" alt="Magneto"></li>
+                            <li><img src="imgs/magneto-carousel2.jpg" alt="Magneto"></li>
+                            <li><img src="imgs/magneto-carousel3.jpg" alt="Magneto"></li>
+                            <li><img src="imgs/magneto-carousel4.jpg" alt="Magneto"></li>
                         </ul>
-                        <blockquote class="char-quote">Mankind has always feared what it doesn’t understand.</blockquote>
+                        <blockquote class="char-quote">"Mankind has always feared what it doesn’t understand."</blockquote>
                     </div>
     
                     <!-- Bio -->
@@ -533,35 +519,35 @@
                 </section>
 
                 <!-- KILLMONGER -->
-                <section class="hero killmonger">
+                <section class="villain killmonger">
                     <!-- Hero name -->
-                    <h3 class="char-name">// KILLMONGER</h3>
+                    <h3 class="char-name" id="vlln-km">// KILLMONGER</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/killmonger-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/killmonger-carousel1.jpg" alt="Killmonger">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/killmonger-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/killmonger-carousel2.jpg" alt="spidey"></li>
-                            <li><img src="imgs/killmonger-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/killmonger-carousel4.png" alt="spidey"></li>
+                            <li><img src="imgs/killmonger-carousel1.jpg" alt="Killmonger"></li>
+                            <li><img src="imgs/killmonger-carousel2.jpg" alt="Killmonger"></li>
+                            <li><img src="imgs/killmonger-carousel3.jpg" alt="Killmonger"></li>
+                            <li><img src="imgs/killmonger-carousel4.png" alt="Killmonger"></li>
                         </ul>
-                        <blockquote class="char-quote">People die every day. That's just part of life around here.
+                        <blockquote class="char-quote">"People die every day. That's just part of life around here."
                         </blockquote>
                     </div>
     
                     <!-- Bio -->
                     <article class="article-chunk bio">
                         <h4>Bio</h4>
-                        <p>Killmonger fights T'Challa to the death (just kidding). (Sorta.) (He dies.)</p>
+                        <p>Erik Stevens learned he was from Wakanda, a rich but isolated African society, when his father was killed. His father had been working with a smuggler interested in Vibranium, of which Wakanda had plenty, and Stevens saw his father's death as an attempt to halt the sharing of resources with black people around the world. With intense training in the military, earning the name 'Killmonger' because of his kill count, Stevens prepared his entire life to take on the Black Panther mantle when he arrived Wakanda.</p>
                     </article>
                     
                     <!-- Ethos -->
                     <article class="article-chunk ethos">
                         <h4>Ethos</h4>
-                        <p>He's staunchly against Wakanda hoarding all its resources and not trying to help the millions of people suffering around the world.</p>
+                        <p>Killmonger staunchly against Wakanda hoarding all its resources and not trying to help the millions of people suffering around the world.</p>
                     </article>
                     
                     <!-- Values -->
@@ -587,26 +573,26 @@
                     <article class="article-chunk appearances">
                         <h4>Appearances</h4>
                         <ul class="appear-list">
-                            <li class="movie-tag"><a href="#black-panther">Black Panther</a></li>
+                            <li class="movie-tag"><a href="#blackpanth">Black Panther</a></li>
                         </ul>
                     </article>
                 </section>
 
                  <!-- LOKI -->
-                 <section class="hero loki">
+                 <section class="villain loki">
                     <!-- Hero name -->
-                    <h3 class="char-name">// LOKI</h3>
+                    <h3 class="char-name" id="vlln-loki">// LOKI</h3>
                     
                     <!-- Image carousel -->
                     <div class="article-chunk char-carousel">
                         <div class="char-slides">
-                            <img class="carousel-big" src="imgs/loki-carousel1.jpg" alt="Spider-Man in civil war">
+                            <img class="carousel-big" src="imgs/loki-carousel1.jpg" alt="Loki">
                         </div>
                         <ul class="carousel-thumbs">
-                            <li><img src="imgs/loki-carousel1.jpg" alt="spidey"></li>
-                            <li><img src="imgs/loki-carousel2.jpg" alt="spidey"></li>
-                            <li><img src="imgs/loki-carousel3.jpg" alt="spidey"></li>
-                            <li><img src="imgs/loki-carousel4.jpg" alt="spidey"></li>
+                            <li><img src="imgs/loki-carousel1.jpg" alt="Loki"></li>
+                            <li><img src="imgs/loki-carousel2.jpg" alt="Loki"></li>
+                            <li><img src="imgs/loki-carousel3.jpg" alt="Loki"></li>
+                            <li><img src="imgs/loki-carousel4.jpg" alt="Loki"></li>
                         </ul>
                         <blockquote class="char-quote">"I am the monster parents tell their children about at night."
                         </blockquote>
@@ -615,13 +601,13 @@
                     <!-- Bio -->
                     <article class="article-chunk bio">
                         <h4>Bio</h4>
-                        <p>Trickster God. Iconic.</p>
+                        <p>Burdened with glorious purpose, Loki grew up in Asgard as the son of Allfather Odin and the brother of Thor. Only when he was adult did he learn of his true heritage: he was actually the son of Laufey, a Frost Giant, and raised to be a bridge between the two races. This realization set Loki off on a destructive path to prove his worth, which involves trying to kill the Frost Giants and take over planet Earth.</p>
                     </article>
                     
                     <!-- Ethos -->
                     <article class="article-chunk ethos">
                         <h4>Ethos</h4>
-                        <p>Does anyone even know what this guy is thinking? One moment he's good, then he's bad. Then he's dead, then alive, then dead, then ali</p>
+                        <p>Loki plays by his own rules. He severs ties with allies as quickly as he creates them, and his own interests are his ultimate priority.</p>
                     </article>
                     
                     <!-- Values -->
@@ -630,15 +616,15 @@
                         <ul class="values-list">
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Responsibility</p>
+                                <p>Power</p>
                             </li>
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Integrity</p>
+                                <p>Chaos</p>
                             </li>
                             <li>
                                 <span class="material-icons star">star_outline</span>
-                                <p>Loyalty</p>
+                                <p>Respect</p>
                             </li>
                         </ul>
                     </article>
@@ -647,11 +633,11 @@
                     <article class="article-chunk appearances">
                         <h4>Appearances</h4>
                         <ul class="appear-list">
-                            <li class="movie-tag"><a href="#thor">Thor</a></li>
+                            <li class="movie-tag"><a href="#thor1">Thor</a></li>
                             <li class="movie-tag"><a href="#avengers">The Avengers</a></li>
                             <li class="movie-tag"><a href="#thor2">Thor: The Dark World</a></li>
                             <li class="movie-tag"><a href="#thor2">Thor: Ragnarok</a></li>
-                            <li class="movie-tag"><a href="#infinitywar">Avengers: Infinity War</a></li>
+                            <li class="movie-tag"><a href="#iw">Avengers: Infinity War</a></li>
                             <li class="movie-tag"><a href="#endgame">Avengers: Endgame</a></li>
                         </ul>
                     </article>
