@@ -197,11 +197,11 @@ FIXED ELEMENTS
 
 }
 /* Scroll-spy */
-.scroll-spy {
+.scrollspy {
     position: fixed;
     bottom: 150px; right: 40px;
 }
-.scroll-spy a {
+.scrollspy a {
     color: var(--primary-text);
 }
 
