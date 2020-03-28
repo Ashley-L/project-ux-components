@@ -246,28 +246,28 @@ FIXED ELEMENTS
 }
 
 .scroll-spiderman {
-    background-image: url(/imgs/icon-spiderman.png);
+    background-image: url(../imgs/icon-spiderman.png);
 }
 .scroll-ironman {
-    background-image: url(/imgs/icon-ironman.png);
+    background-image: url(../imgs/icon-ironman.png);
 }
 .scroll-capmarv {
-    background-image: url(/imgs/icon-captainmarvel.png);
+    background-image: url(../imgs/icon-captainmarvel.png);
 }
 .scroll-bp {
-    background-image: url(/imgs/icon-blackpanther.png);
+    background-image: url(../imgs/icon-blackpanther.png);
 }
 .scroll-thanos {
-    background-image: url(/imgs/icon-thanos.png);
+    background-image: url(../imgs/icon-thanos.png);
 }
 .scroll-magneto {
-    background-image: url(/imgs/icon-magneto.png);
+    background-image: url(../imgs/icon-magneto.png);
 }
 .scroll-km {
-    background-image: url(/imgs/icon-killmonger.png);
+    background-image: url(../imgs/icon-killmonger.png);
 }
 .scroll-loki {
-    background-image: url(/imgs/icon-loki.png);
+    background-image: url(../imgs/icon-loki.png);
 }
 
 
