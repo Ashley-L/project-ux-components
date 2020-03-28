@@ -183,7 +183,7 @@ FIXED ELEMENTS
 
 /* Filter by movie */
 .side-movies {
-    position: fixed;
+    /* position: fixed; */
     top: 100px; right: 57px;
     text-align: right;
 }
@@ -198,21 +198,78 @@ FIXED ELEMENTS
 }
 /* Scroll-spy */
 .scrollspy {
-    position: fixed;
-    bottom: 150px; right: 57px;
+    padding-top: 2em;
 }
-.scrollspy-icons li {
-    padding: .4em 0;
-}
-.scrollspy-icons a {
-    color: var(--primary-text);
-}
-.scrollspy-icons img {
-    height: 2.2em;
-    /* border-radius: 50%;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4); */
 
+
+.scrollspy li {
+    position: relative;
+    padding: .3em;
+    display: flex;
+    justify-content: flex-end;
 }
+.scrollspy a {
+    color: var(--primary-text);
+    width: 2.5em;
+    height: 2.5em;
+    position: relative;
+    z-index: 100;
+    display: block;
+    background-size: 2em;
+    background-repeat: no-repeat;
+    background-position: center center; 
+}
+.scrollspy-label {
+    color: var(--primary-text);
+    font-weight: 500;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    padding: .5em 1em;
+    width: max-content;
+    height: max-content;
+    text-align: center;
+    display: none;
+    position: absolute;
+    /* top: 3px; */
+    right: 30px;
+}
+
+.scrollspy a:hover .scrollspy-label{
+    display: block;
+}
+
+
+.current-character a {
+    width: 3em;
+    height: 3em;
+    background-size: 3em;
+}
+
+.scroll-spiderman {
+    background-image: url(/imgs/icon-spiderman.png);
+}
+.scroll-ironman {
+    background-image: url(/imgs/icon-ironman.png);
+}
+.scroll-capmarv {
+    background-image: url(/imgs/icon-captainmarvel.png);
+}
+.scroll-bp {
+    background-image: url(/imgs/icon-blackpanther.png);
+}
+.scroll-thanos {
+    background-image: url(/imgs/icon-thanos.png);
+}
+.scroll-magneto {
+    background-image: url(/imgs/icon-magneto.png);
+}
+.scroll-km {
+    background-image: url(/imgs/icon-killmonger.png);
+}
+.scroll-loki {
+    background-image: url(/imgs/icon-loki.png);
+}
+
 
 /*Back to top*/
 .back-to-top {
@@ -242,22 +299,33 @@ ARTICLE CONTENT
 
 /*GENERAL*/
 .main-container {
-    max-width: 800px;
+    max-width: 1300px;
     margin: 0 auto;
-    position: relative;
+    /* position: relative; */
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: row-reverse;
 }
+
+/* .article-content, .sidebar {
+    padding: 3em;
+} */
+.sidebar {
+    padding: 3em 0 3em 3em;
+}
+.article-content {
+    padding: 3em 3em 3em 0;
+}
+
+.article-content p {
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
 .article-title {
     line-height: 1em;
     font-size: 3em;
     padding-top: .25em;
-}
-.article-content {
-    padding-top: 3em;
-    
-}
-.article-content p {
-    font-size: 1.2em;
-    line-height: 1.2em;
 }
 .intro-sec, .heroes-sec, .villains-sec {
     padding-bottom: 3em;
@@ -298,7 +366,7 @@ ARTICLE CONTENT
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
-    max-width: 800px;
+    /* max-width: 1000px; */
 }
 .char-card {
     position: relative;

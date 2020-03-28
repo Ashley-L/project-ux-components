@@ -43,37 +43,41 @@
 
     <main class="main-container">
 
-        <!-- filter by movie -->
-        <div class="side-movies">
-            <h3>#movies</h3>
-            <ul class="movies-table">
-                <li><a href="#">Iron Man</a></li>
-                <li><a href="#">Captain America</a></li>
-                <li><a href="#">Thor</a></li>
-                <li><a href="#">Avengers</a></li>
-                <li><a href="#">Black Panther</a></li>
-                <li><a href="#">Captain Marvel</a></li>
-                <li><a href="#">Guardians of the Galaxy</a></li>
-                <li><a href="#">Spider-Man</a></li>
-                <li><a href="#">X-Men</a></li>
-            </ul>
-        </div>
+        <section class="sidebar">
+            <!-- filter by movie -->
+            <div class="side-movies">
+                <h3>#movies</h3>
+                <ul class="movies-table">
+                    <li><a href="#">Iron Man</a></li>
+                    <li><a href="#">Captain America</a></li>
+                    <li><a href="#">Thor</a></li>
+                    <li><a href="#">Avengers</a></li>
+                    <li><a href="#">Black Panther</a></li>
+                    <li><a href="#">Captain Marvel</a></li>
+                    <li><a href="#">Guardians of the Galaxy</a></li>
+                    <li><a href="#">Spider-Man</a></li>
+                    <li><a href="#">X-Men</a></li>
+                </ul>
+            </div>
 
-        <!-- Scroll-spy -->
-        <!-- Stars are placeholders, will replace with actual character icons when we make them -->
-        <div class="scrollspy">
-            <ul class="scrollspy-icons">
-                <li><a href="#hero-spiderman"><img src="imgs/spiderman.svg" alt="Go to Spider-Man"></a></li>
-                <li><a href="#hero-ironman"><img src="imgs/ironman.svg" alt="Go to Iron Man"></a></li>
-                <li><a href="#hero-capmarv"><img src="imgs/captainmarvel.svg" alt="Go to Captain Marvel"></a></li>
-                <li><a href="#hero-bp"><img src="imgs/blackpanther.svg" alt="Go to Black Panther"></a></li>
-                <li><a href="#vlln-thanos"><img src="imgs/thanos.svg" alt="Go to Thanos"></a></li>
-                <li><a href="#vlln-magneto"><img src="imgs/magneto.svg" alt="Go to Magneto"></a></li>
-                <li><a href="#vlln-km"><img src="imgs/killmonger.svg" alt="Go to Killmonger"></a></li>
-                <li><a href="#vlln-loki"><img src="imgs/loki.svg" alt="Go to Loki"></a></li>
+            <!-- Scroll-spy -->
+            <ul class="scrollspy">
+                <li>
+                    <a class="scroll-spiderman" href="#hero-spiderman">
+                        <span class="scrollspy-label">Spider-Man</span>
+                    </a>
+                </li>
+                <li><a href="#hero-ironman" class="scroll-ironman"><span class="scrollspy-label">Iron Man</span></a></li>
+                <li><a href="#hero-capmarv" class="scroll-capmarv"><span class="scrollspy-label">Captain Marvel</span></a></li>
+                <li><a href="#hero-bp" class="scroll-bp"><span class="scrollspy-label">Black Panther</span></a></li>
+                <li><a href="#vlln-thanos" class="scroll-thanos"><span class="scrollspy-label">Thanos</span></a></li>
+                <li><a href="#vlln-magneto" class="scroll-magneto"><span class="scrollspy-label">Magneto</span></a></li>
+                <li><a href="#vlln-km" class="scroll-km"><span class="scrollspy-label">Killmonger</span></a></li>
+                <li><a href="#vlln-loki" class="scroll-loki"><span class="scrollspy-label">Loki</span></a></li>
             </ul>
-        </div>
-
+            
+        </section>
+        
         <!-- Back to top -->
         <ul class="back-to-top">
             <li><a href="#intro"><span class="material-icons arrow">arrow_upward</span></a></li>
