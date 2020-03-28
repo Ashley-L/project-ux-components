@@ -259,6 +259,7 @@ ARTICLE CONTENT
     padding: 0.5em 0 0.5em 0;
 }
 .select-msg {
+    color: var(--primary-text);
     text-align: center; 
     font-size: 1.5em;
     font-weight: 500;
@@ -394,11 +395,13 @@ ARTICLE CONTENT
 
 
 
-
-.bottom-footer {
+/*FOOTER*/
+.footer {
     background-color: var(--main-dark);
-    padding: 4em 2em 0.5em 2em;
+    padding: 4em 2em;
     margin-top: 4em;
+    position: relative;
+    width: 100%;
 }
 .footer-title {
     font-size: 2.5em;
@@ -413,33 +416,45 @@ ARTICLE CONTENT
     justify-content: center;
     padding-top: 1.3em;
 }
-
 .mappy li {
     padding: 1.2em 1.4em;
 }
-
-.legal li a {
-    padding-left: 1.1em;
+.mappy a:hover, .legal a:hover {
+    color: var(--main-bright);
 }
+
+.footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto; 
+}
+.verified {
+    color: var(--main-dark);
+    background-color: var(--main-bright);
+    text-transform: uppercase;
+    width: 5em;
+    padding: .5em;
+    border-radius: 25px 0px 25px 0px;
+    position: absolute;
+}
+
 
 .mappy li a, .legal li a{
     color: var(--background);
     font-family: var(--heading-sans);
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 2em;
     text-decoration: none;
 }
+.legal li a {
+    font-size: 1em;
+}
 
-.connect-title, .legal, .copyright-c {
+.connect-title, .legal, .social-icons, .copyright-c {
+    font-size: 1.2em;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    padding-top: 1.3em;
-}
-
-.connect-title, .legal, .copyright-c {
-    font-size: 0.9em;
-    padding: 0.5em 0.8em;
+    padding-top: .8em;
 }
 
 .social-icons {
@@ -447,15 +462,16 @@ ARTICLE CONTENT
     flex-direction: row;
     justify-content: flex-end;
 }
-
-.social-icons li{
-    padding: 0 0.8em;
+.social-icons li, .legal li {
+    padding-left: .8em;
+}
+.social-icons img{
+    background-color: var(--background);
+    border-radius: 50%;
+    padding: .4em;
+    align-self: center;
+}
+.social-icons img:hover {
+    background-color: var(--main-bright);
 }
 
-.social-b img{
-    width: 30px;
-}
-
-.copyright-c {
-    padding-bottom: 1.3em;
-}
