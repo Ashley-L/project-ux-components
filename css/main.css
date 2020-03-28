@@ -184,7 +184,7 @@ FIXED ELEMENTS
 /* Filter by movie */
 .side-movies {
     position: fixed;
-    top: 100px; right: 40px;
+    top: 100px; right: 57px;
     text-align: right;
 }
 .movies-table li {
@@ -199,18 +199,39 @@ FIXED ELEMENTS
 /* Scroll-spy */
 .scrollspy {
     position: fixed;
-    bottom: 150px; right: 40px;
+    bottom: 150px; right: 57px;
 }
-.scrollspy a {
+.scrollspy-icons li {
+    padding: .4em 0;
+}
+.scrollspy-icons a {
     color: var(--primary-text);
+}
+.scrollspy-icons img {
+    height: 2.2em;
+    /* border-radius: 50%;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.4); */
+
 }
 
 /*Back to top*/
-.arrow-up {
+.back-to-top {
+    display: grid;
     position: fixed;
     bottom: 50px; right: 40px;
+    grid-gap: .5em;
 }
-.arrow-up a {
+.back-to-top li {
+    text-align: center;
+}
+.material-icons.arrow {
+    background-color: var(--background);
+    padding: .2em;
+    border: 1px solid var(--main-dark);
+    border-radius: 50%;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.up-arrow a {
     color: var(--primary-text);
 }
     
