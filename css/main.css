@@ -121,7 +121,7 @@ HEADER
     display: grid;
     grid-template-columns: 4fr 30em 8em;
     width: 100%;
-    max-width: 1300px;
+    max-width: 1200px;
     /* position: fixed;
     top: 0; */
 }
@@ -130,7 +130,7 @@ HEADER
     font-weight: 800;
     color: var(--background);
     -webkit-text-stroke: 3px var(--primary-text);
-    padding: 0.25em;
+    padding: 0.25em 0.25em 0.25em .5em;
 }
 .top-menu {
     font-family: var(--bold-sans);
@@ -204,18 +204,18 @@ FIXED ELEMENTS
 
 .scrollspy li {
     position: relative;
-    padding: .3em;
+    padding: .2em;
     display: flex;
     justify-content: flex-end;
 }
 .scrollspy a {
     color: var(--primary-text);
-    width: 2.5em;
-    height: 2.5em;
+    width: 2em;
+    height: 2em;
     position: relative;
     z-index: 100;
     display: block;
-    background-size: 2em;
+    background-size: 1.75em;
     background-repeat: no-repeat;
     background-position: center center; 
 }
@@ -299,7 +299,7 @@ ARTICLE CONTENT
 
 /*GENERAL*/
 .main-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
     /* position: relative; */
     /* display: inline-block; */
@@ -307,12 +307,18 @@ ARTICLE CONTENT
     flex-direction: row-reverse;
 }
 
-
 .sidebar {
-    padding: 3em 0 3em 3em;
+    width: 50%;
+    /* max-width: 300px; */
+    padding: 2em 2em 3em 2em;
+    /* justify-content: flex-end; */
 }
 .article-content {
-    padding: 3em 3em 3em 0;
+    width: 100%;
+    /* max-width: 900px; */
+    padding: 2em 2em 3em 2em;
+    justify-content: flex-end;
+    /* flex-shrink: 5; */
 }
 
 .article-content p {
@@ -380,7 +386,7 @@ ARTICLE CONTENT
     background-color: var(--hover-dark);
     font-family: var(--heading-sans);
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
     text-align: right;
@@ -421,8 +427,9 @@ ARTICLE CONTENT
 
 /*CAROUSEL*/
 .char-slides img {
-    object-fit: fill;
     width: 100%;
+    height: 425px;
+    object-fit: cover;
 }
 .carousel-thumbs{
     display: grid;
@@ -432,10 +439,12 @@ ARTICLE CONTENT
     margin: 1em auto;    
 }
 .carousel-thumbs li {
+    width: 6em;
+    height: 4.5em;
     max-height: 100%;  
 }
 .carousel-thumbs img{
-    /* object-fit: cover; */
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -491,6 +500,7 @@ ARTICLE CONTENT
     background-color: var(--main-dark);
     padding: 4em 2em;
     margin-top: 4em;
+    display: block;
     position: relative;
     width: 100%;
 }
@@ -515,7 +525,7 @@ ARTICLE CONTENT
 }
 
 .footer-bottom {
-    max-width: 1300px;
+    max-width: 1000px;
     margin: 0 auto; 
 }
 .verified {
