@@ -55,6 +55,17 @@
 #thor1
 #thor2
 #thor3
+
+***Might change to - 
+Iron Man #movie-im
+Captain America #movie-capamerica
+Thor #movie-thor
+Avengers #movie-avengers
+Black Panther #movie-bp
+Captain Marvel #movie-capmarvel
+Guardians of the Galaxy #movie-gotg
+Spider-Man #movie-spidey
+X-Men #movie-xmen
 */
 
 
@@ -187,18 +198,25 @@ FIXED ELEMENTS
     top: 100px; right: 57px;
     text-align: right;
 }
+.side-movies h3 {
+    padding-bottom: .5em;
+}
 .movies-table li {
-    padding: .25em;
+    display: inline-block;
 }
-.movies-table a {
-    color: var(--primary-text);
+.movies-table .movie-tag a {
+    color: var(--main-dark);
     font-family: var(--body-sans);
-
-
 }
+.movies-table .movie-tag {
+    font-size: 1em;
+    margin-bottom: 1.25em;
+    border-radius: 5px;
+}
+
 /* Scroll-spy */
 .scrollspy {
-    padding-top: 2em;
+    padding-top: 1.25em;
 }
 
 
@@ -228,14 +246,28 @@ FIXED ELEMENTS
     width: max-content;
     height: max-content;
     text-align: center;
-    display: none;
+    align-self: center;
+    /* display: none; */
     position: absolute;
-    /* top: 3px; */
     right: 30px;
 }
 
 .scrollspy a:hover .scrollspy-label{
-    display: block;
+    font-weight: 600;
+}
+
+.scrollspy-current a {
+    width: 2.5em;
+    height: 2.5em;
+    background-size: 2.5em;
+    left: 5px;
+}
+.scrollspy-current span {
+    font-weight: 600;
+    text-decoration: underline;
+}
+.scrollspy-current .scrollspy-label {
+    right: 35px;
 }
 
 
@@ -477,21 +509,22 @@ ARTICLE CONTENT
 }
 .appear-list li {
     display: inline-block;
-    margin: .25em .25em .25em 0;
+    margin: .25em .25em 1em 0;
+    /* padding: 1em; */
+}
 
-}
-.movie-tag {
-    font-size: 1.2em;
-    padding: .5em;
-    border:1px solid;
-    border-radius: 8px;
-}
-.movie-tag a{
+.movie-tag a {
     color: var(--main-dark);
     text-decoration: none;
-    width: 100%;
-    height: 100%;
+    padding: .25em .5em;
+    border: 1.5px solid var(--main-dark);
+    border-radius: 5px;
 }
+.movie-tag a:hover {
+    color: var(--background);
+    background-color: var(--main-dark);
+}
+
 
 
 
