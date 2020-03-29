@@ -307,9 +307,7 @@ ARTICLE CONTENT
     flex-direction: row-reverse;
 }
 
-/* .article-content, .sidebar {
-    padding: 3em;
-} */
+
 .sidebar {
     padding: 3em 0 3em 3em;
 }
@@ -331,6 +329,9 @@ ARTICLE CONTENT
     padding-bottom: 3em;
     font-size: 1.2em;
     line-height: 1.2em;
+}
+.heroes-sec > p, .villains-sec > p {
+    padding-bottom: 1.5em;
 }
 .section-heading {
     padding-bottom: .5em;
@@ -403,7 +404,7 @@ ARTICLE CONTENT
     align-items: flex-end;
     justify-content: flex-end;
 }
-.hero .char-quote, .villain .char-quote {
+.character .char-quote {
     font-family: var(--b-quote);
     font-size: 1.3em;
     font-style: italic;
@@ -413,9 +414,10 @@ ARTICLE CONTENT
 }
 
 
-.char-name {
-    padding-top: 1.5em;
+.character {
+    padding: 2em 0;
 }
+
 
 /*CAROUSEL*/
 .char-slides img {
