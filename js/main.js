@@ -118,6 +118,10 @@ window.addEventListener('scroll', event => {
     }
 
 
+    /////////////////////////////////////////////////////////////////////
+    //FIXED THEN SCROLL WHEN YOU REACH THE BOTTOM IS STILL NOT WORKING //
+    /////////////////////////////////////////////////////////////////////
+
     // start scrolling again when you hit the bottom
     // if scroll position is > bottom scroll position of scrollspy
     // remove fixed class
@@ -145,53 +149,6 @@ window.addEventListener('scroll', event => {
     }
 
 
-    // if bottom of articlecontent is in viewport, remove fixed class
-    // if ($sidebarBottom >= $footerTop) {
-    //     console.log(`sidebar is greater than footer`)
-        
-    //     $sidebar.classList.remove('sidebar-fixed')
-    //     // $sidebar.style.position = 'absolute'
-
-    //     // $sidebar.style.marginTop = `11200px`
-
-    //     // $sidebar.style.bottom = `${document.querySelector('.footer').getBoundingClientRect().bottom}px`
-    // } else {
-    //     console.log(`nothing`)
-    // }
-
-
-    
-
-
-
-    // if the fixed class exists
-    // adjust the margin top
-    // if ($sidebar.classList.contains('sidebar-fixed')) {
-    //     // console.log(`class exists`)
-    //     document.querySelector('.sidebar').style.marginTop = `-${$containerTop}px`
-    // } 
-
-    // // if scroll position of sidebar bottom >= scroll position of container bottom
-    // // remove fixed class
-    // $sidebarBottom = ($sidebar.getBoundingClientRect().bottom - $topbarHeight) + window.scrollY 
-    // console.log(`sidebar: ${$sidebarBottom}`)
-    // $villainsBottom = (document.querySelector('.villains-sec').getBoundingClientRect().bottom - $topbarHeight) + window.scrollY
-    // console.log(`villains ${$villainsBottom}`)
-
-    // if ($sidebarBottom > $villainsBottom) {
-    //     $sidebar.classList.remove('sidebar-fixed')
-    //     console.log(`sidebar greater than villains`)
-    //     // document.querySelector('.sidebar').style.marginTop = `${$sidebarBottom}px`
-        
-    //     // `${document.documentElement.scrollHeight - (document.querySelector('.villains-sec').getBoundingClientRect().bottom + window.scrollY - $topbarHeight)}px`
-
-    //     // document.querySelector('.sidebar').style.marginBottom = `-${$villainsBottom.offsetBottom}px`
-
-    // }
-
-    // // set bottom margin
-    // let test = document.documentElement.scrollHeight - ($mainContainerBottom)
-    // console.log(test)
 
 
 })
