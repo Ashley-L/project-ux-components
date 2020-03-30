@@ -256,11 +256,11 @@ FIXED ELEMENTS
     font-weight: 600;
 }
 
-.scrollspy-current a {
+.scrollspy-current {
     width: 2.5em;
     height: 2.5em;
     background-size: 2.5em;
-    left: 5px;
+    /* left: 5px; */
 }
 .scrollspy-current span {
     font-weight: 600;
