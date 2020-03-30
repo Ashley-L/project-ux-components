@@ -328,25 +328,24 @@ ARTICLE CONTENT
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
-    /* display: inline-block; */
     display: flex;
 }
 
 .sidebar {
-    width: 100%;
     max-width: 400px;
     padding: 2em 2em 3em 2em;
-    /* justify-content: flex-end; */
 }
-
 .sidebar-fixed {
     position: fixed;
+    max-width: 400px;
+    margin-left: 800px;
+    /* margin-top: -200px; */
 }
+
 .article-content {
     width: 100%;
     max-width: 800px;
     padding: 2em 2em 3em 2em;
-    justify-content: flex-start;
 }
 
 .article-content p {

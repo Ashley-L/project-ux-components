@@ -92,34 +92,38 @@ let $charSectionAll = document.querySelectorAll('.character')
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
+let $sidebarFixed = document.querySelector('.sidebar-fixed')
 let $articleContent = document.querySelector('.article-content')
+let $mainContainer = document.querySelector('.main-container')
 
 
 
-// window.addEventListener('scroll', event => {
-//     console.log(test)
-
-    // if ($scrollPosition >= $articleTop) {
-    //     $sidebar.classList.add('sidebar-fixed')
-    // } else {
-    //     $sidebar.classList.remove('sidebar-fixed')
-    // }
-// })
+let $containerTop = (document.querySelector('.main-container').getBoundingClientRect().top -$topbarHeight) + window.scrollY
 
 window.addEventListener('scroll', event => {   
+    // get scroll position
     let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
-    // console.log($scrollPosition)
+    console.log(`scroll position is ${$scrollPosition}`)
+    console.log($containerTop)
+   
 
-    let $articleTop = $articleContent.getBoundingClientRect().top + window.scrollY
-    // console.log($articleTop)
-    let $articleBottom = $articleContent.getBoundingClientRect().bottom + window.scrollY
-    // console.log($articleBottom)
 
-    if ($scrollPosition >= $articleTop) {
+    // add .sidebar-fixed if scroll position is greater than scroll position of top of container
+    // which is defined above
+    if ($scrollPosition >= $containerTop) {
         $sidebar.classList.add('sidebar-fixed')
-    } else if ($scrollPosition <= $articleBottom) {
-        $sidebar.classList.remove('sidebar-fixed')
     } else {
         $sidebar.classList.remove('sidebar-fixed')
+        document.querySelector('.sidebar').style.marginTop = `0`
     }
+
+    // if the fixed class exists
+    // adjust the margin top
+    if ($sidebar.classList.contains('sidebar-fixed')) {
+        console.log(`class exists`)
+        document.querySelector('.sidebar').style.marginTop = `-${$containerTop}px`
+    } 
+
+
+
 })
