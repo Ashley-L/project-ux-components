@@ -256,11 +256,11 @@ FIXED ELEMENTS
     font-weight: 600;
 }
 
-.scrollspy-current {
+.scrollspy-current a {
     width: 2.5em;
     height: 2.5em;
     background-size: 2.5em;
-    /* left: 5px; */
+    left: 5px;
 }
 .scrollspy-current span {
     font-weight: 600;
@@ -270,12 +270,6 @@ FIXED ELEMENTS
     right: 35px;
 }
 
-
-.current-character a {
-    width: 3em;
-    height: 3em;
-    background-size: 3em;
-}
 
 .scroll-spiderman {
     background-image: url(../imgs/icon-spiderman.png);
@@ -333,24 +327,26 @@ ARTICLE CONTENT
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
-    /* position: relative; */
+    position: relative;
     /* display: inline-block; */
     display: flex;
-    flex-direction: row-reverse;
 }
 
 .sidebar {
-    width: 50%;
-    /* max-width: 300px; */
+    width: 100%;
+    max-width: 400px;
     padding: 2em 2em 3em 2em;
     /* justify-content: flex-end; */
 }
+
+.sidebar-fixed {
+    position: fixed;
+}
 .article-content {
     width: 100%;
-    /* max-width: 900px; */
+    max-width: 800px;
     padding: 2em 2em 3em 2em;
-    justify-content: flex-end;
-    /* flex-shrink: 5; */
+    justify-content: flex-start;
 }
 
 .article-content p {

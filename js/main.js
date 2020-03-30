@@ -40,13 +40,14 @@ $charCard.forEach($charCardLink => {
 })
 
 
-// Match scrollspy to position in page
+// Scroll-to from scrollspy
+let $scrollspyUl = document.querySelector('.scrollspy')
+let $scrollspyList = document.querySelector('.scrollspy-char')
+let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
+// console.log($scrollspyCharLink)
+let $scrollspyCharAll = document.querySelectorAll('.scrollspy-char a')
 
-let $scrollspyCharLink = document.querySelector('.scrollspy-char')
-console.log($scrollspyCharLink)
-let $scrollspyChar = document.querySelectorAll('.scrollspy-char')
-
-$scrollspyChar.forEach($scrollspyCharLink => {
+$scrollspyCharAll.forEach($scrollspyCharLink => {
     $scrollspyCharLink.addEventListener('click', event => {
         event.preventDefault()
     
@@ -68,10 +69,57 @@ $scrollspyChar.forEach($scrollspyCharLink => {
         top: $charSectionPosition, 
         behavior:'smooth'
         })
-
-
-
-
     })
 })
 
+// Match scrollspy to position on page
+
+let $charSection = document.querySelector('.character')
+let $charSectionAll = document.querySelectorAll('.character')
+
+
+// if section is in viewport, add .scrollspy-current class to 
+
+// is the char section in the viewport
+
+// window.addEventListener('scroll', event => {
+//     console.log(scrollPosition)
+
+// });
+
+
+// scroll then fix sidebar
+let $doc = document.documentElement 
+// let $scrollPosition = window.scrollY
+let $sidebar = document.querySelector('.sidebar')
+let $articleContent = document.querySelector('.article-content')
+
+
+
+// window.addEventListener('scroll', event => {
+//     console.log(test)
+
+    // if ($scrollPosition >= $articleTop) {
+    //     $sidebar.classList.add('sidebar-fixed')
+    // } else {
+    //     $sidebar.classList.remove('sidebar-fixed')
+    // }
+// })
+
+window.addEventListener('scroll', event => {   
+    let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
+    // console.log($scrollPosition)
+
+    let $articleTop = $articleContent.getBoundingClientRect().top + window.scrollY
+    // console.log($articleTop)
+    let $articleBottom = $articleContent.getBoundingClientRect().bottom + window.scrollY
+    // console.log($articleBottom)
+
+    if ($scrollPosition >= $articleTop) {
+        $sidebar.classList.add('sidebar-fixed')
+    } else if ($scrollPosition <= $articleBottom) {
+        $sidebar.classList.remove('sidebar-fixed')
+    } else {
+        $sidebar.classList.remove('sidebar-fixed')
+    }
+})
