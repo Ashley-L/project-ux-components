@@ -114,6 +114,10 @@ em {
     font-style: italic;
 }
 
+a {
+    text-decoration: none;
+}
+
 
 /**************************************
 HEADER
@@ -137,7 +141,7 @@ HEADER
     top: 0; */
 }
 .nav-title {
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 800;
     color: var(--background);
     -webkit-text-stroke: 3px var(--primary-text);
@@ -162,7 +166,6 @@ HEADER
 }
 .top-menu a {
     color: var(--primary-text);
-    text-decoration: none;
 }
 .top-menu-icons {
     display: grid;
@@ -519,7 +522,6 @@ ARTICLE CONTENT
 
 .movie-tag a {
     color: var(--main-dark);
-    text-decoration: none;
     padding: .25em .5em;
     border: 1.5px solid var(--main-dark);
     border-radius: 5px;
@@ -581,7 +583,7 @@ ARTICLE CONTENT
     font-family: var(--heading-sans);
     font-weight: 700;
     font-size: 2em;
-    text-decoration: none;
+
 }
 .legal li a {
     font-size: 1em;
