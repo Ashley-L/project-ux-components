@@ -104,8 +104,8 @@ $charSectionAll.forEach($charSection => {
 
         if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
         
-            console.log(`It's your boy (or girl) ${$charId}`)
-            console.log(`${$charId} in view`)
+            // console.log(`It's your boy (or girl) ${$charId}`)
+            // console.log(`${$charId} in view`)
             
             // add the class
             $currentScrollspy.classList.add('scrollspy-current')        
@@ -191,3 +191,116 @@ window.addEventListener('scroll', event => {
 
 
 })
+
+
+
+
+/////////////////////
+// INFINITE SCROLL //
+/////////////////////
+
+
+
+// window.addEventListener('scroll', event => {
+    
+
+
+
+// })
+
+
+
+let loadNewContent = (event) => {
+
+    let $articleBottom = $articleContent.getBoundingClientRect().bottom
+
+    if ($articleBottom < window.innerHeight) {
+        console.log(`bottom of article in viewport`)
+
+        document.querySelector('#loadContent').innerHTML += `
+        <section class="intro-sec" id="intro">
+                <article class="article-details">
+                    <p class="fig-caption">The Mightiest of Them All.</p>
+                    <h1 class="article-title">TOP 8 MARVEL HEROES AND VILLAINS</h1>
+                    <p class="byline">by various vigilantes </p>
+                    <h5 class="select-msg">Select a character below</h5>
+                </article>
+
+                <!-- CHARACTER CARD GRID -->
+                <div class="cards-container">
+                    <div class="char-card">
+                        <a class="char-card-name" href="#hero-spiderman">Spider-Man</a>
+                        <img src="imgs/char-card-spider-man.png" alt="Spider-Man">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#hero-ironman">Iron Man</a>
+                        <img src="imgs/char-card-iron-man.png" alt="Iron Man">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#hero-capmarv">Captain Marvel</a>
+                        <img src="imgs/char-card-cap-marvel.png" alt="Captain Marvel">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#hero-bp">Black Panther</a>
+                        <img src="imgs/char-card-black-panther.png" alt="">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#vlln-thanos">Thanos</a>
+                        <img src="imgs/char-card-thanos.png" alt="Thanos">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#vlln-magneto">Magneto</a>
+                        <img src="imgs/char-card-magneto.png" alt="Magneto">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#vlln-km">Killmonger</a>
+                        <img src="imgs/char-card-killmonger.png" alt="Killmonger">
+                    </div>
+                    <div class="char-card">
+                        <a class="char-card-name" href="#vlln-loki">Loki</a>
+                        <img src="imgs/char-card-loki.png" alt="Loki"></div>
+                </div>
+                <p class="dramatic-msg">Which side are YOU on?</p>
+            </section>
+        `
+        // console.log(document.querySelector('#loadContent').innerHTML)
+
+        $sidebar.classList.remove('sidebar-fixed')
+
+    } else {
+        console.log(`didn't reach bottom of article`)
+    }
+
+
+
+}
+window.addEventListener('load', loadNewContent)
+window.addEventListener('scroll', loadNewContent)
+window.addEventListener('resize', loadNewContent)
+
+
+
+// let loadNewContent = (event) => {
+// 	// Put up the loading screen
+// 	document.querySelector('.loading').classList.add('show')
+
+// 	fetch('load.html')
+// 		.then((response) => {
+// 			return response.text() // Convert it something readable
+// 		})
+// 		.then((html) => {
+
+// 			let parser = new DOMParser()
+// 			let newDocument = parser.parseFromString(html, 'text/html')
+
+// 			// The loadthis.html page has been loaded!
+// 			// Append the content from the new page into the old page
+// 			document.querySelector('#content').innerHTML += newDocument.querySelector('#content').innerHTML
+			
+// 			// Take down the loading screen, we're done
+// 			document.querySelector('.loading').classList.remove('show')
+// 		})
+
+// }
+
+// document.querySelector('#loadContent').addEventListener('scroll', loadNewContent)
