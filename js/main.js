@@ -199,15 +199,9 @@ window.addEventListener('scroll', event => {
 // INFINITE SCROLL //
 /////////////////////
 
+let $newContent = document.querySelectorAll('.new-article')
 
-
-// window.addEventListener('scroll', event => {
-    
-
-
-
-// })
-
+let $newArticle = document.querySelector('.new-article')
 
 
 let loadNewContent = (event) => {
@@ -218,7 +212,7 @@ let loadNewContent = (event) => {
         console.log(`bottom of article in viewport`)
 
         document.querySelector('#loadContent').innerHTML += `
-        <section class="new-article">
+        <section class="new-article article-fade">
                 <section class="article-intro">
                     <p class="fig-caption">How did we even survive?</p>
                     <h1 class="article-title">MCU MOMENTS THAT CHANGED MY LIFE</h1>
@@ -230,42 +224,56 @@ let loadNewContent = (event) => {
         `
         // console.log(document.querySelector('#loadContent').innerHTML)
 
-        $sidebar.classList.remove('sidebar-fixed')
+        // $sidebar.classList.remove('sidebar-fixed')
 
     } else {
         console.log(`didn't reach bottom of article`)
     }
-
-
-
 }
-window.addEventListener('load', loadNewContent)
-window.addEventListener('scroll', loadNewContent)
-window.addEventListener('resize', loadNewContent)
+
+
+window.addEventListener('load', event =>{
+    setTimeout(loadNewContent, 2500)  
+})
+window.addEventListener('scroll', event => {
+    setTimeout(loadNewContent, 2500)  
+
+    // console.log(window.scrollY)
+    // console.log(document.querySelector('.new-article').getBoundingClientRect.bottom)
+})
+// window.addEventListener('resize', loadNewContent)
 
 
 
-// let loadNewContent = (event) => {
-// 	// Put up the loading screen
-// 	document.querySelector('.loading').classList.add('show')
 
-// 	fetch('load.html')
-// 		.then((response) => {
-// 			return response.text() // Convert it something readable
-// 		})
-// 		.then((html) => {
 
-// 			let parser = new DOMParser()
-// 			let newDocument = parser.parseFromString(html, 'text/html')
 
-// 			// The loadthis.html page has been loaded!
-// 			// Append the content from the new page into the old page
-// 			document.querySelector('#content').innerHTML += newDocument.querySelector('#content').innerHTML
-			
-// 			// Take down the loading screen, we're done
-// 			document.querySelector('.loading').classList.remove('show')
-// 		})
 
-// }
 
-// document.querySelector('#loadContent').addEventListener('scroll', loadNewContent)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function test(name) {
+    //     // document.querySelector('.article-content') !== 'undefined' && document.querySelector('.article-content') !== 'null'
+    //     if (document.querySelector('.article-content').length > 0) {
+    //         console.log(`exists`)
+    //     } else {
+    //         console.log(`doesn't exist`)
+    //     }
+    // }  
+    // test();

@@ -74,6 +74,7 @@ body {
     font-family: var(--body-sans);
     color: var(--primary-text);
     padding-top: 60px;
+    position: relative;
 }
 p {
     /* font-family: var(--body-sans); */
@@ -559,7 +560,7 @@ ARTICLE CONTENT
     padding: 4em 2em;
     /* margin-top: 4em; */
     display: block;
-    position: relative;
+    position: absolute;
     width: 100%;
 }
 .footer-title {
@@ -640,8 +641,19 @@ ARTICLE CONTENT
 
 
 /*New article*/
+@keyframes article-fade {
+    from {
+        transform: translate3d(0,100px,0);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1;
+    }
+}
 .new-article {
-    padding-top: 4em;
+    padding-top: 2em;
 }
 .new-article-image img {
     width: 100%;
@@ -649,5 +661,11 @@ ARTICLE CONTENT
     object-fit: cover;
 }
 .new-article-intro {
-    padding-top: 1.5em;
+    padding-top: 1.25em;
+}
+.article-fade {
+    animation-name: article-fade;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    /* animation-delay: 1s; */
 }
