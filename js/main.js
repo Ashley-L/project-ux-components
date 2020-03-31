@@ -218,49 +218,14 @@ let loadNewContent = (event) => {
         console.log(`bottom of article in viewport`)
 
         document.querySelector('#loadContent').innerHTML += `
-        <section class="intro-sec" id="intro">
-                <article class="article-details">
-                    <p class="fig-caption">The Mightiest of Them All.</p>
-                    <h1 class="article-title">TOP 8 MARVEL HEROES AND VILLAINS</h1>
+        <section class="new-article">
+                <section class="article-intro">
+                    <p class="fig-caption">How did we even survive?</p>
+                    <h1 class="article-title">MCU MOMENTS THAT CHANGED MY LIFE</h1>
                     <p class="byline">by various vigilantes </p>
-                    <h5 class="select-msg">Select a character below</h5>
-                </article>
-
-                <!-- CHARACTER CARD GRID -->
-                <div class="cards-container">
-                    <div class="char-card">
-                        <a class="char-card-name" href="#hero-spiderman">Spider-Man</a>
-                        <img src="imgs/char-card-spider-man.png" alt="Spider-Man">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#hero-ironman">Iron Man</a>
-                        <img src="imgs/char-card-iron-man.png" alt="Iron Man">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#hero-capmarv">Captain Marvel</a>
-                        <img src="imgs/char-card-cap-marvel.png" alt="Captain Marvel">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#hero-bp">Black Panther</a>
-                        <img src="imgs/char-card-black-panther.png" alt="">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#vlln-thanos">Thanos</a>
-                        <img src="imgs/char-card-thanos.png" alt="Thanos">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#vlln-magneto">Magneto</a>
-                        <img src="imgs/char-card-magneto.png" alt="Magneto">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#vlln-km">Killmonger</a>
-                        <img src="imgs/char-card-killmonger.png" alt="Killmonger">
-                    </div>
-                    <div class="char-card">
-                        <a class="char-card-name" href="#vlln-loki">Loki</a>
-                        <img src="imgs/char-card-loki.png" alt="Loki"></div>
-                </div>
-                <p class="dramatic-msg">Which side are YOU on?</p>
+                    <div class="new-article-image"><img src="imgs/new-article.jpg" alt="Thor's iconic scene in Endgame"></div>
+                    <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
+                </section>
             </section>
         `
         // console.log(document.querySelector('#loadContent').innerHTML)

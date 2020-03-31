@@ -383,7 +383,7 @@ ARTICLE CONTENT
     font-size: 3em;
     padding-top: .25em;
 }
-.intro-sec, .heroes-sec, .villains-sec {
+.intro-sec, .heroes-sec, .villains-sec, .new-article {
     padding-bottom: 3em;
     font-size: 1.2em;
     line-height: 1.2em;
@@ -636,3 +636,18 @@ ARTICLE CONTENT
     transition: all 0.4s ease-in-out;
 }
 
+
+
+
+/*New article*/
+.new-article {
+    padding-top: 4em;
+}
+.new-article-image img {
+    width: 100%;
+    height: 425px;
+    object-fit: cover;
+}
+.new-article-intro {
+    padding-top: 1.5em;
+}
