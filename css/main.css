@@ -141,11 +141,16 @@ HEADER
     top: 0; */
 }
 .nav-title {
-    font-size: 2em;
+    display: flex;
+    font-size: 1.75em;
     font-weight: 800;
     color: var(--background);
     -webkit-text-stroke: 3px var(--primary-text);
     padding: 0.25em 0.25em 0.25em .5em;
+}
+.nav-title:hover {
+    transition: all 0.3s ease-in;
+    -webkit-text-stroke: 3px var(--high-link);
 }
 .top-menu {
     font-family: var(--bold-sans);
@@ -163,7 +168,9 @@ HEADER
 }
 .top-menu li:hover {
     background-color: #D8A211;
+    transition: all 0.4s ease-in-out;
 }
+
 .top-menu a {
     color: var(--primary-text);
 }
@@ -257,6 +264,7 @@ FIXED ELEMENTS
 
 .scrollspy a:hover .scrollspy-label{
     font-weight: 600;
+    /* can't find a way to smoothly transition font-weight on hover :( */
 }
 
 .scrollspy-current a {
@@ -312,15 +320,22 @@ FIXED ELEMENTS
 }
 .material-icons.arrow {
     background-color: var(--background);
+    color: var(--main-dark);
     padding: .2em;
     border: 1px solid var(--main-dark);
     border-radius: 50%;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
-.up-arrow a {
-    color: var(--primary-text);
+
+.material-icons.arrow:hover{
+    background-color: var(--main-dark);
+    color: var(--background);
+    transition: all 0.3s ease-out;
 }
-    
+
+/* .up-arrow a {
+    color: var(--main-bright);
+} */
 
 /**************************************
 ARTICLE CONTENT
@@ -448,6 +463,8 @@ ARTICLE CONTENT
     height: 100%;
     align-items: flex-end;
     justify-content: flex-end;
+    /* how to fade in transition char-card-name when hovering on char-card img?*/
+
 }
 .character .char-quote {
     font-family: var(--b-quote);
@@ -527,6 +544,7 @@ ARTICLE CONTENT
     border-radius: 5px;
 }
 .movie-tag a:hover {
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     color: var(--background);
     background-color: var(--main-dark);
 }
@@ -561,6 +579,7 @@ ARTICLE CONTENT
 }
 .mappy a:hover, .legal a:hover {
     color: var(--main-bright);
+    transition: all 0.4s ease-in-out;
 }
 
 .footer-bottom {
@@ -613,5 +632,6 @@ ARTICLE CONTENT
 }
 .social-icons img:hover {
     background-color: var(--main-bright);
+    transition: all 0.4s ease-in-out;
 }
 
