@@ -222,7 +222,7 @@ FIXED ELEMENTS
 
 .scrollspy li {
     position: relative;
-    padding: .2em;
+    padding: .25em;
     display: flex;
     justify-content: flex-end;
 }
@@ -267,6 +267,7 @@ FIXED ELEMENTS
     text-decoration: underline;
 }
 .scrollspy-current .scrollspy-label {
+    top: 4px;
     right: 35px;
 }
 

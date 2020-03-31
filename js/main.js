@@ -6,7 +6,10 @@ let $topbarHeight = document.querySelector('.top-bar').getBoundingClientRect().h
 
 // PART A
 
-// Scroll-to from character cards at top
+///////////////////////////////////
+// SCROLL-TO FROM CHARACTER CARDS//
+///////////////////////////////////
+
 let $charCardLink = document.querySelector('.char-card-name')
 let $charCard = document.querySelectorAll('.char-card-name')
 
@@ -39,8 +42,10 @@ $charCard.forEach($charCardLink => {
     })
 })
 
+//////////////////////////////
+// SCROLL-TO FROM SCROLL-SPY//
+//////////////////////////////
 
-// Scroll-to from scrollspy
 let $scrollspyUl = document.querySelector('.scrollspy')
 // let $scrollspyList = document.querySelector('.scrollspy-char')
 let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
@@ -75,13 +80,13 @@ $scrollspyCharAll.forEach($scrollspyCharLink => {
 
 
 
-
-// Match scrollspy to position on page
+//////////////////////////////////////////
+// SCROLL-SPY MATCHES CHARACTER SECTIONS//
+//////////////////////////////////////////
 
 let $charSection = document.querySelector('.character')
 let $charSectionAll = document.querySelectorAll('.character')
 
-let $docH = document.documentElement.clientHeight + window.scrollY
 let $viewport = window.innerHeight
 let $halfViewport = $viewport/2
 
@@ -90,23 +95,27 @@ $charSectionAll.forEach($charSection => {
 
         let $charRect = $charSection.getBoundingClientRect()
     
-        if ($charRect.top <= $halfViewport && ($charRect.bottom >= $halfViewport)) {
-            console.log(`character in view`)
-            
-            // get the current id so you can match it to the scrollspy li item
-            let $charId = $charSection.getAttribute('id')
-            console.log(`It's your boy (or girl) ${$charId}`)
+        // get the current id so you can match it to the scrollspy li item
+        let $charId = $charSection.getAttribute('id')
 
-            // get the scrollspy list item
-            let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
-            // console.log($currentScrollspy)
+        // get the scrollspy list item
+        let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
+        // console.log($currentScrollspy)
+
+        if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
+        
+            console.log(`It's your boy (or girl) ${$charId}`)
+            console.log(`${$charId} in view`)
             
             // add the class
             $currentScrollspy.classList.add('scrollspy-current')        
     
         } else {
-            console.log(`character not in view`)
+            // console.log(`character not in view`)
+            $currentScrollspy.classList.remove('scrollspy-current')        
+
         }
+    
     })
   
 })
@@ -114,8 +123,10 @@ $charSectionAll.forEach($charSection => {
 
 
 
+/////////////////////////////
+// SCROLL THEN FIX SIDEBAR //
+/////////////////////////////
 
-// scroll then fix sidebar
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
@@ -145,9 +156,10 @@ window.addEventListener('scroll', event => {
     }
 
 
-    /////////////////////////////////////////////////////////////////////
-    //FIXED THEN SCROLL WHEN YOU REACH THE BOTTOM IS STILL NOT WORKING //
-    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////
+    //FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM//
+    ///////////////////////////////////////////////////////
+    // THIS IS NOT WORKING DAMMIT
 
     // start scrolling again when you hit the bottom
     // if scroll position is > bottom scroll position of scrollspy
