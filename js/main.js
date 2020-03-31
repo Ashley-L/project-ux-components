@@ -42,7 +42,7 @@ $charCard.forEach($charCardLink => {
 
 // Scroll-to from scrollspy
 let $scrollspyUl = document.querySelector('.scrollspy')
-let $scrollspyList = document.querySelector('.scrollspy-char')
+// let $scrollspyList = document.querySelector('.scrollspy-char')
 let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
 // console.log($scrollspyCharLink)
 let $scrollspyCharAll = document.querySelectorAll('.scrollspy-char a')
@@ -85,69 +85,34 @@ let $docH = document.documentElement.clientHeight + window.scrollY
 let $viewport = window.innerHeight
 let $halfViewport = $viewport/2
 
-window.addEventListener('scroll', event => {
+$charSectionAll.forEach($charSection => {
+    window.addEventListener('scroll', event => {
 
-    let $charRect = $charSection.getBoundingClientRect()
-
-
-    // && $charSection.getBoundingClientRect().top >= 0
-    if ($charRect.top < $halfViewport  && ($charRect.bottom >= $halfViewport)) {
-        console.log(`character in view`)
-
-    } else {
-        console.log(`character not in view`)
-    }
-
-    // console.log(`bottom of character is ${$charRect.bottom}`)
+        let $charRect = $charSection.getBoundingClientRect()
     
-    // something is visible if
-        // top is in viewpor
-        //
+        if ($charRect.top <= $halfViewport && ($charRect.bottom >= $halfViewport)) {
+            console.log(`character in view`)
+            
+            // get the current id so you can match it to the scrollspy li item
+            let $charId = $charSection.getAttribute('id')
+            console.log(`It's your boy (or girl) ${$charId}`)
 
-
-
- 
-    // function charInViewport() {
-
-    //     var charBounding = $charSection.getBoundingClientRect();
+            // get the scrollspy list item
+            let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
+            // console.log($currentScrollspy)
+            
+            // add the class
+            $currentScrollspy.classList.add('scrollspy-current')        
     
-    //     if (charBounding.top >= 0 && charBounding.left >= 0 && charBounding.right <= (window.innerWidth || document.documentElement.clientWidth) && charBounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
-    
-    //         console.log('section is in viewport');
-    //     } else {
-    
-    //         console.log('section not in viewport');
-    //     }
-    // }
-    // charInViewport();
+        } else {
+            console.log(`character not in view`)
+        }
+    })
+  
 })
 
 
-// get id of the character section in viewport
 
-// match id to the href in the scrollspy
-// apply class to that a in the scrollspy
-
-// $mainContainer.forEach($charSection => {
-//     $charSection.addEventListener('scroll', event => {
-//         // if character section is in viewport
-//         // add class to scrollspy
-//         if ($charSection.getBoundingClientRect().top >= 0) {
-            
-//         }
-
-
-//     })
-// })
-
-// if section is in viewport, add .scrollspy-current class to 
-
-// is the char section in the viewport
-
-// window.addEventListener('scroll', event => {
-//     console.log(scrollPosition)
-
-// });
 
 
 // scroll then fix sidebar
