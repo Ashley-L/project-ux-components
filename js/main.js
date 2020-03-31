@@ -6,7 +6,10 @@ let $topbarHeight = document.querySelector('.top-bar').getBoundingClientRect().h
 
 // PART A
 
-// Scroll-to from character cards at top
+///////////////////////////////////
+// SCROLL-TO FROM CHARACTER CARDS//
+///////////////////////////////////
+
 let $charCardLink = document.querySelector('.char-card-name')
 let $charCard = document.querySelectorAll('.char-card-name')
 
@@ -39,10 +42,12 @@ $charCard.forEach($charCardLink => {
     })
 })
 
+//////////////////////////////
+// SCROLL-TO FROM SCROLL-SPY//
+//////////////////////////////
 
-// Scroll-to from scrollspy
 let $scrollspyUl = document.querySelector('.scrollspy')
-let $scrollspyList = document.querySelector('.scrollspy-char')
+// let $scrollspyList = document.querySelector('.scrollspy-char')
 let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
 // console.log($scrollspyCharLink)
 let $scrollspyCharAll = document.querySelectorAll('.scrollspy-char a')
@@ -72,23 +77,56 @@ $scrollspyCharAll.forEach($scrollspyCharLink => {
     })
 })
 
-// Match scrollspy to position on page
+
+
+
+//////////////////////////////////////////
+// SCROLL-SPY MATCHES CHARACTER SECTIONS//
+//////////////////////////////////////////
 
 let $charSection = document.querySelector('.character')
 let $charSectionAll = document.querySelectorAll('.character')
 
+let $viewport = window.innerHeight
+let $halfViewport = $viewport/2
 
-// if section is in viewport, add .scrollspy-current class to 
+$charSectionAll.forEach($charSection => {
+    window.addEventListener('scroll', event => {
 
-// is the char section in the viewport
+        let $charRect = $charSection.getBoundingClientRect()
+    
+        // get the current id so you can match it to the scrollspy li item
+        let $charId = $charSection.getAttribute('id')
 
-// window.addEventListener('scroll', event => {
-//     console.log(scrollPosition)
+        // get the scrollspy list item
+        let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
+        // console.log($currentScrollspy)
 
-// });
+        if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
+        
+            console.log(`It's your boy (or girl) ${$charId}`)
+            console.log(`${$charId} in view`)
+            
+            // add the class
+            $currentScrollspy.classList.add('scrollspy-current')        
+    
+        } else {
+            // console.log(`character not in view`)
+            $currentScrollspy.classList.remove('scrollspy-current')        
+
+        }
+    
+    })
+  
+})
 
 
-// scroll then fix sidebar
+
+
+/////////////////////////////
+// SCROLL THEN FIX SIDEBAR //
+/////////////////////////////
+
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
@@ -104,7 +142,7 @@ let $articleTop = ($articleContent.getBoundingClientRect().top -$topbarHeight) +
 window.addEventListener('scroll', event => {   
     // get scroll position
     let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
-    console.log(`scroll position is ${$scrollPosition}`)
+    // console.log(`scroll position is ${$scrollPosition}`)
     // console.log($containerTop)
    
     // fixing sidebar to top on scroll
@@ -118,9 +156,10 @@ window.addEventListener('scroll', event => {
     }
 
 
-    /////////////////////////////////////////////////////////////////////
-    //FIXED THEN SCROLL WHEN YOU REACH THE BOTTOM IS STILL NOT WORKING //
-    /////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////
+    //FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM//
+    ///////////////////////////////////////////////////////
+    // THIS IS NOT WORKING DAMMIT
 
     // start scrolling again when you hit the bottom
     // if scroll position is > bottom scroll position of scrollspy
@@ -131,7 +170,7 @@ window.addEventListener('scroll', event => {
     let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
 
     if ($footerTop < window.innerHeight && $footerTop >= 0) {
-        console.log(`top of footer in viewport`)
+        // console.log(`top of footer in viewport`)
         $sidebar.classList.remove('sidebar-fixed')
         $sidebar.style.marginTop = `11500px`
         // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
@@ -143,7 +182,7 @@ window.addEventListener('scroll', event => {
         // $sidebar.style.bottom = `0px`
 
     } else {
-        console.log(`it's not there`)
+        // console.log(`it's not there`)
         $sidebar.style.marginTop = `0px`
 
     }
