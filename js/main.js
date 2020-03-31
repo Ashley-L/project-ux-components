@@ -72,11 +72,73 @@ $scrollspyCharAll.forEach($scrollspyCharLink => {
     })
 })
 
+
+
+
+
 // Match scrollspy to position on page
 
 let $charSection = document.querySelector('.character')
 let $charSectionAll = document.querySelectorAll('.character')
 
+let $docH = document.documentElement.clientHeight + window.scrollY
+let $viewport = window.innerHeight
+let $halfViewport = $viewport/2
+
+window.addEventListener('scroll', event => {
+
+    let $charRect = $charSection.getBoundingClientRect()
+
+
+    // && $charSection.getBoundingClientRect().top >= 0
+    if ($charRect.top < $halfViewport  && ($charRect.bottom >= $halfViewport)) {
+        console.log(`character in view`)
+
+    } else {
+        console.log(`character not in view`)
+    }
+
+    // console.log(`bottom of character is ${$charRect.bottom}`)
+    
+    // something is visible if
+        // top is in viewpor
+        //
+
+
+
+ 
+    // function charInViewport() {
+
+    //     var charBounding = $charSection.getBoundingClientRect();
+    
+    //     if (charBounding.top >= 0 && charBounding.left >= 0 && charBounding.right <= (window.innerWidth || document.documentElement.clientWidth) && charBounding.bottom <= (window.innerHeight || document.documentElement.clientHeight)) {
+    
+    //         console.log('section is in viewport');
+    //     } else {
+    
+    //         console.log('section not in viewport');
+    //     }
+    // }
+    // charInViewport();
+})
+
+
+// get id of the character section in viewport
+
+// match id to the href in the scrollspy
+// apply class to that a in the scrollspy
+
+// $mainContainer.forEach($charSection => {
+//     $charSection.addEventListener('scroll', event => {
+//         // if character section is in viewport
+//         // add class to scrollspy
+//         if ($charSection.getBoundingClientRect().top >= 0) {
+            
+//         }
+
+
+//     })
+// })
 
 // if section is in viewport, add .scrollspy-current class to 
 
@@ -104,7 +166,7 @@ let $articleTop = ($articleContent.getBoundingClientRect().top -$topbarHeight) +
 window.addEventListener('scroll', event => {   
     // get scroll position
     let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
-    console.log(`scroll position is ${$scrollPosition}`)
+    // console.log(`scroll position is ${$scrollPosition}`)
     // console.log($containerTop)
    
     // fixing sidebar to top on scroll
@@ -131,7 +193,7 @@ window.addEventListener('scroll', event => {
     let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
 
     if ($footerTop < window.innerHeight && $footerTop >= 0) {
-        console.log(`top of footer in viewport`)
+        // console.log(`top of footer in viewport`)
         $sidebar.classList.remove('sidebar-fixed')
         $sidebar.style.marginTop = `11500px`
         // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
@@ -143,7 +205,7 @@ window.addEventListener('scroll', event => {
         // $sidebar.style.bottom = `0px`
 
     } else {
-        console.log(`it's not there`)
+        // console.log(`it's not there`)
         $sidebar.style.marginTop = `0px`
 
     }
