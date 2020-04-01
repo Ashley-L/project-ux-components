@@ -216,13 +216,16 @@ FIXED ELEMENTS
     display: inline-block;
 }
 .movies-table .movie-tag a {
-    color: var(--main-dark);
     font-family: var(--body-sans);
 }
 .movies-table .movie-tag {
     font-size: 1em;
     margin-bottom: 1.25em;
     border-radius: 5px;
+}
+.selected-movie a{
+    color: var(--background);
+    background-color: var(--main-dark);;
 }
 
 /* Scroll-spy */
@@ -540,7 +543,6 @@ ARTICLE CONTENT
 }
 
 .movie-tag a {
-    color: var(--main-dark);
     padding: .25em .5em;
     border: 1.5px solid var(--main-dark);
     border-radius: 5px;
@@ -558,6 +560,7 @@ ARTICLE CONTENT
     color: var(--background);
     background-color: var(--main-dark);
 }
+
 
 
 
