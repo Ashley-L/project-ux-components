@@ -104,8 +104,8 @@ $charSectionAll.forEach($charSection => {
 
         if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
         
-            console.log(`It's your boy (or girl) ${$charId}`)
-            console.log(`${$charId} in view`)
+            // console.log(`It's your boy (or girl) ${$charId}`)
+            // console.log(`${$charId} in view`)
             
             // add the class
             $currentScrollspy.classList.add('scrollspy-current')        
@@ -168,11 +168,11 @@ window.addEventListener('scroll', event => {
     // let $sidebarBottom = ($sidebar.getBoundingClientRect().bottom - $topbarHeight) + window.scrollY
 
     let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
-
-    if ($footerTop < window.innerHeight && $footerTop >= 0) {
+    let $sidebarTop = document.querySelector('.sidebar').offsetTop
+    if ($footerTop < window.innerHeight && $footerTop > 50) {
         // console.log(`top of footer in viewport`)
         $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.style.marginTop = `11500px`
+        $sidebar.style.marginTop = $sidebarTop
         // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
 
 
@@ -191,3 +191,87 @@ window.addEventListener('scroll', event => {
 
 
 })
+
+
+
+
+/////////////////////
+// INFINITE SCROLL //
+/////////////////////
+
+let $newContent = document.querySelectorAll('.new-article')
+
+let $newArticle = document.querySelector('.new-article')
+
+
+let loadNewContent = (event) => {
+
+    let $articleBottom = $articleContent.getBoundingClientRect().bottom
+
+    // let $load = document.querySelector('#loadContent')
+    if ($articleBottom < window.innerHeight) {
+        // console.log(`bottom of article in viewport`)
+
+        // create new section, append it to the doc
+        let $newSection = document.createElement("section");
+        $newSection.setAttribute('class', 'new-article')
+        document.querySelector('.article-content').appendChild($newSection)
+
+        // set the innerHTML
+        $newSection.innerHTML += `
+            <section class="article-intro article-fade">
+                <p class="fig-caption">How did we even survive?</p>
+                <h1 class="article-title">MCU MOMENTS THAT CHANGED MY LIFE</h1>
+                <p class="byline">by various vigilantes </p>
+                <div class="new-article-image"><img src="imgs/new-article.jpg" alt="Thor's iconic scene in Endgame"></div>
+                <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
+            </section>
+        `
+    } else {
+        // console.log(`didn't reach bottom of article`)
+    }
+}
+
+
+window.addEventListener('load', event =>{
+    setTimeout(loadNewContent, 1500) 
+})
+window.addEventListener('scroll', event => {
+    setTimeout(loadNewContent, 1500)     
+})
+// window.addEventListener('resize', loadNewContent)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function test(name) {
+    //     // document.querySelector('.article-content') !== 'undefined' && document.querySelector('.article-content') !== 'null'
+    //     if (document.querySelector('.article-content').length > 0) {
+    //         console.log(`exists`)
+    //     } else {
+    //         console.log(`doesn't exist`)
+    //     }
+    // }  
+    // test();
