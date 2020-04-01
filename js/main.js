@@ -243,35 +243,3 @@ window.addEventListener('scroll', event => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function test(name) {
-    //     // document.querySelector('.article-content') !== 'undefined' && document.querySelector('.article-content') !== 'null'
-    //     if (document.querySelector('.article-content').length > 0) {
-    //         console.log(`exists`)
-    //     } else {
-    //         console.log(`doesn't exist`)
-    //     }
-    // }  
-    // test();
