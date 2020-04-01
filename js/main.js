@@ -208,24 +208,25 @@ let loadNewContent = (event) => {
 
     let $articleBottom = $articleContent.getBoundingClientRect().bottom
 
+    // let $load = document.querySelector('#loadContent')
     if ($articleBottom < window.innerHeight) {
         console.log(`bottom of article in viewport`)
 
-        document.querySelector('#loadContent').innerHTML += `
-        <section class="new-article article-fade">
-                <section class="article-intro">
-                    <p class="fig-caption">How did we even survive?</p>
-                    <h1 class="article-title">MCU MOMENTS THAT CHANGED MY LIFE</h1>
-                    <p class="byline">by various vigilantes </p>
-                    <div class="new-article-image"><img src="imgs/new-article.jpg" alt="Thor's iconic scene in Endgame"></div>
-                    <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
-                </section>
+        // create new section, append it to the doc
+        let $newSection = document.createElement("section");
+        $newSection.setAttribute('class', 'new-article')
+        document.querySelector('.article-content').appendChild($newSection)
+
+        // set the innerHTML
+        $newSection.innerHTML += `
+            <section class="article-intro article-fade">
+                <p class="fig-caption">How did we even survive?</p>
+                <h1 class="article-title">MCU MOMENTS THAT CHANGED MY LIFE</h1>
+                <p class="byline">by various vigilantes </p>
+                <div class="new-article-image"><img src="imgs/new-article.jpg" alt="Thor's iconic scene in Endgame"></div>
+                <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
             </section>
         `
-        // console.log(document.querySelector('#loadContent').innerHTML)
-
-        // $sidebar.classList.remove('sidebar-fixed')
-
     } else {
         console.log(`didn't reach bottom of article`)
     }
@@ -233,13 +234,10 @@ let loadNewContent = (event) => {
 
 
 window.addEventListener('load', event =>{
-    setTimeout(loadNewContent, 2500)  
+    setTimeout(loadNewContent, 2500) 
 })
 window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 2500)  
-
-    // console.log(window.scrollY)
-    // console.log(document.querySelector('.new-article').getBoundingClientRect.bottom)
+    setTimeout(loadNewContent, 2500)     
 })
 // window.addEventListener('resize', loadNewContent)
 
