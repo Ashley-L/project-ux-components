@@ -252,6 +252,27 @@ window.addEventListener('scroll', event => {
 
 // Click on the tags in the sidebar to filter the characters by movie appearances
 // a concept
-    // if I click on a button with a specific href
-    // display the characters w/ a certain class
+    // if I click on a button with a specific class
+    // display the characters w/ that same certain class
 
+let $movieButtonsAll = document.querySelectorAll('.movie-tag a')
+let $movieButton = document.querySelector('.movie-tag a')
+// let $charSection = document.querySelector('.character')
+// let $charSectionAll = document.querySelectorAll('.character')
+
+$movieButtonsAll.forEach($movieButton => {
+    $movieButton.addEventListener('click', event => {
+       
+        let $clickedMovieButton = $movieButton.getAttribute('class')
+        console.log($clickedMovieButton)
+
+        $charSectionAll.forEach($charSection => {
+            if ($charSection.classList.contains(`${$clickedMovieButton}`)) {
+                $charSection.style.display = 'block'
+            } else {
+                $charSection.style.display = 'none'
+            }
+        })
+
+    })
+})
