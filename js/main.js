@@ -197,9 +197,9 @@ window.addEventListener('scroll', event => {
 // SLIDESHOW WORK IN PROGRESS //
 ////////////////////////////////
 // img slides container
-const $slideImgs = document.querySelector(`.char-imgs`);
+let $slideImgs = document.querySelector(`.char-imgs`);
 // list of prev & fwd btn
-const $arrowBtns = document.querySelectorAll(`.arrow-btn`);
+let $arrowBtns = document.querySelectorAll(`.arrow-btn`);
 
 const $numOfImgs = 4; // every char has 4 slide imgs
 // current img counter
