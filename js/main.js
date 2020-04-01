@@ -243,3 +243,15 @@ window.addEventListener('scroll', event => {
 
 
 
+
+
+
+////////////////////////////
+// FILTER BY MOVIE SERIES //
+////////////////////////////
+
+// Click on the tags in the sidebar to filter the characters by movie appearances
+// a concept
+    // if I click on a button with a specific href
+    // display the characters w/ a certain class
+

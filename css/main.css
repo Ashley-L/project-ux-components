@@ -545,6 +545,14 @@ ARTICLE CONTENT
     border: 1.5px solid var(--main-dark);
     border-radius: 5px;
 }
+.appear-list .movie-tag {
+    color: var(--background);
+    background-color: var(--main-dark);
+    padding: .25em .5em;
+    border: 1.5px solid var(--main-dark);
+    border-radius: 5px;
+    margin-bottom: .2em;  
+}
 .movie-tag a:hover {
     transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     color: var(--background);
