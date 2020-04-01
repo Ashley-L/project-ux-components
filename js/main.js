@@ -191,3 +191,57 @@ window.addEventListener('scroll', event => {
 
 
 })
+
+/***** PART B: SLIDESHOW ******/
+////////////////////////////////
+// SLIDESHOW WORK IN PROGRESS //
+////////////////////////////////
+// img slides container
+const $slideImgs = document.querySelector(`.char-imgs`);
+// list of prev & fwd btn
+const $arrowBtns = document.querySelectorAll(`.arrow-btn`);
+
+const $numOfImgs = 4; // every char has 4 slide imgs
+// current img counter
+let imgIndex = 1;
+
+// how far (left/right) imgs have "scrolled"
+let shiftX = 0;
+
+// loop over the buttons using counter; $arrowBtns.forEach(button => {event})
+$arrowBtns.forEach(button => {
+    button.addEventListener(`click`, event => {
+        // if they click the PREV button (check event target id)
+        // and it's not the FIRST img, then subtract from image index counter (slide back)
+        if (event.target.id === `prev`){
+            console.log(`back clicked!`);
+            if (imgIndex !== 1) {
+                imgIndex -=1;
+                shiftX += 100;
+                console.log(`shiftX is ${shiftX}`);
+                console.log(`imgIndex is ${imgIndex}`);
+            }
+        }
+        //  else if they click the FWD btn 
+        // AND if the imgIndex does not equal number of images (if it's not the FINAL img)
+        // add to img index (slide forward)
+        else {
+            console.log(`fwd clicked!`)
+            if (imgIndex !== $numOfImgs) {
+                imgIndex +=1
+                shiftX -=100;
+                console.log(`shiftX is ${shiftX}`);
+                console.log(`imgIndex is ${imgIndex}`);
+            }
+        }
+        // apply shiftX to slideImgs (shift entire img width)
+        $slideImgs.style.transform = `translateX(${shiftX}%)`
+
+    });
+})
+
+
+
+
+
+
