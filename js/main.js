@@ -168,11 +168,11 @@ window.addEventListener('scroll', event => {
     // let $sidebarBottom = ($sidebar.getBoundingClientRect().bottom - $topbarHeight) + window.scrollY
 
     let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
-
-    if ($footerTop < window.innerHeight && $footerTop >= 0) {
+    let $sidebarTop = document.querySelector('.sidebar').offsetTop
+    if ($footerTop < window.innerHeight && $footerTop > 50) {
         // console.log(`top of footer in viewport`)
         $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.style.marginTop = `11500px`
+        $sidebar.style.marginTop = $sidebarTop
         // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
 
 
@@ -210,7 +210,7 @@ let loadNewContent = (event) => {
 
     // let $load = document.querySelector('#loadContent')
     if ($articleBottom < window.innerHeight) {
-        console.log(`bottom of article in viewport`)
+        // console.log(`bottom of article in viewport`)
 
         // create new section, append it to the doc
         let $newSection = document.createElement("section");
@@ -228,16 +228,16 @@ let loadNewContent = (event) => {
             </section>
         `
     } else {
-        console.log(`didn't reach bottom of article`)
+        // console.log(`didn't reach bottom of article`)
     }
 }
 
 
 window.addEventListener('load', event =>{
-    setTimeout(loadNewContent, 2500) 
+    setTimeout(loadNewContent, 1500) 
 })
 window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 2500)     
+    setTimeout(loadNewContent, 1500)     
 })
 // window.addEventListener('resize', loadNewContent)
 
