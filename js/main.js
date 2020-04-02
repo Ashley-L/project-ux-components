@@ -283,6 +283,9 @@ let $capmarvelThumbs = document.querySelectorAll(`.cm-thumb`);
 //     })
 // })
 
+let $topContainerCaro = document.querySelector('.char-slides img')
+let $topContainerCaroAll = document.querySelectorAll('.char-slides img')
+
 // container list containing each of the characters' carousel
 let $carouselUl = document.querySelector('.carousel-thumbs');
 // first list item 
@@ -294,6 +297,8 @@ let $carouselLinkAll = document.querySelectorAll('.carousel-thumbs li')
 let $shownSlide = document.querySelector('.carousel-big');
 let $shownSlideAll = document.querySelectorAll('.carousel-big');
 
+
+// ** CHANGES ALL THE BIG SLIDES: BAD!!! ** //
 $carouselLinkAll.forEach($carouselLink => {
     $carouselLink.addEventListener('click', event => {
         console.log('thumbnail is clicked!');
@@ -301,18 +306,39 @@ $carouselLinkAll.forEach($carouselLink => {
         let $clickedThumb = $carouselLink.getAttribute('id');
         console.log($clickedThumb);
 
-        $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
+        // $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
 
         // HOW TO CONNECT $clickedThumb and BIG IMG $shownSlide???? grrr.
 
-        // document.querySelector('carousel-big').src = 
-        // store id of clicked thumb
-        // var $charThumbBig = document.querySelector();
-        // console.log($charThumbBig);
-        // $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
+        $topContainerCaroAll.forEach($topContainerCaro => {
+            $topContainerCaro.src = `/imgs/${$clickedThumb}.jpg`;
+            
+        })
         
     })
 })
+
+
+// *** ONLY TOP SPIDEY CHANGES *** //
+// $carouselLinkAll.forEach($carouselLink => {
+//     $carouselLink.addEventListener('click', event => {
+//         console.log('thumbnail is clicked!');
+
+//         let $clickedThumb = $carouselLink.getAttribute('id');
+//         console.log($clickedThumb);
+
+//         $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
+
+//         // HOW TO CONNECT $clickedThumb and BIG IMG $shownSlide???? grrr.
+
+//         // document.querySelector('carousel-big').src = 
+//         // store id of clicked thumb
+//         // var $charThumbBig = document.querySelector();
+//         // console.log($charThumbBig);
+//         // $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
+        
+//     })
+// })
 
 /////////////////////
 // INFINITE SCROLL //
