@@ -252,7 +252,32 @@ $arrowBtns.forEach(button => {
     });
 })
 
+///////////////////////////////////////////
+// THUMBNAIL CLICK SLIDESHOW (NO ARROWS) //
+//////////////////////////////////////////
 
+let $capmarvelB = document.querySelector(`#capmarvel-big`);
+let $blackpanthB =document.querySelector(`#blackpanth-big`)
+
+// when cap marvel thumbnail is clicked
+//replace carousel-big 
+
+let $capmarvelThumbs = document.querySelectorAll(`.cm-thumb`);
+let $blackpanthThumbs = document.getElementById(`blackpanth-thumbs`)
+
+$capmarvelThumbs.forEach(thumb => {
+    thumb.addEventListener('click', event => {
+        // find id of clicked 
+        console.log(event.target.id);
+
+        //store id
+        let $clickedNum = event.target.id;
+        document.getElementById('capmarvel-big').src = `imgs/capmarvel-${$clickedNum}.jpg`;
+
+
+
+    })
+})
 
 
 
