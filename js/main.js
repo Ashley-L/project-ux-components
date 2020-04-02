@@ -256,3 +256,59 @@ window.addEventListener('scroll', event => {
 
 
 
+
+
+
+////////////////////////////
+// FILTER BY MOVIE SERIES //
+////////////////////////////
+
+// Click on the tags in the sidebar to filter the characters by movie appearances
+// a concept
+    // if I click on a button with a specific class
+    // display the characters w/ that same certain class
+
+let $movieButtonsAll = document.querySelectorAll('.movie-tag a')
+let $movieButton = document.querySelector('.movie-tag a')
+// let $charSection = document.querySelector('.character')
+// let $charSectionAll = document.querySelectorAll('.character')
+let $movieTable = document.querySelector('.movies-table')
+let $allMovieTags= $movieTable.querySelectorAll('.movie-tag')
+let $oneMovieTag = $movieTable.querySelector('.movie-tag')
+
+
+
+$movieButtonsAll.forEach($movieButton => {
+    $movieButton.addEventListener('click', (event) => {
+        console.log(event)
+
+        // get the class of the button you clicked
+        let $clickedMovie = event.target.getAttribute('class')
+        console.log($clickedMovie)
+
+        // list item of that button (adding/removing class from here)
+        let $clickedMovieTag = event.target.parentNode
+
+        // get the parent of the (whole) button you clicked
+        $allMovieTags = $clickedMovieTag.parentNode
+        console.log($allMovieTags)
+        
+        // remove the selected class from all of the tags
+        // EXCEPT for the one you clicked
+        $allMovieTags.querySelectorAll('.movie-tag').forEach(ele => {
+            ele.classList.remove('selected-movie')
+        })
+        $clickedMovieTag.classList.add('selected-movie')
+
+        // show/hide characters by class (of what you clicked)
+        $charSectionAll.forEach($charSection => {
+            if ($charSection.classList.contains(`${$clickedMovie}`)) {
+                $charSection.style.display = 'block'
+            } else {
+                $charSection.style.display = 'none'
+            }
+        })
+
+
+    })
+})
