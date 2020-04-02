@@ -192,6 +192,18 @@ window.addEventListener('scroll', event => {
 
 })
 
+/*Back to top BTN*/
+let $backToTopBtn = document.querySelector(`.top-w-btn`);
+let $introH = document.querySelector(`#intro`);
+
+$backToTopBtn.addEventListener(`click`, event => {
+    // when btn is clicked, scroll to intro heading, like anchor href=#
+    $introH.scrollIntoView({
+        behavior: `smooth`
+    });
+})
+
+
 /***** PART B: SLIDESHOW ******/
 ////////////////////////////////
 // SLIDESHOW WORK IN PROGRESS //
