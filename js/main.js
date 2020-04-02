@@ -1,7 +1,7 @@
 // create character database
 // add characters in an array in order to populate each section
 
-let $topbarHeight = document.querySelector('.top-bar').getBoundingClientRect().height 
+let $topbarHeight = document.querySelector('.top-bar').scrollHeight 
 
 
 // PART A
@@ -127,67 +127,75 @@ $charSectionAll.forEach($charSection => {
 // SCROLL THEN FIX SIDEBAR //
 /////////////////////////////
 
+
+
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
 let $sidebarFixed = document.querySelector('.sidebar-fixed')
 let $articleContent = document.querySelector('.article-content')
 let $mainContainer = document.querySelector('.main-container')
-
-
-
+let $footer = document.querySelector('.footer')
 let $containerTop = ($mainContainer.getBoundingClientRect().top -$topbarHeight) + window.scrollY
-let $articleTop = ($articleContent.getBoundingClientRect().top -$topbarHeight) + window.scrollY
+
+
+
+// set the sidebar to be a window height - topbar
+let sidebarFixedHeight = window.innerHeight - $topbarHeight
+// console.log(sidebarFixedHeight)
+$sidebar.style.height = `${sidebarFixedHeight}`
+
+
 
 window.addEventListener('scroll', event => {   
-    // get scroll position
-    let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
-    // console.log(`scroll position is ${$scrollPosition}`)
-    // console.log($containerTop)
-   
-    // fixing sidebar to top on scroll
-    // add .sidebar-fixed if scroll position is greater than scroll position of top of article
-    // which is defined above
-    if ($scrollPosition >= $articleTop) {
+
+    // fix sidebar to right under topbar when the top of the article passes topbar
+    let $articleTop = $articleContent.getBoundingClientRect().top - $topbarHeight
+    // console.log($articleTop)
+    
+    if ($articleTop <= 0) {
+        // add the fixed class + fix sidebar to just under topbar
         $sidebar.classList.add('sidebar-fixed')
-        document.querySelector('.sidebar').style.top = `${$topbarHeight}px`
+        $sidebar.style.top = `${$topbarHeight}px`
     } else {
         $sidebar.classList.remove('sidebar-fixed')
     }
 
+    // if ($sidebar.classList.contains('sidebar-fixed')) {
+    //     $sidebar.style.height = `${sidebarFixedHeight}px`
+    //     // console.log(`exists`)
+    // } else {
+    //     // console.log(`no`)
+    // }
 
+   
     ///////////////////////////////////////////////////////
     //FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM//
     ///////////////////////////////////////////////////////
-    // THIS IS NOT WORKING DAMMIT
+    // EDIT: IT WORKS NOW
 
     // start scrolling again when you hit the bottom
-    // if scroll position is > bottom scroll position of scrollspy
-    // remove fixed class
-    // let $footerTop = (document.querySelector('.footer').getBoundingClientRect().top - $topbarHeight) + window.scrollY
-    // let $sidebarBottom = ($sidebar.getBoundingClientRect().bottom - $topbarHeight) + window.scrollY
+    // when you get to the bottom
+    // add the fixed class and add the bottom class
+    
+    let $footerTop = $footer.getBoundingClientRect().top
 
-    let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
-    let $sidebarTop = document.querySelector('.sidebar').offsetTop
-    if ($footerTop < window.innerHeight && $footerTop > 50) {
-        // console.log(`top of footer in viewport`)
+    // if footer goes above the bottom of the window
+    if ($footerTop <= window.innerHeight) {
+         // console.log(`top of footer in viewport`)
+        // add the fixed class and add the bottom class
         $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.style.marginTop = $sidebarTop
-        // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
-
-
-
+        $sidebar.classList.add('sidebar-bottom')
+        document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
         
-        // $sidebar.style.top = `-${$topbarHeight}px`
-        // $sidebar.style.bottom = `0px`
+        // remove top property b/c it'll go to the top of the **document
+        // since it's position absolute
+        $sidebar.style.top = ''
 
     } else {
         // console.log(`it's not there`)
-        $sidebar.style.marginTop = `0px`
-
+        $sidebar.classList.remove('sidebar-bottom')
     }
-
-
 
 
 })
@@ -233,12 +241,12 @@ let loadNewContent = (event) => {
 }
 
 
-window.addEventListener('load', event =>{
-    setTimeout(loadNewContent, 1500) 
-})
-window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 1500)     
-})
+// window.addEventListener('load', event =>{
+//     setTimeout(loadNewContent, 1500) 
+// })
+// window.addEventListener('scroll', event => {
+//     setTimeout(loadNewContent, 1500)     
+// })
 // window.addEventListener('resize', loadNewContent)
 
 
