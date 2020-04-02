@@ -319,14 +319,15 @@ FIXED ELEMENTS
 .back-to-top li, .back-to-top btn {
     text-align: center;
 }
-.material-icons.arrow{
+
+/* .material-icons.arrow{
     background-color: var(--background);
     color: var(--main-dark);
     padding: .2em;
     border: 1px solid var(--main-dark);
     border-radius: 50%;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .material-icons.arrow:hover, .top-w-btn:hover{
     background-color: var(--main-dark);
@@ -334,14 +335,9 @@ FIXED ELEMENTS
     transition: all 0.3s ease-out;
 }
 
-/* .up-arrow a {
-    color: var(--main-bright);
-} */
-
-/*back to top 2*/
+/*back to top 2 using a btn: styling a btn*/
 .top-w-btn {
-    font-size: 2em;
-    font-weight: 700;
+    font-size: 2em; font-weight: 700;
     color: var(--main-dark);
     /* background-color: var(--main-bright); */
     border: 1px solid var(--main-dark);
@@ -349,17 +345,16 @@ FIXED ELEMENTS
     outline: none;
     text-decoration: none;
     display: inline-block;
-    
+
     padding: 0.45em 0.2em;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 #back-to-top-2 {
-    color: red;
     /* position: fixed; */
     /* right: 40px; */
-    bottom: 50px; right: 120px;
+    bottom: 50px; right: 40px;
+    /* bottom: 50px; right: 120px; */
 }
 
 /**************************************

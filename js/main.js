@@ -192,7 +192,7 @@ window.addEventListener('scroll', event => {
 
 })
 
-/*Back to top BTN*/
+/*Back to top: BTN, using js*/
 let $backToTopBtn = document.querySelector(`.top-w-btn`);
 let $introH = document.querySelector(`#intro`);
 
