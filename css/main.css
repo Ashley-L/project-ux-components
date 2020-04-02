@@ -341,7 +341,7 @@ FIXED ELEMENTS
     font-size: 2em; font-weight: 700;
     color: var(--main-dark);
     /* background-color: var(--main-bright); */
-    border: px solid var(--main-dark);
+    border: 2px solid var(--main-dark);
     border-radius: 50%;
     outline: none;
     text-decoration: none;
