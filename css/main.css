@@ -349,16 +349,18 @@ FIXED ELEMENTS
     outline: none;
     text-decoration: none;
     display: inline-block;
-    padding: 0px 0.5px;
+    
+    padding: 0.45em 0.2em;
     box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
+
+
 #back-to-top-2 {
     color: red;
     /* position: fixed; */
     /* right: 40px; */
     bottom: 50px; right: 120px;
 }
-
 
 /**************************************
 ARTICLE CONTENT
