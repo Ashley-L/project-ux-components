@@ -1,7 +1,7 @@
 // create character database
 // add characters in an array in order to populate each section
 
-let $topbarHeight = document.querySelector('.top-bar').getBoundingClientRect().height 
+let $topbarHeight = document.querySelector('.top-bar').scrollHeight 
 
 
 // PART A
@@ -127,68 +127,79 @@ $charSectionAll.forEach($charSection => {
 // SCROLL THEN FIX SIDEBAR //
 /////////////////////////////
 
+
+
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
 let $sidebarFixed = document.querySelector('.sidebar-fixed')
 let $articleContent = document.querySelector('.article-content')
 let $mainContainer = document.querySelector('.main-container')
-
+let $footer = document.querySelector('.footer')
 let $containerTop = ($mainContainer.getBoundingClientRect().top -$topbarHeight) + window.scrollY
-let $articleTop = ($articleContent.getBoundingClientRect().top -$topbarHeight) + window.scrollY
 
-window.addEventListener('scroll', event => {   
-    // get scroll position
-    let $scrollPosition = window.scrollY // shows scroll position, changes every time you scroll
-    // console.log(`scroll position is ${$scrollPosition}`)
-    // console.log($containerTop)
-   
-    // fixing sidebar to top on scroll
-    // add .sidebar-fixed if scroll position is greater than scroll position of top of article
-    // which is defined above
-    if ($scrollPosition >= $articleTop) {
+
+
+// set the sidebar to be a window height - topbar
+let sidebarFixedHeight = window.innerHeight - $topbarHeight
+// console.log(sidebarFixedHeight)
+$sidebar.style.height = `${sidebarFixedHeight}`
+
+
+function stickySidebar() {
+
+    // fix sidebar to right under topbar when the top of the article passes topbar
+    let $articleTop = $articleContent.getBoundingClientRect().top - $topbarHeight
+    // console.log($articleTop)
+    
+    if ($articleTop <= 0) {
+        // add the fixed class + fix sidebar to just under topbar
         $sidebar.classList.add('sidebar-fixed')
-        document.querySelector('.sidebar').style.top = `${$topbarHeight}px`
+        $sidebar.style.top = `${$topbarHeight}px`
     } else {
         $sidebar.classList.remove('sidebar-fixed')
     }
 
+    // if ($sidebar.classList.contains('sidebar-fixed')) {
+    //     $sidebar.style.height = `${sidebarFixedHeight}px`
+    //     // console.log(`exists`)
+    // } else {
+    //     // console.log(`no`)
+    // }
 
+   
     ///////////////////////////////////////////////////////
     //FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM//
     ///////////////////////////////////////////////////////
-    // THIS IS NOT WORKING DAMMIT
+    // EDIT: IT WORKS NOW
 
     // start scrolling again when you hit the bottom
-    // if scroll position is > bottom scroll position of scrollspy
-    // remove fixed class
-    // let $footerTop = (document.querySelector('.footer').getBoundingClientRect().top - $topbarHeight) + window.scrollY
-    // let $sidebarBottom = ($sidebar.getBoundingClientRect().bottom - $topbarHeight) + window.scrollY
+    // when you get to the bottom
+    // add the fixed class and add the bottom class
+    
+    let $footerTop = $footer.getBoundingClientRect().top
 
-    let $footerTop = document.querySelector('.footer').getBoundingClientRect().top
-    let $sidebarTop = document.querySelector('.sidebar').offsetTop
-    if ($footerTop < window.innerHeight && $footerTop > 50) {
-        // console.log(`top of footer in viewport`)
+    // if footer goes above the bottom of the window
+    if ($footerTop <= window.innerHeight) {
+         // console.log(`top of footer in viewport`)
+        // add the fixed class and add the bottom class
         $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.style.marginTop = $sidebarTop
-        // $sidebar.style.marginTop = `-${$articleContent.getBoundingClientRect().top}px`
-
-
-
+        $sidebar.classList.add('sidebar-bottom')
+        document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
         
-        // $sidebar.style.top = `-${$topbarHeight}px`
-        // $sidebar.style.bottom = `0px`
+        // remove top property b/c it'll go to the top of the **document
+        // since it's position absolute
+        $sidebar.style.top = ''
 
     } else {
         // console.log(`it's not there`)
-        $sidebar.style.marginTop = `0px`
-
+        $sidebar.classList.remove('sidebar-bottom')
     }
 
 
 
-
-})
+}
+window.addEventListener('scroll', stickySidebar)
 
 /*Back to top: BTN, using js*/
 let $backToTopBtn = document.querySelector(`.top-w-btn`);
@@ -335,19 +346,79 @@ let loadNewContent = (event) => {
                 <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
             </section>
         `
+
+
     } else {
         // console.log(`didn't reach bottom of article`)
     }
 }
 
 
-window.addEventListener('load', event =>{
-    setTimeout(loadNewContent, 1500) 
+window.addEventListener('load', event => {
+    setTimeout(loadNewContent, 1000) 
+
 })
 window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 1500)     
+    setTimeout(loadNewContent, 1000)   
+  
 })
 // window.addEventListener('resize', loadNewContent)
 
 
 
+
+
+
+////////////////////////////
+// FILTER BY MOVIE SERIES //
+////////////////////////////
+
+// Click on the tags in the sidebar to filter the characters by movie appearances
+// a concept
+    // if I click on a button with a specific class
+    // display the characters w/ that same certain class
+
+let $movieButtonsAll = document.querySelectorAll('.movie-tag a')
+let $movieButton = document.querySelector('.movie-tag a')
+// let $charSection = document.querySelector('.character')
+// let $charSectionAll = document.querySelectorAll('.character')
+let $movieTable = document.querySelector('.movies-table')
+let $allMovieTags= $movieTable.querySelectorAll('.movie-tag')
+let $oneMovieTag = $movieTable.querySelector('.movie-tag')
+
+
+
+$movieButtonsAll.forEach($movieButton => {
+    $movieButton.addEventListener('click', (event) => {
+        console.log(event)
+
+        // get the class of the button you clicked
+        let $clickedMovie = event.target.getAttribute('class')
+        console.log($clickedMovie)
+
+        // list item of that button (adding/removing class from here)
+        let $clickedMovieTag = event.target.parentNode
+
+        // get the parent of the (whole) button you clicked
+        $allMovieTags = $clickedMovieTag.parentNode
+        console.log($allMovieTags)
+        
+        // remove the selected class from all of the tags
+        // EXCEPT for the one you clicked
+        $allMovieTags.querySelectorAll('.movie-tag').forEach(ele => {
+            ele.classList.remove('selected-movie')
+        })
+        $clickedMovieTag.classList.add('selected-movie')
+
+        // show/hide characters by class (of what you clicked)
+        $charSectionAll.forEach($charSection => {
+            if ($charSection.classList.contains(`${$clickedMovie}`)) {
+                $charSection.style.display = 'block'
+            } else {
+                $charSection.style.display = 'none'
+            }
+        })
+
+
+    })
+})
