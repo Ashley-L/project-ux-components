@@ -218,127 +218,29 @@ $backToTopBtn.addEventListener(`click`, event => {
 // SLIDESHOW WORK IN PROGRESS //
 ////////////////////////////////
 
-// Version 1: slides img slides container
-// let $slideImgs = document.querySelector(`.char-imgs`);
-// // list of prev & fwd btn
-// let $arrowBtns = document.querySelectorAll(`.arrow-btn`);
-
-// const $numOfImgs = 4; // every char has 4 slide imgs
-// // current img counter
-// let imgIndex = 1;
-
-// // how far (left/right) imgs have "scrolled"
-// let shiftX = 0;
-
-// // loop over the buttons using counter; $arrowBtns.forEach(button => {event})
-// $arrowBtns.forEach(button => {
-//     button.addEventListener(`click`, event => {
-//         // if they click the PREV button (check event target id)
-//         // and it's not the FIRST img, then subtract from image index counter (slide back)
-//         if (event.target.id === `prev`){
-//             console.log(`back clicked!`);
-//             if (imgIndex !== 1) {
-//                 imgIndex -=1;
-//                 shiftX += 100;
-//                 console.log(`shiftX is ${shiftX}`);
-//                 console.log(`imgIndex is ${imgIndex}`);
-//             }
-//         }
-//         //  else if they click the FWD btn 
-//         // AND if the imgIndex does not equal number of images (if it's not the FINAL img)
-//         // add to img index (slide forward)
-//         else {
-//             console.log(`fwd clicked!`)
-//             if (imgIndex !== $numOfImgs) {
-//                 imgIndex +=1
-//                 shiftX -=100;
-//                 console.log(`shiftX is ${shiftX}`);
-//                 console.log(`imgIndex is ${imgIndex}`);
-//             }
-//         }
-//         // apply shiftX to slideImgs (shift entire img width)
-//         $slideImgs.style.transform = `translateX(${shiftX}%)`
-
-//     });
-// })
-
 ///////////////////////////////////////////
 // THUMBNAIL CLICK SLIDESHOW (NO ARROWS) //
 //////////////////////////////////////////
 
-let $capmarvelB = document.querySelector(`#capmarvel-big`);
-// when cap marvel thumbnail is clicked
-//replace carousel-big 
-let $capmarvelThumbs = document.querySelectorAll(`.cm-thumb`);
+// MAIN CONTAINER .char-carousel 
+let $charCaro = document.querySelector(`.char-carousel`);
+// every character's .char-carousel container
+let $charCaroAll = document.querySelectorAll(`char-carousel`);
 
-// $capmarvelThumbs.forEach(thumb => {
-//     thumb.addEventListener('click', event => {
-//         // find id of clicked 
-//         console.log(event.target.id);
-//         //store id
-//         let $clickedNum = event.target.id;
+// big img container
+let $carouselBig = document.querySelector(`.char-slides .carousel-big`);
+let $imagesourceBig = $carouselBig.src;
+let $carouselBigAll = document.querySelectorAll(`.char-slides .carousel-big`)
 
-//         // replace big slide with clicked thumbnail
-//         document.getElementById('capmarvel-big').src = `imgs/capmarvel-${$clickedNum}.jpg`;
-//     })
-// })
+// thumbnails container
+let $carouselThumb = document.querySelector(`.carousel-thumbs`)
+let $carouselThumbs2 = document.querySelectorAll(`.carousel-thumbs`)
 
-let $topContainerCaro = document.querySelector('.char-slides img')
-let $topContainerCaroAll = document.querySelectorAll('.char-slides img')
+let $carouselThumbMini = document.querySelector(`.carousel-thumbs li`)
+let $carouselThumbMiniImg = document.querySelector(`.carousel-thumbs li img`)
 
-// container list containing each of the characters' carousel
-let $carouselUl = document.querySelector('.carousel-thumbs');
-// first list item 
-let $carouselLink = document.querySelector('.carousel-thumbs li')
-// all the list items of all the characters
-let $carouselLinkAll = document.querySelectorAll('.carousel-thumbs li')
+let $carouselThumbMiniAll = document.querySelectorAll(`.carousel-thumbs li`)
 
-//BIG IMG 
-let $shownSlide = document.querySelector('.carousel-big');
-let $shownSlideAll = document.querySelectorAll('.carousel-big');
-
-
-// ** CHANGES ALL THE BIG SLIDES: BAD!!! ** //
-$carouselLinkAll.forEach($carouselLink => {
-    $carouselLink.addEventListener('click', event => {
-        console.log('thumbnail is clicked!');
-
-        let $clickedThumb = $carouselLink.getAttribute('id');
-        console.log($clickedThumb);
-
-        // $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
-
-        // HOW TO CONNECT $clickedThumb and BIG IMG $shownSlide???? grrr.
-
-        $topContainerCaroAll.forEach($topContainerCaro => {
-            $topContainerCaro.src = `/imgs/${$clickedThumb}.jpg`;
-            
-        })
-        
-    })
-})
-
-
-// *** ONLY TOP SPIDEY CHANGES *** //
-// $carouselLinkAll.forEach($carouselLink => {
-//     $carouselLink.addEventListener('click', event => {
-//         console.log('thumbnail is clicked!');
-
-//         let $clickedThumb = $carouselLink.getAttribute('id');
-//         console.log($clickedThumb);
-
-//         $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
-
-//         // HOW TO CONNECT $clickedThumb and BIG IMG $shownSlide???? grrr.
-
-//         // document.querySelector('carousel-big').src = 
-//         // store id of clicked thumb
-//         // var $charThumbBig = document.querySelector();
-//         // console.log($charThumbBig);
-//         // $shownSlide.src = `imgs/${$clickedThumb}.jpg`;
-        
-//     })
-// })
 
 /////////////////////
 // INFINITE SCROLL //
