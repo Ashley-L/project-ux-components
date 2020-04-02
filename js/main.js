@@ -146,8 +146,7 @@ let sidebarFixedHeight = window.innerHeight - $topbarHeight
 $sidebar.style.height = `${sidebarFixedHeight}`
 
 
-
-window.addEventListener('scroll', event => {   
+function stickySidebar() {
 
     // fix sidebar to right under topbar when the top of the article passes topbar
     let $articleTop = $articleContent.getBoundingClientRect().top - $topbarHeight
@@ -198,7 +197,9 @@ window.addEventListener('scroll', event => {
     }
 
 
-})
+
+}
+window.addEventListener('scroll', stickySidebar)
 
 
 
@@ -235,18 +236,22 @@ let loadNewContent = (event) => {
                 <p class="new-article-intro">So, uh, spoilers if you didn't see Infinity War by now, but honestly, that's on you. We've been blessed with a lot of movies over the past 12 years, and I don't know about y'all, but I think there are a handful of moments that left me well and truly shook. I am now going to discuss each of these moments in painstaking detail for your entertainment.</p>
             </section>
         `
+
+
     } else {
         // console.log(`didn't reach bottom of article`)
     }
 }
 
 
-// window.addEventListener('load', event =>{
-//     setTimeout(loadNewContent, 1500) 
-// })
-// window.addEventListener('scroll', event => {
-//     setTimeout(loadNewContent, 1500)     
-// })
+window.addEventListener('load', event => {
+    setTimeout(loadNewContent, 1000) 
+
+})
+window.addEventListener('scroll', event => {
+    setTimeout(loadNewContent, 1000)   
+  
+})
 // window.addEventListener('resize', loadNewContent)
 
 
