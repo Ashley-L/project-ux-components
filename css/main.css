@@ -538,12 +538,21 @@ ARTICLE CONTENT
     
 }
 
-.mini-thumb:hover{
+/* .mini-thumb:hover{
     background-color: red;
-    /* display: none; */
+    display: none;
     border:1px solid #000;
     padding: 0.2em;
     border-radius: 0.5em;
+
+} */
+
+.mini-thumb.selected-thumb{
+    background-color: palegreen;
+    /* border: 0.2em solid #000; */
+    border-radius: 0.6em;
+    /* display: none; */
+    padding: 0.2em;
 
 }
 
