@@ -220,41 +220,38 @@ $backToTopBtn.addEventListener(`click`, event => {
 //////////////////////////////////////////
 
 // MAIN CAROUSEL container .char-carousel 
-let $charCaro = document.querySelector(`.char-carousel`);
 // every character's .char-carousel container
-let $charCaroAll = document.querySelectorAll(`char-carousel`);
-
-// BIG IMG container
-let $carouselBig = document.querySelector(`.char-slides .carousel-big`);
-let $carouselBigAll = document.querySelectorAll(`.char-slides .carousel-big`)
-
-// THUMBNAILS container
-let $carouselThumb = document.querySelector(`.carousel-thumbs`)
-// let $carouselThumb = document.querySelector(`.char-carousel .carousel-thumbs`)
-let $carouselThumbAll = document.querySelectorAll(`.carousel-thumbs`)
-
-let $carouselThumbMini = document.querySelector(`.carousel-thumbs li`)
-// let $carouselThumbMini = document.querySelector(`.carousel-thumbs .mini-thumb`)
-let $carouselThumbMiniAll = document.querySelectorAll(`.carousel-thumbs li`);
-
-let $carouselThumbMiniImg = document.querySelector(`.carousel-thumbs li img`)
-// let $carouselThumbMini = document.querySelector(`.carousel-thumbs .mini-thumb img`)
-// let $carouselThumbMiniImgAll = document.querySelectorAll(`.carousel-thumbs li img`)
-
+let $charCarouAll = document.querySelectorAll(`.char-carousel`);
+let $singleCarou = document.querySelector(`.char-carousel`);
 
 // 1) find source of the big img
-$carouselBig.getAttribute(`src`);
-
+// $carouselBig.getAttribute(`src`);
 // 2) find source of the thumbnail 
-let $thumbnailSrc = $carouselThumbMiniImg.getAttribute(`src`);
-
+// let $thumbnailSrc = $carouselThumbMiniImg.src;
 //3 replace big img source with thumbnail source
-$carouselBig.setAttribute(`src`, $thumbnailSrc);
+// $carouselBig.setAttribute(`src`, $thumbnailSrc);
 
+$charCarouAll.forEach($singleCarou => {
+    console.log($singleCarou);
+    let $carouselBig = $singleCarou.querySelector('.carousel-big');
+    // console.log($carouselBig);
 
+    let $previewMinis= $singleCarou.querySelectorAll(`.mini-thumb .sml-slide`)
+    // console.log($previewMini);
+    let $singleMini= $singleCarou.querySelector(`.mini-thumb .sml-slide`)
 
-
-
+    $previewMinis.forEach($singleMini => {
+        $singleMini.addEventListener('click', event => {
+            console.log('THUMB CLICKED!!')
+            // console.log($singlePreview)
+            // let $miniSrc = $singleMini.src;
+            let $miniSrc = event.target.getAttribute('src')
+            console.log($miniSrc)
+            $carouselBig.src = ($miniSrc);
+    
+        })
+    })
+})
 
 
 /////////////////////
