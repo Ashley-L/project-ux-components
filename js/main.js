@@ -224,21 +224,14 @@ $backToTopBtn.addEventListener(`click`, event => {
 let $charCarouAll = document.querySelectorAll(`.char-carousel`);
 let $singleCarou = document.querySelector(`.char-carousel`);
 
-// 1) find source of the big img
-// $carouselBig.getAttribute(`src`);
-// 2) find source of the thumbnail 
-// let $thumbnailSrc = $carouselThumbMiniImg.src;
-//3 replace big img source with thumbnail source
-// $carouselBig.setAttribute(`src`, $thumbnailSrc);
-
 $charCarouAll.forEach($singleCarou => {
     console.log($singleCarou);
     let $carouselBig = $singleCarou.querySelector('.carousel-big');
     // console.log($carouselBig);
 
-    let $previewMinis= $singleCarou.querySelectorAll(`.mini-thumb .sml-slide`)
+    let $previewMinis = $singleCarou.querySelectorAll(`.mini-thumb .sml-slide`)
     // console.log($previewMini);
-    let $singleMini= $singleCarou.querySelector(`.mini-thumb .sml-slide`)
+    let $singleMini = $singleCarou.querySelector(`.mini-thumb .sml-slide`)
 
     $previewMinis.forEach($singleMini => {
         $singleMini.addEventListener('click', event => {
