@@ -1,6 +1,3 @@
-// create character database
-// add characters in an array in order to populate each section
-
 let $topbarHeight = document.querySelector('.top-bar').scrollHeight 
 
 
@@ -222,24 +219,42 @@ $backToTopBtn.addEventListener(`click`, event => {
 // THUMBNAIL CLICK SLIDESHOW (NO ARROWS) //
 //////////////////////////////////////////
 
-// MAIN CONTAINER .char-carousel 
+// MAIN CAROUSEL container .char-carousel 
 let $charCaro = document.querySelector(`.char-carousel`);
 // every character's .char-carousel container
 let $charCaroAll = document.querySelectorAll(`char-carousel`);
 
-// big img container
+// BIG IMG container
 let $carouselBig = document.querySelector(`.char-slides .carousel-big`);
-let $imagesourceBig = $carouselBig.src;
 let $carouselBigAll = document.querySelectorAll(`.char-slides .carousel-big`)
 
-// thumbnails container
+// THUMBNAILS container
 let $carouselThumb = document.querySelector(`.carousel-thumbs`)
-let $carouselThumbs2 = document.querySelectorAll(`.carousel-thumbs`)
+// let $carouselThumb = document.querySelector(`.char-carousel .carousel-thumbs`)
+let $carouselThumbAll = document.querySelectorAll(`.carousel-thumbs`)
 
 let $carouselThumbMini = document.querySelector(`.carousel-thumbs li`)
-let $carouselThumbMiniImg = document.querySelector(`.carousel-thumbs li img`)
+// let $carouselThumbMini = document.querySelector(`.carousel-thumbs .mini-thumb`)
+let $carouselThumbMiniAll = document.querySelectorAll(`.carousel-thumbs li`);
 
-let $carouselThumbMiniAll = document.querySelectorAll(`.carousel-thumbs li`)
+let $carouselThumbMiniImg = document.querySelector(`.carousel-thumbs li img`)
+// let $carouselThumbMini = document.querySelector(`.carousel-thumbs .mini-thumb img`)
+// let $carouselThumbMiniImgAll = document.querySelectorAll(`.carousel-thumbs li img`)
+
+
+// 1) find source of the big img
+$carouselBig.getAttribute(`src`);
+
+// 2) find source of the thumbnail 
+let $thumbnailSrc = $carouselThumbMiniImg.getAttribute(`src`);
+
+//3 replace big img source with thumbnail source
+$carouselBig.setAttribute(`src`, $thumbnailSrc);
+
+
+
+
+
 
 
 /////////////////////
