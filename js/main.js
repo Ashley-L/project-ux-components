@@ -339,22 +339,25 @@ let $movieTable = document.querySelector('.movies-table')
 let $allMovieTags= $movieTable.querySelectorAll('.movie-tag')
 let $oneMovieTag = $movieTable.querySelector('.movie-tag')
 
+let $wrapper = document.querySelectorAll('.wrapper')
+// console.log($wrapper)
+
 
 
 $movieButtonsAll.forEach($movieButton => {
     $movieButton.addEventListener('click', (event) => {
-        console.log(event)
+        // console.log(event)
 
         // get the class of the button you clicked
         let $clickedMovie = event.target.getAttribute('class')
-        console.log($clickedMovie)
+        // console.log($clickedMovie)
 
         // list item of that button (adding/removing class from here)
         let $clickedMovieTag = event.target.parentNode
-
+        
         // get the parent of the (whole) button you clicked
         $allMovieTags = $clickedMovieTag.parentNode
-        console.log($allMovieTags)
+        // console.log($allMovieTags)
         
         // remove the selected class from all of the tags
         // EXCEPT for the one you clicked
@@ -363,15 +366,41 @@ $movieButtonsAll.forEach($movieButton => {
         })
         $clickedMovieTag.classList.add('selected-movie')
 
+
         // show/hide characters by class (of what you clicked)
         $charSectionAll.forEach($charSection => {
             if ($charSection.classList.contains(`${$clickedMovie}`)) {
-                $charSection.style.display = 'block'
+
+                // display changes
+                $charSection.querySelector('.char-name').classList.remove('shrink')
+                $charSection.querySelector('.filtered-msg').classList.remove('show')
+                $charSection.querySelector('.wrapper').classList.remove('hide')
+
+                // select the clicked class
+                let $characterClass = document.querySelector(`.${$clickedMovie}`)
+                // console.log($characterClass)
+
             } else {
-                $charSection.style.display = 'none'
-            }
+                // display changes
+                $charSection.querySelector('.char-name').classList.add('shrink')
+                $charSection.querySelector('.filtered-msg').classList.add('show')
+                $charSection.querySelector('.wrapper').classList.add('hide')
+            }            
+
+
+            // of the class selected
+            // position the first character w/ that class at the top of the page
+            let $characterClassFirst = document.querySelector(`.${$clickedMovie}`)
+            // console.log($characterClassFirst)
+            
+            $characterClassFirst.scrollIntoView(true);
+            if (true) {
+                window.scrollTo(0, window.scrollY - $topbarHeight);
+            } 
+
+        
         })
-
-
     })
 })
+
+
