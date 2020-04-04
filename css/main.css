@@ -427,6 +427,35 @@ ARTICLE CONTENT
     font-style: italic;
 }
 
+
+
+/*add this to wrapper when filtering characters*/
+.shrink {
+    font-size: 1.7em;
+}
+.filtered-msg {
+    padding-top: 1.5em;
+    font-size: 1.2em;
+    font-family: var(--body-sans);
+    font-weight: 400;
+    display: none;
+}
+/* .filtered-msg .character-filtered {
+    display: block;
+    
+}
+.wrapper .character-filtered {
+    display: none;
+} */
+
+.hide {
+    display: none;
+}
+.show {
+    display: block
+}
+
+
 /* CHARACTER GRID */
 .cards-container {
     display: grid;

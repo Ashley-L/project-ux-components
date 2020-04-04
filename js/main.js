@@ -263,6 +263,9 @@ let $movieTable = document.querySelector('.movies-table')
 let $allMovieTags= $movieTable.querySelectorAll('.movie-tag')
 let $oneMovieTag = $movieTable.querySelector('.movie-tag')
 
+let $wrapper = document.querySelectorAll('.wrapper')
+// console.log($wrapper)
+
 
 
 $movieButtonsAll.forEach($movieButton => {
@@ -291,8 +294,12 @@ $movieButtonsAll.forEach($movieButton => {
         // show/hide characters by class (of what you clicked)
         $charSectionAll.forEach($charSection => {
             if ($charSection.classList.contains(`${$clickedMovie}`)) {
-                
-                $charSection.style.display = 'block'
+
+                // display changes
+                $charSection.querySelector('.char-name').classList.remove('shrink')
+                $charSection.querySelector('.filtered-msg').classList.remove('show')
+                $charSection.querySelector('.wrapper').classList.remove('hide')
+
 
                 // select the clicked class
                 let $characterClass = document.querySelector(`.${$clickedMovie}`)
@@ -300,11 +307,12 @@ $movieButtonsAll.forEach($movieButton => {
 
 
             } else {
-                $charSection.style.display = 'none'
-                // let $wrapper = $charSection.querySelector('.wrapper')
-                // $wrapper.innerHTML = `This character is not in the selected movie`
+                // display changes
+                $charSection.querySelector('.char-name').classList.add('shrink')
+                $charSection.querySelector('.filtered-msg').classList.add('show')
+                $charSection.querySelector('.wrapper').classList.add('hide')
             }            
-            
+
 
 
             // of the class selected
