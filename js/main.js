@@ -236,13 +236,22 @@ $charCarouAll.forEach($singleCarou => {
     $previewMinis.forEach($singleMini => {
         $singleMini.addEventListener('click', event => {
             console.log('THUMB CLICKED!!')
+            // console.log($singleMini.classList)
+
             // console.log($singlePreview)
             // let $miniSrc = $singleMini.src;
             let $miniSrc = event.target.getAttribute('src')
             console.log($miniSrc)
             $carouselBig.src = ($miniSrc);
+
+            let $clickedMini = event.target.getAttribute('class')
+            // console.log($clickedMini)
     
         })
+
+
+        // fill in 
+        
     })
 })
 
