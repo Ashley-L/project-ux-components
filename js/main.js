@@ -221,38 +221,6 @@ $backToTopBtn.addEventListener(`click`, event => {
 
 // MAIN CAROUSEL container .char-carousel 
 // every character's .char-carousel container
-// let $charCarouAll = document.querySelectorAll(`.char-carousel`);
-// let $singleCarou = document.querySelector(`.char-carousel`);
-
-// $charCarouAll.forEach($singleCarou => {
-//     console.log($singleCarou);
-//     let $carouselBig = $singleCarou.querySelector('.carousel-big');
-//     // console.log($carouselBig);
-//     let $previewMinis = $singleCarou.querySelectorAll(`.mini-thumb .sml-slide`)
-//     // console.log($previewMini);
-//     let $singleMini = $singleCarou.querySelector(`.mini-thumb .sml-slide`)
-
-//     $previewMinis.forEach($singleMini => {
-        
-//         $singleMini.addEventListener('click', event => {
-//             console.log('THUMB CLICKED!!')
-//             // console.log($singleMini.classList)
-
-//             // console.log($singlePreview)
-//             // let $miniSrc = $singleMini.src;
-//             let $miniSrc = event.target.getAttribute('src')
-//             console.log($miniSrc)
-//             $carouselBig.src = ($miniSrc);
-
-//             let $clickedMini = event.target.getAttribute('class')
-//             // console.log($clickedMini)
-    
-//         })
-        
-//     })
-// })
-
-
 let $charCarouAll = document.querySelectorAll(`.char-carousel`);
 let $singleCarou = document.querySelector(`.char-carousel`);
 

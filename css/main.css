@@ -538,12 +538,16 @@ ARTICLE CONTENT
 
 /* add border highlight  */
 .mini-thumb.selected-thumb{
-    /* box-shadow:0.2em rgba(0, 0, 0, 0.6); */
     /* transition: box-shadow 0.3s ease-in; */
     opacity: 100%;
     border: 0.2em inset var(--main-dark);
     box-shadow: 4px 6px 6px rgba(92, 50, 50, 0.3);
 
+}
+
+.mini-thumb:hover{
+    opacity: 90%;
+    transition: opacity 0.25s ease-in-out;
 }
 
 /* thumbnail imgs: .carousel-thumbs li  img */
@@ -555,10 +559,6 @@ ARTICLE CONTENT
     /* opacity: 10%; */
 }
 
-.mini-thumb:hover{
-    opacity: 90%;
-    transition: opacity 0.25s ease-in-out;
-}
 
 
 /*****
