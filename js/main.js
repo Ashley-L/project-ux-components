@@ -271,12 +271,11 @@ $movieButtonsAll.forEach($movieButton => {
 
         // get the class of the button you clicked
         let $clickedMovie = event.target.getAttribute('class')
-        console.log($clickedMovie)
+        // console.log($clickedMovie)
 
         // list item of that button (adding/removing class from here)
         let $clickedMovieTag = event.target.parentNode
         
-
         // get the parent of the (whole) button you clicked
         $allMovieTags = $clickedMovieTag.parentNode
         // console.log($allMovieTags)
@@ -288,42 +287,53 @@ $movieButtonsAll.forEach($movieButton => {
         })
         $clickedMovieTag.classList.add('selected-movie')
 
-     
 
         // show/hide characters by class (of what you clicked)
         $charSectionAll.forEach($charSection => {
             if ($charSection.classList.contains(`${$clickedMovie}`)) {
-               
-                // get the first character w/ the clicked class
-                let $characterClass = document.querySelector(`.${$clickedMovie}`)
-                let $test = $characterClass.getBoundingClientRect().top - $topbarHeight
-                    console.log($test)
-
-                let $characterClassFirst = $characterClass[0]
-                // let $firstCharacterSect = $firstCharacter.parentNode
-                // let $firstCharacter = document.getElementsByClassName(`.${$clickedMovie}`)[0]
-                console.log($characterClass)
-                // console.log($characterClassFirst)
-
-
-                $characterClass.scrollIntoView(true);
-                // // const $scrollPosition = window.scrollY;
-
-                if (window.scrollY) {
-                window.scroll(0, window.scrollY - $topbarHeight);
-                } 
-            
-
-                $charSection.style.display = 'block'
-                // console.log(`test`)
                 
+                $charSection.style.display = 'block'
+
+                // select the clicked class
+                let $characterClass = document.querySelector(`.${$clickedMovie}`)
+                // console.log($characterClass)
+
+
             } else {
                 $charSection.style.display = 'none'
-                // $charSection.innerHTML = `hello`
-            }
+                // let $wrapper = $charSection.querySelector('.wrapper')
+                // $wrapper.innerHTML = `This character is not in the selected movie`
+            }            
+            
+
+
+            // of the class selected
+            // position the first character w/ that class at the top of the page
+            let $characterClassFirst = document.querySelector(`.${$clickedMovie}`)
+            // console.log($characterClassFirst)
+            
+            $characterClassFirst.scrollIntoView(true);
+            if (true) {
+                window.scrollTo(0, window.scrollY - $topbarHeight);
+            } 
+
+
+            // if the hero/villain section doesn't have any characters from the selected movie
+            // display some message
+            // let $charBlocksAll = document.querySelectorAll('.block')
+            // let $charBlock = document.querySelector('.block')
+            // // console.log($charBlocksAll)
+                  
+            // $charBlocksAll.forEach($charBlock => {
+            //     if ($charBlock.classList.contains(`${$clickedMovie}`)) {
+            //         console.log(`none of the other characters are here`)
+            //     } 
+                
+            // })
+        
         })
 
-
+        
         
 
 
