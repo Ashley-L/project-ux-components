@@ -530,16 +530,19 @@ ARTICLE CONTENT
     width: 6em;
     height: 4.5em;
     max-height: 100%;
-    border: 0.2em inset var(--main-dark);
+    opacity: 65%;
     border-radius: 0.5em;
-    opacity: 50%;
+    /* border: 0.2em solid rgba(0, 0, 0, 0.1); */
+    box-shadow: 2px 2px 3px rgba(92, 50, 50, 0.3);
 }
 
+/* add border highlight  */
 .mini-thumb.selected-thumb{
-    box-shadow:0.2em rgba(0, 0, 0, 0.6);
+    /* box-shadow:0.2em rgba(0, 0, 0, 0.6); */
+    /* transition: box-shadow 0.3s ease-in; */
     opacity: 100%;
-    border-color: var(--main-bright);
-
+    border: 0.2em inset var(--main-dark);
+    box-shadow: 4px 6px 6px rgba(92, 50, 50, 0.3);
 
 }
 
@@ -548,8 +551,13 @@ ARTICLE CONTENT
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: 0.3em;
+    border-radius: 0.25em;
     /* opacity: 10%; */
+}
+
+.mini-thumb:hover{
+    opacity: 90%;
+    transition: opacity 0.25s ease-in-out;
 }
 
 
