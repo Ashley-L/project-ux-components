@@ -8,16 +8,15 @@ Ashley Lall & Kim Nguyen
 * Desktop view only (not responsive)
 
 ## PART 1 DELIVERABLES
-Design and Prototype the following components/tools for your article (5x length of the window) on browser’s default font size.
+Design and prototype the following components/tools for your article (5x length of the window) on browser’s default font size.
 
 ### A) Landmarks/Bearings
 * Bolded headings (hero/villain name)
 * Navigation topbar:
   * Sticky when scrolled
   * Home button leads to top of the page
-  * Share to social icons 
 * Back to top button (fixed position while reading the article, click leads to top of the page)
-* Scrollspy sidebar: 
+* Sticky sidebar with scrollspy: 
   * Located on the side of the page, always visible
   * Bold heading for current section, updates as scrolled
   * Scroll-to animation when heading is clicked
@@ -26,7 +25,7 @@ Design and Prototype the following components/tools for your article (5x length 
 http://www.ideakites.com/ - icon scrollspy, but also kind of a nice site
 
 ### B) Carousel/tabbed components
-* In character section: carousel of images (like a slideshow) that the user can click through to view the images at their own pace 
+* In character section: carousel of images that the user can click through to view the images at their own pace 
 * Indicate place in slideshow with styled 'selected' thumbnail
 * Inspiration
   * https://dribbble.com/shots/10604596-5-Rules-For-UI-Design - shows all of the images at the bottom, can click on any
@@ -34,20 +33,18 @@ http://www.ideakites.com/ - icon scrollspy, but also kind of a nice site
 
 ### C) Load new content at the bottom of the doc
 * Fade in new article (modify original article content) as user scrolls to the end of the page
-* Timed buffer/delay animation between reaching the bottom of the article and loading new content
+* Timed buffer/delay between reaching the bottom of the article and loading new content
 * Inspiration for loading additional content at the bottom
   * https://www.commarts.com/features/typetogether
   * http://andrevv.com/
 
 ### D) Personal component(s) to enhance reading experience
-* Clickable character cards at top of article which allows user to immediately select a character
-* Filter which allows users to view characters by movie (in a sticky sidebar w/ scrollspy so user can always access it)
-* SCROLL-TO animation (smoothly glide up/down as opposed to jumping (default) to each character heading)
-* Fixed footer so users to access links even with infinite scroll
+* Clickable character cards at top of article which takes user to their selected character
+* Filter which allows users to view characters by movie series (in the sticky sidebar so user can always access it)
+* Fixed footer so users can access links even with infinite scroll
 
 ### THINGS TO CONSIDER:
-* Scroll-to (animate to slide up, back to top)
-* Scrollspy mobile (non-existent) → activated on desktop size (min 2 media query widths)
+* Scroll-to animation (smoothly glide up/down as opposed to jumping (default) to each character heading)
 
 ## GENERAL INSPO
 * https://materializecss.com/grid.html - scrollspy on right side of page

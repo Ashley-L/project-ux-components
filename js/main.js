@@ -1,212 +1,14 @@
+let $doc = document.documentElement 
 let $topbarHeight = document.querySelector('.top-bar').scrollHeight 
 
 /////////////////////////////////
 // PART A : LANDMARKS/BEARINGS //
 /////////////////////////////////
 
-///////////////////////////////////
-// SCROLL-TO FROM CHARACTER CARDS//
-///////////////////////////////////
+//////////////////////////////////////////////////////
+// SCROLL TO TOP OF ARTICLE FROM BACK TO TOP BUTTON //
+//////////////////////////////////////////////////////
 
-let $charCardLink = document.querySelector('.char-card-name')
-let $charCard = document.querySelectorAll('.char-card-name')
-
-$charCard.forEach($charCardLink => {
-    $charCardLink.addEventListener('click', event => {
-        event.preventDefault();
-
-        console.log(`clicked`);
-
-        // Which link are you clicking <a href>
-        let $clickedCharCard = $charCardLink.getAttribute('href')
-        console.log(`you clicked ${$clickedCharCard}`)
-
-        // variable to select the character <section> you clicked
-        var $clickedChar = document.querySelector($clickedCharCard)
-        console.log($clickedChar)
-
-        // get the scroll position of the top of the character section
-        // subtract the topbar height so it slides to the right position (otherwise it's under the topbar)
-        let $charSectionPosition = ($clickedChar.getBoundingClientRect().top - $topbarHeight) + window.scrollY 
-        console.log(`section top scroll position is ${$charSectionPosition}px`)
-
-        // scroll to the position of the character section 
-        window.scrollTo({
-        left:0, 
-        top: $charSectionPosition, 
-        behavior:'smooth'
-        })
-
-    })
-})
-
-//////////////////////////////
-// SCROLL-TO FROM SCROLL-SPY//
-//////////////////////////////
-
-let $scrollspyUl = document.querySelector('.scrollspy')
-// let $scrollspyList = document.querySelector('.scrollspy-char')
-let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
-// console.log($scrollspyCharLink)
-let $scrollspyCharAll = document.querySelectorAll('.scrollspy-char a')
-
-$scrollspyCharAll.forEach($scrollspyCharLink => {
-    $scrollspyCharLink.addEventListener('click', event => {
-        event.preventDefault()
-    
-        console.log(`clicked`)
-
-        let $clickedScrollspy = $scrollspyCharLink.getAttribute('href')
-        console.log($clickedScrollspy)
-
-        // variable to select the character <section> you clicked
-        var $clickedChar = document.querySelector($clickedScrollspy)
-        console.log($clickedChar)
-
-        let $charSectionPosition = ($clickedChar.getBoundingClientRect().top - $topbarHeight) + window.scrollY 
-        console.log(`section top scroll position is ${$charSectionPosition}px`)
-
-        // scroll to the position of the character section 
-        window.scrollTo({
-        left:0, 
-        top: $charSectionPosition, 
-        behavior:'smooth'
-        })
-    })
-})
-
-
-
-
-//////////////////////////////////////////
-// SCROLL-SPY MATCHES CHARACTER SECTIONS//
-//////////////////////////////////////////
-
-let $charSection = document.querySelector('.character')
-let $charSectionAll = document.querySelectorAll('.character')
-
-let $viewport = window.innerHeight
-let $halfViewport = $viewport/2
-
-$charSectionAll.forEach($charSection => {
-    window.addEventListener('scroll', event => {
-
-        let $charRect = $charSection.getBoundingClientRect()
-    
-        // get the current id so you can match it to the scrollspy li item
-        let $charId = $charSection.getAttribute('id')
-
-        // get the scrollspy list item
-        let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
-        // console.log($currentScrollspy)
-
-        if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
-        
-            // console.log(`It's your boy (or girl) ${$charId}`)
-            // console.log(`${$charId} in view`)
-            
-            // add the class
-            $currentScrollspy.classList.add('scrollspy-current')        
-    
-        } else {
-            // console.log(`character not in view`)
-            $currentScrollspy.classList.remove('scrollspy-current')        
-
-        }
-    
-    })
-  
-})
-
-
-
-
-/////////////////////////////
-// SCROLL THEN FIX SIDEBAR //
-/////////////////////////////
-
-let $doc = document.documentElement 
-// let $scrollPosition = window.scrollY
-let $sidebar = document.querySelector('.sidebar')
-let $sidebarFixed = document.querySelector('.sidebar-fixed')
-let $articleContent = document.querySelector('.article-content')
-let $mainContainer = document.querySelector('.main-container')
-let $footer = document.querySelector('.footer')
-let $containerTop = ($mainContainer.getBoundingClientRect().top -$topbarHeight) + window.scrollY
-
-
-
-// set the sidebar to be a window height - topbar
-let sidebarFixedHeight = window.innerHeight - $topbarHeight
-// console.log(sidebarFixedHeight)
-$sidebar.style.height = `${sidebarFixedHeight}`
-
-
-function stickySidebar() {
-
-    // fix sidebar to right under topbar when the top of the article passes topbar
-    let $articleTop = $articleContent.getBoundingClientRect().top - $topbarHeight
-    // console.log($articleTop)
-    
-    if ($articleTop <= 0) {
-        // add the fixed class + fix sidebar to just under topbar
-        $sidebar.classList.add('sidebar-fixed')
-        $sidebar.style.top = `${$topbarHeight}px`
-    } else {
-        $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.style.top = ''
-    }
-
-    // if ($sidebar.classList.contains('sidebar-fixed')) {
-    //     $sidebar.style.height = `${sidebarFixedHeight}px`
-    //     // console.log(`exists`)
-    // } else {
-    //     // console.log(`no`)
-    // }
-
-   
-    ///////////////////////////////////////////////////////
-    //FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM//
-    ///////////////////////////////////////////////////////
-    // EDIT: IT WORKS NOW
-
-    // start scrolling again when you hit the bottom
-    // when you get to the bottom
-    // add the fixed class and add the bottom class
-    
-
-
-    // after spending my entire life on having the sidebar scroll when you hit the bottom
-    // I am
-    // deleting it for the sake of the fixed footer
-
-
-    
-    // let $footerTop = $footer.getBoundingClientRect().top
-
-    // if footer goes above the bottom of the window
-    // if ($footerTop <= window.innerHeight) {
-    //      // console.log(`top of footer in viewport`)
-    //     // add the fixed class and add the bottom class
-    //     $sidebar.classList.remove('sidebar-fixed')
-    //     $sidebar.classList.add('sidebar-bottom')
-    //     document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
-        
-    //     // remove top property b/c it'll go to the top of the **document
-    //     // since it's position absolute
-    //     $sidebar.style.top = ''
-
-    // } else {
-    //     // console.log(`it's not there`)
-    //     $sidebar.classList.remove('sidebar-bottom')
-    // }
-}
-window.addEventListener('scroll', stickySidebar)
-
-
-
-// SCROLL TO TOP OF ARTICLE FROM BACK TO TOP BUTTON
-let $footerTitle = document.querySelector('.footer-title a')
 let $backToTopBtn = document.querySelector(`.back-to-top`);
 let $mainH = document.querySelector(`#main`).getBoundingClientRect().top + (window.scrollY - $topbarHeight);
 
@@ -222,7 +24,13 @@ $backToTopBtn.addEventListener(`click`, event => {
     });
 })
 
-// SCROLL TO VERY TOP OF PAGE FROM FOOTER AND TOPBAR LOGOS 
+
+
+/////////////////////////////////////////////////////////////
+// SCROLL TO VERY TOP OF PAGE FROM FOOTER AND TOPBAR LOGOS //
+/////////////////////////////////////////////////////////////
+
+let $footerTitle = document.querySelector('.footer-title a')
 let $mainLogo = document.querySelector('.nav-title')
 
 let scrollTopofPage = (event) => {
@@ -254,10 +62,209 @@ $mainLogo.addEventListener('click', scrollTopofPage)
 
 
 
+////////////////////////////////////
+// SCROLL-TO FROM CHARACTER CARDS //
+////////////////////////////////////
 
-//////////////////////
-// PART B: CAROUSEL //
-//////////////////////
+let $charCardLink = document.querySelector('.char-card-name')
+let $charCard = document.querySelectorAll('.char-card-name')
+
+$charCard.forEach($charCardLink => {
+    $charCardLink.addEventListener('click', event => {
+        event.preventDefault();
+
+        // console.log(`clicked`);
+
+        // Which link are you clicking <a href>
+        let $clickedCharCard = $charCardLink.getAttribute('href')
+        // console.log(`you clicked ${$clickedCharCard}`)
+
+        // variable to select the character <section> you clicked
+        var $clickedChar = document.querySelector($clickedCharCard)
+        // console.log($clickedChar)
+
+        // get the scroll position of the top of the character section
+        // subtract the topbar height so it slides to the right position (otherwise it's under the topbar)
+        let $charSectionPosition = ($clickedChar.getBoundingClientRect().top - $topbarHeight) + window.scrollY 
+        // console.log(`section top scroll position is ${$charSectionPosition}px`)
+
+        // scroll to the position of the character section 
+        window.scrollTo({
+            left:0, 
+            top: $charSectionPosition, 
+            behavior:'smooth'
+        })
+
+    })
+})
+
+
+
+///////////////////////////////
+// SCROLL-TO FROM SCROLL-SPY //
+///////////////////////////////
+
+let $scrollspyUl = document.querySelector('.scrollspy')
+// let $scrollspyList = document.querySelector('.scrollspy-char')
+let $scrollspyCharLink = document.querySelector('.scrollspy-char a')
+// console.log($scrollspyCharLink)
+let $scrollspyCharAll = document.querySelectorAll('.scrollspy-char a')
+
+$scrollspyCharAll.forEach($scrollspyCharLink => {
+    $scrollspyCharLink.addEventListener('click', event => {
+        event.preventDefault()
+    
+        // console.log(`clicked`)
+
+        // get the link of the clicked character
+        let $clickedScrollspy = $scrollspyCharLink.getAttribute('href')
+        // console.log($clickedScrollspy)
+
+        // variable to select the character <section> you clicked
+        var $clickedChar = document.querySelector($clickedScrollspy)
+        // console.log($clickedChar)
+
+        let $charSectionPosition = ($clickedChar.getBoundingClientRect().top - $topbarHeight) + window.scrollY 
+        // console.log(`section top scroll position is ${$charSectionPosition}px`)
+
+        // scroll to the position of the character section 
+        window.scrollTo({
+            left:0, 
+            top: $charSectionPosition, 
+            behavior:'smooth'
+        })
+    })
+})
+
+
+
+///////////////////////////////////////////
+// SCROLL-SPY MATCHES CHARACTER SECTIONS //
+///////////////////////////////////////////
+
+let $charSection = document.querySelector('.character')
+let $charSectionAll = document.querySelectorAll('.character')
+
+let $viewport = window.innerHeight
+let $halfViewport = $viewport/2
+
+$charSectionAll.forEach($charSection => {
+    window.addEventListener('scroll', event => {
+
+        let $charRect = $charSection.getBoundingClientRect()
+    
+        // get the current id so you can match it to the scrollspy li item
+        let $charId = $charSection.getAttribute('id')
+
+        // get the scrollspy list item
+        let $currentScrollspy = document.querySelector(`#scrollspy-${$charId}`)
+        // console.log($currentScrollspy)
+
+        if ($charRect.top <= $halfViewport && $charRect.bottom >= $halfViewport) {
+        
+            // console.log(`It's your boy (or girl) ${$charId}`)
+            
+            // add the class
+            $currentScrollspy.classList.add('scrollspy-current')        
+    
+        } else {
+            // console.log(`character not in view`)
+            $currentScrollspy.classList.remove('scrollspy-current')        
+
+        }
+    
+    })
+  
+})
+
+
+
+/////////////////////////////
+// SCROLL THEN FIX SIDEBAR //
+/////////////////////////////
+
+// let $scrollPosition = window.scrollY
+let $sidebar = document.querySelector('.sidebar')
+let $sidebarFixed = document.querySelector('.sidebar-fixed')
+let $articleContent = document.querySelector('.article-content')
+let $mainContainer = document.querySelector('.main-container')
+let $footer = document.querySelector('.footer')
+let $containerTop = ($mainContainer.getBoundingClientRect().top -$topbarHeight) + window.scrollY
+
+
+// set the sidebar to be a window height - topbar
+let sidebarFixedHeight = window.innerHeight - $topbarHeight
+// console.log(sidebarFixedHeight)
+$sidebar.style.height = `${sidebarFixedHeight}`
+
+
+function stickySidebar() {
+
+    // fix sidebar to right under topbar when the top of the article passes topbar
+    let $articleTop = $articleContent.getBoundingClientRect().top - $topbarHeight
+    // console.log($articleTop)
+    
+    if ($articleTop <= 0) {
+        // add the fixed class + fix sidebar to just under topbar
+        $sidebar.classList.add('sidebar-fixed')
+        $sidebar.style.top = `${$topbarHeight}px`
+    } else {
+        $sidebar.classList.remove('sidebar-fixed')
+        $sidebar.style.top = ''
+    }
+
+    // if ($sidebar.classList.contains('sidebar-fixed')) {
+    //     $sidebar.style.height = `${sidebarFixedHeight}px`
+    //     // console.log(`exists`)
+    // } else {
+    //     // console.log(`no`)
+    // }
+
+
+   
+    /////////////////////////////////////////////////////////
+    // FIXED THEN SCROLL SIDEBAR WHEN YOU REACH THE BOTTOM //
+    /////////////////////////////////////////////////////////
+    
+    // EDIT 1: IT WORKS NOW
+
+    // EDIT 2
+    // after spending my entire life on having the sidebar scroll when you hit the bottom
+    // I am
+    // deleting it for the sake of the fixed footer
+  
+
+    // start scrolling again when you hit the bottom
+    // when you get to the bottom
+    // add the fixed class and add the bottom class
+
+    
+    // let $footerTop = $footer.getBoundingClientRect().top
+
+    // if footer goes above the bottom of the window
+    // if ($footerTop <= window.innerHeight) {
+    //      // console.log(`top of footer in viewport`)
+    //     // add the fixed class and add the bottom class
+    //     $sidebar.classList.remove('sidebar-fixed')
+    //     $sidebar.classList.add('sidebar-bottom')
+    //     document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
+        
+    //     // remove top property b/c it'll go to the top of the **document
+    //     // since it's position absolute
+    //     $sidebar.style.top = ''
+
+    // } else {
+    //     // console.log(`it's not there`)
+    //     $sidebar.classList.remove('sidebar-bottom')
+    // }
+}
+window.addEventListener('scroll', stickySidebar)
+
+
+
+///////////////////////
+// PART B : CAROUSEL //
+///////////////////////
 
 ///////////////////////////////////////////
 // THUMBNAIL CLICK SLIDESHOW (NO ARROWS) //
@@ -311,9 +318,10 @@ $charCarouAll.forEach($singleCarou => {
 })
 
 
-////////////////////////////
-// PART C: INFINTE SCROLL //
-////////////////////////////
+
+/////////////////////////////
+// PART C : INFINTE SCROLL //
+/////////////////////////////
 
 let $newContent = document.querySelectorAll('.new-article')
 let $newArticle = document.querySelector('.new-article')
@@ -344,11 +352,11 @@ let loadNewContent = (event) => {
         `
 
 
-    } else {
-        console.log(`didn't reach bottom of article`)
-    }
+    } 
+    // else {
+    //     console.log(`didn't reach bottom of article`)
+    // }
 }
-
 
 // window.addEventListener('load', event => {
 //     setTimeout(loadNewContent, 1000) 
@@ -363,16 +371,14 @@ window.addEventListener('scroll', loadNewContent)
 
 
 
-
-/////////////////////////////
-// PART D: FILTER BY MOVIE //
-////////////////////////////
-
+//////////////////////////////
+// PART D : FILTER BY MOVIE //
+//////////////////////////////
 
 // Click on the tags in the sidebar to filter the characters by movie appearances
 // a concept
     // if I click on a button with a specific class
-    // display the characters w/ that same certain class
+    // display the characters w/ that same class only 
 
 let $movieButtonsAll = document.querySelectorAll('.movie-tag a')
 let $movieButton = document.querySelector('.movie-tag a')
@@ -417,11 +423,8 @@ $movieButtonsAll.forEach($movieButton => {
                 $charSection.querySelector('.filtered-msg').classList.remove('show')
                 $charSection.querySelector('.character-wrapper').classList.remove('hide')
 
-                // select the clicked class
-                let $characterClass = document.querySelector(`.${$clickedMovie}`)
-                // console.log($characterClass)
-
             } else {
+                
                 // display changes
                 $charSection.querySelector('.char-name').classList.add('shrink')
                 $charSection.querySelector('.filtered-msg').classList.add('show')
@@ -443,5 +446,7 @@ $movieButtonsAll.forEach($movieButton => {
         })
     })
 })
+
+
 
 
