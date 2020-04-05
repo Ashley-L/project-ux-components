@@ -1,7 +1,8 @@
 let $topbarHeight = document.querySelector('.top-bar').scrollHeight 
 
-
-// PART A
+/////////////////////////////////
+// PART A : LANDMARKS/BEARINGS //
+/////////////////////////////////
 
 ///////////////////////////////////
 // SCROLL-TO FROM CHARACTER CARDS//
@@ -124,8 +125,6 @@ $charSectionAll.forEach($charSection => {
 // SCROLL THEN FIX SIDEBAR //
 /////////////////////////////
 
-
-
 let $doc = document.documentElement 
 // let $scrollPosition = window.scrollY
 let $sidebar = document.querySelector('.sidebar')
@@ -155,6 +154,7 @@ function stickySidebar() {
         $sidebar.style.top = `${$topbarHeight}px`
     } else {
         $sidebar.classList.remove('sidebar-fixed')
+        $sidebar.style.top = ''
     }
 
     // if ($sidebar.classList.contains('sidebar-fixed')) {
@@ -179,6 +179,8 @@ function stickySidebar() {
     // after spending my entire life on having the sidebar scroll when you hit the bottom
     // I am
     // deleting it for the sake of the fixed footer
+
+
     
     // let $footerTop = $footer.getBoundingClientRect().top
 
@@ -203,25 +205,38 @@ window.addEventListener('scroll', stickySidebar)
 
 
 
-// SCROLL TO TOP
-// FROM BACK TO TOP BUTTON
-// AND FOOTER TITLE
+// SCROLL TO TOP OF ARTICLE FROM BACK TO TOP BUTTON
 let $footerTitle = document.querySelector('.footer-title a')
 let $backToTopBtn = document.querySelector(`.back-to-top`);
 let $mainH = document.querySelector(`#main`).getBoundingClientRect().top + (window.scrollY - $topbarHeight);
 
-let scrollToTop = (event) => {
+$backToTopBtn.addEventListener(`click`, event => {
+    // console.log(`clicked`)
     event.preventDefault()
-    
-    // when btn is clicked, scroll to top of article, like anchor href=#
+
+    // when btn is clicked, scroll to intro heading, like anchor href=#
     window.scrollTo({
         top: $mainH,
         left: 0,
         behavior: `smooth`
     });
+})
+
+// SCROLL TO VERY TOP OF PAGE FROM FOOTER AND TOPBAR LOGOS 
+let $mainLogo = document.querySelector('.nav-title')
+
+let scrollTopofPage = (event) => {
+    event.preventDefault()
+    
+    // when btn is clicked, scroll to top of, like anchor href=#
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: `smooth`
+    });
 }
-$footerTitle.addEventListener('click', scrollToTop)
-$backToTopBtn.addEventListener('click', scrollToTop)
+$footerTitle.addEventListener('click', scrollTopofPage)
+$mainLogo.addEventListener('click', scrollTopofPage)
 
 
 // scroll to top from footer title
@@ -237,30 +252,16 @@ $backToTopBtn.addEventListener('click', scrollToTop)
 //     });
 // })
 
-/*Back to top: BTN, using js*/
-// let $backToTopBtn = document.querySelector(`.back-to-top`);
-
-// $backToTopBtn.addEventListener(`click`, event => {
-//     // console.log(`clicked`)
-//     event.preventDefault()
-
-//     // when btn is clicked, scroll to intro heading, like anchor href=#
-//     window.scrollTo({
-//         top: $mainH,
-//         left: 0,
-//         behavior: `smooth`
-//     });
-// })
 
 
-/***** PART B: SLIDESHOW ******/
-////////////////////////////////
-// SLIDESHOW WORK IN PROGRESS //
-////////////////////////////////
+
+//////////////////////
+// PART B: CAROUSEL //
+//////////////////////
 
 ///////////////////////////////////////////
 // THUMBNAIL CLICK SLIDESHOW (NO ARROWS) //
-//////////////////////////////////////////
+///////////////////////////////////////////
 
 // MAIN CAROUSEL container .char-carousel 
 // every character's .char-carousel container
@@ -310,12 +311,11 @@ $charCarouAll.forEach($singleCarou => {
 })
 
 
-/////////////////////
-// INFINITE SCROLL //
-/////////////////////
+////////////////////////////
+// PART C: INFINTE SCROLL //
+////////////////////////////
 
 let $newContent = document.querySelectorAll('.new-article')
-
 let $newArticle = document.querySelector('.new-article')
 
 
@@ -364,12 +364,10 @@ window.addEventListener('scroll', loadNewContent)
 
 
 
-
-
-
+/////////////////////////////
+// PART D: FILTER BY MOVIE //
 ////////////////////////////
-// FILTER BY MOVIE SERIES //
-////////////////////////////
+
 
 // Click on the tags in the sidebar to filter the characters by movie appearances
 // a concept
@@ -384,9 +382,7 @@ let $movieTable = document.querySelector('.movies-table')
 let $allMovieTags= $movieTable.querySelectorAll('.movie-tag')
 let $oneMovieTag = $movieTable.querySelector('.movie-tag')
 
-let $wrapper = document.querySelectorAll('.wrapper')
-// console.log($wrapper)
-
+// let $charwrapper = document.querySelectorAll('.character-wrapper')
 
 
 $movieButtonsAll.forEach($movieButton => {
@@ -419,7 +415,7 @@ $movieButtonsAll.forEach($movieButton => {
                 // display changes
                 $charSection.querySelector('.char-name').classList.remove('shrink')
                 $charSection.querySelector('.filtered-msg').classList.remove('show')
-                $charSection.querySelector('.wrapper').classList.remove('hide')
+                $charSection.querySelector('.character-wrapper').classList.remove('hide')
 
                 // select the clicked class
                 let $characterClass = document.querySelector(`.${$clickedMovie}`)
@@ -429,7 +425,7 @@ $movieButtonsAll.forEach($movieButton => {
                 // display changes
                 $charSection.querySelector('.char-name').classList.add('shrink')
                 $charSection.querySelector('.filtered-msg').classList.add('show')
-                $charSection.querySelector('.wrapper').classList.add('hide')
+                $charSection.querySelector('.character-wrapper').classList.add('hide')
             }            
 
 
