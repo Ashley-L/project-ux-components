@@ -176,9 +176,9 @@ function stickySidebar() {
     
 
 
-    // after spending my entire life on having the sidebars scroll when you hit the bottom
+    // after spending my entire life on having the sidebar scroll when you hit the bottom
     // I am
-    // deleting in for the sake of the fixed footer
+    // deleting it for the sake of the fixed footer
     
     // let $footerTop = $footer.getBoundingClientRect().top
 
@@ -198,22 +198,59 @@ function stickySidebar() {
     //     // console.log(`it's not there`)
     //     $sidebar.classList.remove('sidebar-bottom')
     // }
-
-
-
 }
 window.addEventListener('scroll', stickySidebar)
 
-/*Back to top: BTN, using js*/
-let $backToTopBtn = document.querySelector(`.top-w-btn`);
-let $introH = document.querySelector(`#intro`);
 
-$backToTopBtn.addEventListener(`click`, event => {
-    // when btn is clicked, scroll to intro heading, like anchor href=#
-    $introH.scrollIntoView({
+
+// SCROLL TO TOP
+// FROM BACK TO TOP BUTTON
+// AND FOOTER TITLE
+let $footerTitle = document.querySelector('.footer-title a')
+let $backToTopBtn = document.querySelector(`.back-to-top`);
+let $mainH = document.querySelector(`#main`).getBoundingClientRect().top + (window.scrollY - $topbarHeight);
+
+let scrollToTop = (event) => {
+    event.preventDefault()
+    
+    // when btn is clicked, scroll to top of article, like anchor href=#
+    window.scrollTo({
+        top: $mainH,
+        left: 0,
         behavior: `smooth`
     });
-})
+}
+$footerTitle.addEventListener('click', scrollToTop)
+$backToTopBtn.addEventListener('click', scrollToTop)
+
+
+// scroll to top from footer title
+// $footerTitle.addEventListener(`click`, event => {
+//     // console.log(`clicked`)
+//     event.preventDefault()
+    
+//     // when btn is clicked, scroll to intro heading, like anchor href=#
+//     window.scrollTo({
+//         top: $mainH,
+//         left: 0,
+//         behavior: `smooth`
+//     });
+// })
+
+/*Back to top: BTN, using js*/
+// let $backToTopBtn = document.querySelector(`.back-to-top`);
+
+// $backToTopBtn.addEventListener(`click`, event => {
+//     // console.log(`clicked`)
+//     event.preventDefault()
+
+//     // when btn is clicked, scroll to intro heading, like anchor href=#
+//     window.scrollTo({
+//         top: $mainH,
+//         left: 0,
+//         behavior: `smooth`
+//     });
+// })
 
 
 /***** PART B: SLIDESHOW ******/
