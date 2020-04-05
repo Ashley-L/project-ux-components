@@ -577,6 +577,8 @@ ARTICLE CONTENT
     border-radius: 0.5em;
     /* border: 0.2em solid rgba(0, 0, 0, 0.1); */
     box-shadow: 2px 2px 3px rgba(92, 50, 50, 0.3);
+    cursor: pointer;
+
 }
 /* add border highlight  */
 .mini-thumb.selected-thumb{
@@ -590,7 +592,6 @@ ARTICLE CONTENT
 .mini-thumb:hover{
     opacity: 90%;
     transition: opacity 0.25s ease-in-out;
-    cursor: pointer;
 }
 
 /* thumbnail imgs: .carousel-thumbs li  img */
