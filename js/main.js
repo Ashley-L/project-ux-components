@@ -174,40 +174,83 @@ function stickySidebar() {
     // when you get to the bottom
     // add the fixed class and add the bottom class
     
-    let $footerTop = $footer.getBoundingClientRect().top
+
+
+    // after spending my entire life on having the sidebar scroll when you hit the bottom
+    // I am
+    // deleting it for the sake of the fixed footer
+    
+    // let $footerTop = $footer.getBoundingClientRect().top
 
     // if footer goes above the bottom of the window
-    if ($footerTop <= window.innerHeight) {
-         // console.log(`top of footer in viewport`)
-        // add the fixed class and add the bottom class
-        $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.classList.add('sidebar-bottom')
-        document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
+    // if ($footerTop <= window.innerHeight) {
+    //      // console.log(`top of footer in viewport`)
+    //     // add the fixed class and add the bottom class
+    //     $sidebar.classList.remove('sidebar-fixed')
+    //     $sidebar.classList.add('sidebar-bottom')
+    //     document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
         
-        // remove top property b/c it'll go to the top of the **document
-        // since it's position absolute
-        $sidebar.style.top = ''
+    //     // remove top property b/c it'll go to the top of the **document
+    //     // since it's position absolute
+    //     $sidebar.style.top = ''
 
-    } else {
-        // console.log(`it's not there`)
-        $sidebar.classList.remove('sidebar-bottom')
-    }
-
-
-
+    // } else {
+    //     // console.log(`it's not there`)
+    //     $sidebar.classList.remove('sidebar-bottom')
+    // }
 }
 window.addEventListener('scroll', stickySidebar)
 
-/*Back to top: BTN, using js*/
-let $backToTopBtn = document.querySelector(`.top-w-btn`);
-let $introH = document.querySelector(`#intro`);
 
-$backToTopBtn.addEventListener(`click`, event => {
-    // when btn is clicked, scroll to intro heading, like anchor href=#
-    $introH.scrollIntoView({
+
+// SCROLL TO TOP
+// FROM BACK TO TOP BUTTON
+// AND FOOTER TITLE
+let $footerTitle = document.querySelector('.footer-title a')
+let $backToTopBtn = document.querySelector(`.back-to-top`);
+let $mainH = document.querySelector(`#main`).getBoundingClientRect().top + (window.scrollY - $topbarHeight);
+
+let scrollToTop = (event) => {
+    event.preventDefault()
+    
+    // when btn is clicked, scroll to top of article, like anchor href=#
+    window.scrollTo({
+        top: $mainH,
+        left: 0,
         behavior: `smooth`
     });
-})
+}
+$footerTitle.addEventListener('click', scrollToTop)
+$backToTopBtn.addEventListener('click', scrollToTop)
+
+
+// scroll to top from footer title
+// $footerTitle.addEventListener(`click`, event => {
+//     // console.log(`clicked`)
+//     event.preventDefault()
+    
+//     // when btn is clicked, scroll to intro heading, like anchor href=#
+//     window.scrollTo({
+//         top: $mainH,
+//         left: 0,
+//         behavior: `smooth`
+//     });
+// })
+
+/*Back to top: BTN, using js*/
+// let $backToTopBtn = document.querySelector(`.back-to-top`);
+
+// $backToTopBtn.addEventListener(`click`, event => {
+//     // console.log(`clicked`)
+//     event.preventDefault()
+
+//     // when btn is clicked, scroll to intro heading, like anchor href=#
+//     window.scrollTo({
+//         top: $mainH,
+//         left: 0,
+//         behavior: `smooth`
+//     });
+// })
 
 
 /***** PART B: SLIDESHOW ******/
@@ -281,8 +324,8 @@ let loadNewContent = (event) => {
     let $articleBottom = $articleContent.getBoundingClientRect().bottom
 
     // let $load = document.querySelector('#loadContent')
-    if ($articleBottom < window.innerHeight) {
-        // console.log(`bottom of article in viewport`)
+    if ($articleBottom - 100 <= window.innerHeight) {
+        console.log(`bottom of article in viewport`)
 
         // create new section, append it to the doc
         let $newSection = document.createElement("section");
@@ -302,20 +345,22 @@ let loadNewContent = (event) => {
 
 
     } else {
-        // console.log(`didn't reach bottom of article`)
+        console.log(`didn't reach bottom of article`)
     }
 }
 
 
-window.addEventListener('load', event => {
-    setTimeout(loadNewContent, 1000) 
+// window.addEventListener('load', event => {
+//     setTimeout(loadNewContent, 1000) 
 
-})
-window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 1000)   
+// })
+// window.addEventListener('scroll', event => {
+//     setTimeout(loadNewContent, 1000)   
   
-})
+// })
 // window.addEventListener('resize', loadNewContent)
+window.addEventListener('scroll', loadNewContent)
+
 
 
 
