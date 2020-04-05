@@ -166,14 +166,18 @@ HEADER
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .top-menu li:hover {
     background-color: #D8A211;
-    transition: all 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
+    border-bottom: 0.1em solid var(--main-dark);
+
 }
 
 .top-menu a {
     color: var(--primary-text);
+
 }
 .top-menu-icons {
     display: grid;
@@ -582,7 +586,6 @@ ARTICLE CONTENT
 }
 /* add border highlight  */
 .mini-thumb.selected-thumb{
-    /* transition: box-shadow 0.3s ease-in; */
     opacity: 100%;
     border: 0.2em inset var(--main-dark);
     box-shadow: 4px 6px 6px rgba(92, 50, 50, 0.3);
