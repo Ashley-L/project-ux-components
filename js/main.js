@@ -174,24 +174,30 @@ function stickySidebar() {
     // when you get to the bottom
     // add the fixed class and add the bottom class
     
-    let $footerTop = $footer.getBoundingClientRect().top
+
+
+    // after spending my entire life on having the sidebars scroll when you hit the bottom
+    // I am
+    // deleting in for the sake of the fixed footer
+    
+    // let $footerTop = $footer.getBoundingClientRect().top
 
     // if footer goes above the bottom of the window
-    if ($footerTop <= window.innerHeight) {
-         // console.log(`top of footer in viewport`)
-        // add the fixed class and add the bottom class
-        $sidebar.classList.remove('sidebar-fixed')
-        $sidebar.classList.add('sidebar-bottom')
-        document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
+    // if ($footerTop <= window.innerHeight) {
+    //      // console.log(`top of footer in viewport`)
+    //     // add the fixed class and add the bottom class
+    //     $sidebar.classList.remove('sidebar-fixed')
+    //     $sidebar.classList.add('sidebar-bottom')
+    //     document.querySelector('.sidebar-bottom').style.height = `${sidebarFixedHeight}px`        
         
-        // remove top property b/c it'll go to the top of the **document
-        // since it's position absolute
-        $sidebar.style.top = ''
+    //     // remove top property b/c it'll go to the top of the **document
+    //     // since it's position absolute
+    //     $sidebar.style.top = ''
 
-    } else {
-        // console.log(`it's not there`)
-        $sidebar.classList.remove('sidebar-bottom')
-    }
+    // } else {
+    //     // console.log(`it's not there`)
+    //     $sidebar.classList.remove('sidebar-bottom')
+    // }
 
 
 
@@ -281,8 +287,8 @@ let loadNewContent = (event) => {
     let $articleBottom = $articleContent.getBoundingClientRect().bottom
 
     // let $load = document.querySelector('#loadContent')
-    if ($articleBottom < window.innerHeight) {
-        // console.log(`bottom of article in viewport`)
+    if ($articleBottom - 100 <= window.innerHeight) {
+        console.log(`bottom of article in viewport`)
 
         // create new section, append it to the doc
         let $newSection = document.createElement("section");
@@ -302,20 +308,22 @@ let loadNewContent = (event) => {
 
 
     } else {
-        // console.log(`didn't reach bottom of article`)
+        console.log(`didn't reach bottom of article`)
     }
 }
 
 
-window.addEventListener('load', event => {
-    setTimeout(loadNewContent, 1000) 
+// window.addEventListener('load', event => {
+//     setTimeout(loadNewContent, 1000) 
 
-})
-window.addEventListener('scroll', event => {
-    setTimeout(loadNewContent, 1000)   
+// })
+// window.addEventListener('scroll', event => {
+//     setTimeout(loadNewContent, 1000)   
   
-})
+// })
 // window.addEventListener('resize', loadNewContent)
+window.addEventListener('scroll', loadNewContent)
+
 
 
 
