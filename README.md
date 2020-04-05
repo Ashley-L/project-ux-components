@@ -3,10 +3,9 @@ Ashley Lall & Kim Nguyen
 
 ### About
 * Marvel heroes and villains 
-* HOVER over a character card at the top of the page → Reveals hero/villain status, and name, over their image
-* CLICK on the character card → takes you to their section, which includes carousel of images + character bio
-* Aesthetic: 
-
+* Top 8 Marvel Heroes and Villains
+* Includes images, quotes, bios, ethos, values, and appearances
+* Desktop view only (not responsive)
 
 ## PART 1 DELIVERABLES
 Design and Prototype the following components/tools for your article (5x length of the window) on browser’s default font size.
@@ -15,42 +14,36 @@ Design and Prototype the following components/tools for your article (5x length 
 * Bolded headings (hero/villain name)
 * Navigation topbar:
   * Sticky when scrolled
-  * Contains main title (HEROES & VILLAINS)
   * Home button leads to top of the page
   * Share to social icons 
-  * Marvel Brand Icon 
 * Back to top button (fixed position while reading the article, click leads to top of the page)
 * Scrollspy sidebar: 
-  * Break into sections by heading (hero/villain name)
   * Located on the side of the page, always visible
   * Bold heading for current section, updates as scrolled
   * Scroll-to animation when heading is clicked
+  * Icons to represent characters
   * Inspiration
 http://www.ideakites.com/ - icon scrollspy, but also kind of a nice site
 
 ### B) Carousel/tabbed components
 * In character section: carousel of images (like a slideshow) that the user can click through to view the images at their own pace 
-* Some sort of indicator to show where they are in the slideshow
-* Images: character/scene w/ some sort of caption
+* Indicate place in slideshow with styled 'selected' thumbnail
 * Inspiration
   * https://dribbble.com/shots/10604596-5-Rules-For-UI-Design - shows all of the images at the bottom, can click on any
   * https://www.marvel.com/ - timed carousel that shows a mini progress bar on each tab
 
 ### C) Load new content at the bottom of the doc
-* Trigger animation on images at the end of article content
+* Fade in new article (modify original article content) as user scrolls to the end of the page
 * Timed buffer/delay animation between reaching the bottom of the article and loading new content
-* Fade in new content (show/hide element by changing opacity)?
 * Inspiration for loading additional content at the bottom
   * https://www.commarts.com/features/typetogether
   * http://andrevv.com/
 
 ### D) Personal component(s) to enhance reading experience
-* Interactive Collapse card
-  * Toggle to reveal more information, perhaps on personal character details (reveal quote?)
-* Highlight on links
-  * Fade in/out diff colour to indicate link is moving to a different section/page 
+* Clickable character cards at top of article which allows user to immediately select a character
+* Filter which allows users to view characters by movie (in a sticky sidebar w/ scrollspy so user can always access it)
 * SCROLL-TO animation (smoothly glide up/down as opposed to jumping (default) to each character heading)
-* Inspiration
+* Fixed footer so users to access links even with infinite scroll
 
 ### THINGS TO CONSIDER:
 * Scroll-to (animate to slide up, back to top)
@@ -107,18 +100,16 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
   * https://www.marvel.com/characters - official site, very beefy images with neat animations
 
 ### HEADER
-* Navbar
-* Marvel Logo
 * TITLE
+* Navigation
 * Social icons?
 
 ### MAIN
 * Intro (TITLE: TOP 8 HEROES & VILLAINS)
-* “Paragraph intro”
-* Quote 
+* “Paragraph intro” 
 * 8 Photo Grid of Characters
 
-#### HEROES (believes in greater Good for ALL of )
+#### HEROES (believes in greater Good for ALL)
 * Snarky section intro?
   * “Not ALL heroes wear capes. Part of blah blah ”
 * Spider-Man
@@ -173,27 +164,9 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
   * Ethos/Values
   * Appearances (movies)
 
-#### BONUS CONTENT (loaded at the bottom): Supporting Crew
-* Shuri
-  * [IMG] slideshow
-  * PULL BLOCKQUOTE (define persona)
-  * BIO (engineer from black panther)
-* Darcy
-  * [IMG] slideshow
-  * PULL BLOCKQUOTE (define persona)
-  * BIO (Jane’s quirky friend from Thor)
-* Maria Hill 
-  * [IMG] slideshow
-  * PULL BLOCKQUOTE (define persona)
-  * BIO (Badass S.H.I.E.L.D. agent)
-
-
-### FOOTER 1: RELATED ARTICLES GRID?
-* Cf. commarts site. “Related articles” div is nested within the article element (article content)
-
 ### BOTTOM FOOTER: SITE MAP
 * About
 * Terms of use
 * Privacy policy
 * Copyright 
-* *could also be sticky/fixed to the side of the page to make room for infinite scrolling
+* Sticky/fixed to the side of the page to make room for infinite scrolling
