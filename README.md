@@ -2,7 +2,6 @@
 Ashley Lall & Kim Nguyen
 
 ### About
-* Marvel heroes and villains 
 * Top 8 Marvel Heroes and Villains
 * Includes images, quotes, bios, ethos, values, and appearances
 * Desktop view only (not responsive)
@@ -80,7 +79,7 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 
 ### FONTS
 - Sans-serif: futura-pt, sans-serif
-- futura-pt-bold
+- Futura-pt-bold
 - Serif: classico-urw
 - blockquote: Crimson italic (google)
 - navbar: outlined w border: Futura PT (adobe)
@@ -97,13 +96,12 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
   * https://www.marvel.com/characters - official site, very beefy images with neat animations
 
 ### HEADER
-* TITLE
+* Title
 * Navigation
-* Social icons?
+* User buttons
 
 ### MAIN
 * Intro (TITLE: TOP 8 HEROES & VILLAINS)
-* “Paragraph intro” 
 * 8 Photo Grid of Characters
 
 #### HEROES (believes in greater Good for ALL)
@@ -136,19 +134,19 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
 
 #### VILLAINS (does not believe in a greater Good/Evil as moral compass )
   * Snarky section intro?
-  * Thanos (multiple movies)
+  * Thanos
     * [IMG] slideshow
       * PULL BLOCKQUOTE (define persona)
     * Short Bio (About)
     * Ethos/Values
     * Appearances (movies)
-* Magneto (X-Men)
+* Magneto
   * [IMG] slideshow
     * PULL BLOCKQUOTE (define persona)
   * Short Bio (About)
   * Ethos/Values
   * Appearances (movies)
-* Killmonger (Black Panther)
+* Killmonger
   * [IMG] slideshow
     * PULL BLOCKQUOTE (define persona)
   * Short Bio (About)
@@ -162,8 +160,8 @@ https://www.filamentgroup.com/workwithus/2020-webdeveloper/ simple anchors and t
   * Appearances (movies)
 
 ### BOTTOM FOOTER: SITE MAP
+* Sticky/fixed to the bottom of the page for infinite scrolling
 * About
 * Terms of use
 * Privacy policy
 * Copyright 
-* Sticky/fixed to the side of the page to make room for infinite scrolling
