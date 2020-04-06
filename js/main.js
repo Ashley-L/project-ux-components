@@ -26,6 +26,43 @@ $backToTopBtn.addEventListener(`click`, event => {
 
 
 
+///////////////////////////
+// SCROLL TO FROM TOPBAR //
+///////////////////////////
+
+// let $heroes = document.querySelector('#all-good')
+// let $villains = document.querySelector('#all-bad')
+
+let $topTabs = document.querySelectorAll('.top-tab a')
+let $topTab = document.querySelector('.top-tab a')
+
+$topTabs.forEach($topTab => {
+    $topTab.addEventListener('click', event => {
+        event.preventDefault();
+
+        // get the href of the clicked tab
+        let $clickedTopTab = $topTab.getAttribute('href')
+        // console.log(`${$clickedTopTab}`)
+
+        // get the id of the clicked block
+        let $clickedBlock = document.querySelector(`${$clickedTopTab}`)
+        
+        // get the position of the block
+        // -50px b/c there's no padding on the blocks
+        let $clickedBlockPosition = $clickedBlock.getBoundingClientRect().top - $topbarHeight + window.scrollY - 50
+        console.log($clickedBlock)    
+        // console.log($clickedBlockPosition)
+
+        window.scrollTo({
+            top: $clickedBlockPosition,
+            left: 0,
+            behavior: `smooth`
+        });
+    })
+})
+
+
+
 /////////////////////////////////////////////////////////////
 // SCROLL TO VERY TOP OF PAGE FROM FOOTER AND TOPBAR LOGOS //
 /////////////////////////////////////////////////////////////
@@ -90,8 +127,8 @@ $charCard.forEach($charCardLink => {
 
         // scroll to the position of the character section 
         window.scrollTo({
-            left:0, 
             top: $charSectionPosition, 
+            left:0, 
             behavior:'smooth'
         })
 
