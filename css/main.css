@@ -37,26 +37,6 @@
 
 
 /* Movie IDs
-#im1
-#im2
-#im3
-#avengers
-#aou
-#civilwar
-#homecoming
-#iw
-#endgame  
-#ffh
-#cm
-#blackpanth
-#gotg
-#xmen
-#dofp
-#thor1
-#thor2
-#thor3
-
-***Might change to - 
 Iron Man #movie-im
 Captain America #movie-capamerica
 Thor #movie-thor
@@ -132,6 +112,8 @@ HEADER
     top: 0;
     left: 0;
 }
+
+/*Nav*/
 .top-bar-nav {
     margin: 0 auto;
     display: grid;
@@ -153,6 +135,8 @@ HEADER
     transition: all 0.3s ease-in;
     -webkit-text-stroke: 3px var(--high-link);
 }
+
+/*Menu*/
 .top-menu {
     font-family: var(--bold-sans);
     color: var(--background);
@@ -167,18 +151,14 @@ HEADER
     justify-content: center;
     align-items: center;
     /* cursor: pointer; */
-
 }
 .top-menu li:hover {
     background-color: #D8A211;
     transition: background-color 0.4s ease-in-out;
     border-bottom: 0.1em solid var(--main-dark);
-
 }
-
 .top-menu a {
     color: var(--primary-text);
-
 }
 .top-menu-icons {
     display: grid;
@@ -186,6 +166,8 @@ HEADER
     align-items: center;
     grid-template-columns: 1fr 1fr;
 }
+
+/*Buttons*/
 .user-button {
     background-color: transparent;
     border: none;
@@ -194,7 +176,6 @@ HEADER
 .user-button span {
     color: var(--primary-text);
 }
-
 .user-button:hover {
     transform: translateY(-3px);
     transform: .15s ease-in-out;
@@ -211,11 +192,14 @@ HEADER
 }
 
 
+
 /**************************************
-FIXED ELEMENTS
+FIXED SIDEBAR
 **************************************/
 
-/* Filter by movie */
+/*********************
+FILTER BY MOVIE
+*********************/
 .side-movies {
     max-height: 100%;
     /* position: fixed; */
@@ -244,13 +228,14 @@ FIXED ELEMENTS
     background-color: var(--main-dark);;
 }
 
-/* Scroll-spy */
+
+/*********************
+SCROLL-SPY
+*********************/
 .scrollspy {
     margin-top: 1.25em;
     max-height: 100%;
 }
-
-
 .scrollspy li {
     position: relative;
     padding: .25em;
@@ -282,12 +267,12 @@ FIXED ELEMENTS
     position: absolute;
     right: 30px;
 }
-
 .scrollspy a:hover .scrollspy-label{
     font-weight: 600;
     /* can't find a way to smoothly transition font-weight on hover :( */
 }
 
+/* Current scrollspy selection*/
 .scrollspy-current a {
     width: 2.5em;
     height: 2.5em;
@@ -303,7 +288,9 @@ FIXED ELEMENTS
     right: 35px;
 }
 
-
+/*********************
+CHARACTER ICONS
+*********************/
 .scroll-spiderman {
     background-image: url(../imgs/icon-spiderman.png);
 }
@@ -330,18 +317,34 @@ FIXED ELEMENTS
 }
 
 
-/*Back to top*/
+
+/*********************
+BACK TO TOP
+*********************/
 .back-to-top {
-    /* display: grid; */
     position: fixed;
     bottom: 50px; right: 40px;
-    /* grid-gap: .5em; */
 }
 .back-to-top li, .back-to-top btn {
     text-align: center;
 }
 .back-to-top li:first-child {
     padding-bottom: .5em;
+}
+/*back to top 2 using a btn: styling a btn*/
+.top-w-btn {
+    font-size: 2em; font-weight: 700;
+    color: var(--main-dark);
+    /* background-color: var(--main-bright); */
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--main-dark);
+    border-radius: 50%;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.45em 0.2em;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* .material-icons.arrow{
@@ -359,35 +362,16 @@ FIXED ELEMENTS
     transition: all 0.3s ease-out;
 }
 
-/*back to top 2 using a btn: styling a btn*/
-.top-w-btn {
-    font-size: 2em; font-weight: 700;
-    color: var(--main-dark);
-    /* background-color: var(--main-bright); */
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--main-dark);
-    border-radius: 50%;
-    outline: none;
-    text-decoration: none;
-    display: inline-block;
 
-    padding: 0.45em 0.2em;
-    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-#back-to-top-2 {
-    /* position: fixed; */
-    /* right: 40px; */
-    bottom: 50px; right: 40px;
-    /* bottom: 50px; right: 120px; */
-}
 
 /**************************************
 ARTICLE CONTENT
 **************************************/
 
-/*GENERAL*/
+/*********************
+GENERAL
+*********************/
+
 .main-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -395,12 +379,12 @@ ARTICLE CONTENT
     display: flex;
 }
 
+/*sidebar*/
 .sidebar {
     max-width: 400px;
     padding: 2em 2em 3em 2em;
     flex-direction: flex-end;
     position: relative;
-
 }
 .sidebar-fixed {
     position: fixed;
@@ -417,23 +401,22 @@ ARTICLE CONTENT
     bottom: 0;
 }
 
+/*article*/
 .article-content {
     width: 100%;
     max-width: 800px;
     padding: 2em 2em 1.5em 2em;
 }
-
 .article-content p {
     font-size: 1.2em;
     line-height: 1.2em;
 }
-
 .article-title {
     line-height: 1em;
     font-size: 3em;
     padding-top: .25em;
 }
-.intro-sec, .heroes-sec, .villains-sec, .new-article {
+.intro-sec, .heroes-sec, .villains-sec {
     padding-bottom: 3em;
     font-size: 1.2em;
     line-height: 1.2em;
@@ -486,14 +469,6 @@ ARTICLE CONTENT
     font-weight: 400;
     display: none;
 }
-/* .filtered-msg .character-filtered {
-    display: block;
-    
-}
-.wrapper .character-filtered {
-    display: none;
-} */
-
 .hide {
     display: none;
 }
@@ -502,7 +477,9 @@ ARTICLE CONTENT
 }
 
 
-/* CHARACTER GRID */
+/*********************
+CHARACTER GRID 
+*********************/
 .cards-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -544,7 +521,6 @@ ARTICLE CONTENT
     align-items: flex-end;
     justify-content: flex-end;
     /* how to fade in transition char-card-name when hovering on char-card img?*/
-
 }
 .character .char-quote {
     font-family: var(--b-quote);
@@ -554,15 +530,15 @@ ARTICLE CONTENT
     color: var(--secondary-text);
     margin: 0 2em;
 }
-
-
 .character {
     padding: 2em 0;
     /* margin: 2em 0; */
 }
 
 
-/*CAROUSEL*/
+/*********************
+CAROUSEL
+*********************/
 .carousel-big {
     width: 100%;
     height: 425px;
@@ -570,7 +546,6 @@ ARTICLE CONTENT
     border-style: solid;
     border-width: 0.3em 0;
     box-shadow: 2px 2px 3px rgba(92, 50, 50, 0.3);
-
 }
 .carousel-thumbs{
     display: grid;
@@ -590,16 +565,13 @@ ARTICLE CONTENT
     /* border: 0.2em solid rgba(0, 0, 0, 0.1); */
     box-shadow: 2px 2px 3px rgba(92, 50, 50, 0.3);
     cursor: pointer;
-
 }
 /* add border highlight  */
 .mini-thumb.selected-thumb{
     opacity: 100%;
     border: 0.2em inset var(--main-dark);
     box-shadow: 4px 6px 6px rgba(92, 50, 50, 0.3);
-
 }
-
 .mini-thumb:hover{
     opacity: 90%;
     transition: opacity 0.25s ease-in-out;
@@ -616,15 +588,14 @@ ARTICLE CONTENT
 
 
 
-/*****
-VALUES
-***** */
+/*********************
+VALUES 
+*********************/
 
 .values-list {
     color: var(--main-dark);
     padding-left: 1em;
 }
-
 .values-list li {
     font-family: var(--body-sans);
     display: grid;
@@ -640,7 +611,9 @@ VALUES
 }
 
 
-/* APPEARANCES */
+/*********************
+APPEARANCES
+*********************/
 .appear-list {
     color: var(--main-dark);
 }
@@ -649,7 +622,6 @@ VALUES
     margin: .25em .25em 1em 0;
     /* padding: 1em; */
 }
-
 .movie-tag a {
     padding: .25em .5em;
     border: 1.5px solid var(--main-dark);
@@ -673,9 +645,10 @@ VALUES
 
 
 
-/*FOOTER*/
+/**************************************
+FOOTER
+**************************************/
 /*fixed footer*/
-
 .footer {
     background-color: var(--main-dark);
     position: fixed;
@@ -772,13 +745,14 @@ VALUES
     transition: all 0.4s ease-in-out;
 }
 
-
 .footer-end {
     display: grid;
     grid-template-columns: auto 9.5em;
 }
 
-/*Footer icons*/
+/*********************
+Footer icons
+*********************/
 .social-icons {
     /* padding-left: 10em; */
     display: flex; 
@@ -883,7 +857,9 @@ VALUES
 
 
 
-/*New article*/
+/*********************
+NEW ARTICLE FADE IN
+*********************/
 @keyframes article-fade {
     from {
         transform: translate3d(0,100px,0);
@@ -897,6 +873,7 @@ VALUES
 }
 .new-article {
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 .new-article-image img {
     width: 100%;
